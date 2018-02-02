@@ -125,7 +125,7 @@ public class Person implements Serializable {
         return "Person{" + "health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatherhingSkill=" + gatherhingSkill + ", stamina=" + stamina + ", available=" + available + '}';
     }
     
-//this is a test to see if commit will work
+//this is a test to see if commit will work .... ::::
   
 
 
