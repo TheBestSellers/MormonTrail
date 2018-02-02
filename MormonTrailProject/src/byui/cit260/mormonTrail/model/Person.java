@@ -20,7 +20,8 @@ public class Person implements Serializable {
     private int gatherhingSkill;
     private int stamina;
     private boolean available;
-
+    
+    
     public Person() {
     }
 
@@ -124,7 +125,7 @@ public class Person implements Serializable {
         return "Person{" + "health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatherhingSkill=" + gatherhingSkill + ", stamina=" + stamina + ", available=" + available + '}';
     }
     
-
+//this is a test to see if commit will work
   
 
 
