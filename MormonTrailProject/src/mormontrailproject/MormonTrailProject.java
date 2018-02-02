@@ -5,6 +5,10 @@
  */
 package mormontrailproject;
 
+import byui.cit260.mormonTrail.model.Person;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author alyssahundley
@@ -15,7 +19,17 @@ public class MormonTrailProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Person personOne = new Person();
+       
+       personOne.setHealth(4);
+       personOne.setGatherhingSkill(1);
+       personOne.setStartingMoney(10.00);
+       personOne.setHuntingSkill(2);
+       personOne.setStamina(3);
+       personOne.setAvailable(true);
+       
+        System.out.println(personOne.toString());
+   
     }
     
 }
