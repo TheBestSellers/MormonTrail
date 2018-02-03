@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 public class Location implements Serializable{
     
-    //type
+    private String type;
     private int locationDistance;
+    
 }

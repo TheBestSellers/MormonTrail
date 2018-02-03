@@ -22,6 +22,7 @@ public class Game implements Serializable{
     private String dayOfWeek;
     private String weather;
     
+    Location currentLocation = new Location();
 
     public Game() {
         
