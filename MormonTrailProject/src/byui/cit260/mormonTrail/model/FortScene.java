@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author saria
  */
-public class FortScene implements Serializable {
+public class FortScene extends Scene implements Serializable {
 
 //class instance variables
 private int locationDistance;

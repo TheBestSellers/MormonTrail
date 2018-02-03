@@ -11,11 +11,12 @@ import java.io.Serializable;
  *
  * @author saria
  */
-public class HotelScene implements Serializable {
+public class HotelScene extends Scene implements Serializable {
     
     //class instance variables
     private int availableCharacters;
-
+    private int locationDistance;
+    
     public HotelScene() {
     }
 
@@ -27,10 +28,19 @@ public class HotelScene implements Serializable {
         this.availableCharacters = availableCharacters;
     }
 
+    public int getLocationDistance() {
+        return locationDistance;
+    }
+
+    public void setLocationDistance(int locationDistance) {
+        this.locationDistance = locationDistance;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 83 * hash + this.availableCharacters;
+        int hash = 7;
+        hash = 41 * hash + this.availableCharacters;
+        hash = 41 * hash + this.locationDistance;
         return hash;
     }
 
@@ -49,14 +59,15 @@ public class HotelScene implements Serializable {
         if (this.availableCharacters != other.availableCharacters) {
             return false;
         }
+        if (this.locationDistance != other.locationDistance) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "HotelScene{" + "availableCharacters=" + availableCharacters + '}';
+        return "HotelScene{" + "availableCharacters=" + availableCharacters + ", locationDistance=" + locationDistance + '}';
     }
-    
-    
     
 }

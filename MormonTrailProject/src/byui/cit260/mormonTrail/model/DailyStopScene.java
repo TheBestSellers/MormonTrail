@@ -11,6 +11,6 @@ import java.io.Serializable;
  *
  * @author saria
  */
-public class DailyStopScene implements Serializable{
+public class DailyStopScene extends Scene implements Serializable{
     
 }
