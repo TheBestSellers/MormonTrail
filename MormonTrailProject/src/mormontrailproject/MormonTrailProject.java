@@ -25,18 +25,32 @@ public class MormonTrailProject {
     public static void main(String[] args) {
        Wagon testWagon = new Wagon();
        Event testEvent = new Event();
+       Item testItem = new Item();
+       Livestock testOx = new Livestock();
        
        testEvent.setDescription("You've probably died of dysentary or something.");
        testEvent.setImpact(5);
        
-       testWagon.setName("Test Ox");
-       testWagon.setCost(5);
-       testWagon.setWeight(10);
+       testWagon.setName("Test Wagon");
+       testWagon.setCost(50);
+       testWagon.setWeight(1800);
        testWagon.setCapacity(150);
        
+       testItem.setName("Test Item");
+       testItem.setCost(4);
+       testItem.setWeight(5);
+       
+       testOx.setName("Test Ox");
+       testOx.setCost(25);
+       testOx.setWeight(100);
+       testOx.setHealth(98);
+       
        System.out.println(testEvent.toString());
+       System.out.println(testItem.toString());
        System.out.println(testWagon.toString() + " " + testWagon.getName() + " " + 
-               testWagon.getWeight() + " " + testWagon.getCost());
+               testWagon.getWeight() + " " + testWagon.getCost() + " " + testWagon.getCapacity());
+       System.out.println(testOx.toString() + " " + testOx.getName() + " " + 
+               testOx.getWeight() + " " + testOx.getCost() + " " + testOx.getHealth());
       
        
    
