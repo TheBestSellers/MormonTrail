@@ -21,7 +21,7 @@ public class Game implements Serializable{
     private int date;
     private String dayOfWeek;
     private String weather;
-    private ArrayList<Person> people = new ArrayList<Person>();
+    
 
     public Game() {
         
@@ -73,26 +73,18 @@ public class Game implements Serializable{
 
     public void setWeather(String weather) {
         this.weather = weather;
-    }
-
-    public ArrayList<Person> getPeople() {
-        return people;
-    }
-
-    public void setPeople(ArrayList<Person> people) {
-        this.people = people;
+    
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 6;
         hash = 53 * hash + this.locationOfParty;
         hash = 53 * hash + this.distanceFromNauvoo;
         hash = 53 * hash + this.distanceFromSLC;
         hash = 53 * hash + this.date;
         hash = 53 * hash + Objects.hashCode(this.dayOfWeek);
         hash = 53 * hash + Objects.hashCode(this.weather);
-        hash = 53 * hash + Objects.hashCode(this.people);
         return hash;
     }
 
@@ -126,16 +118,14 @@ public class Game implements Serializable{
         if (!Objects.equals(this.weather, other.weather)) {
             return false;
         }
-        if (!Objects.equals(this.people, other.people)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "locationOfParty=" + locationOfParty + ", distanceFromNauvoo=" + distanceFromNauvoo + ", distanceFromSLC=" + distanceFromSLC + ", date=" + date + ", dayOfWeek=" + dayOfWeek + ", weather=" + weather + ", people=" + people + '}';
+        return "Game{" + "locationOfParty=" + locationOfParty + ", distanceFromNauvoo=" + distanceFromNauvoo + ", distanceFromSLC=" + distanceFromSLC + ", date=" + date + ", dayOfWeek=" + dayOfWeek + ", weather=" + weather + '}';
     }
 
-    
 }
+
+    
