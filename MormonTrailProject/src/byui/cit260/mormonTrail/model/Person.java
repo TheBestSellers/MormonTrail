@@ -34,8 +34,6 @@ public class Person implements Serializable {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-    
-    
 
     public double getHealth() {
         return health;
