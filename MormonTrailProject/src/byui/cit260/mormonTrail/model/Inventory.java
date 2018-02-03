@@ -13,8 +13,6 @@ import java.io.Serializable;
  */
 public class Inventory implements Serializable {
     
-   // private String item;
-   // private int quantity;
     private int totalWeight;
 }
 

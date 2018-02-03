@@ -14,12 +14,14 @@ import java.io.Serializable;
 public class Person implements Serializable {
     
     //class instance varables
-    private int health;
+    private double health;
     private double startingMoney;
     private int huntingSkill;
-    private int gatherhingSkill;
+    private int gatheringSkill;
     private int stamina;
     private boolean available;
+    private int dailyProteinDraw;
+    private int dailyVeggieDraw;
     
     
     public Person() {
@@ -35,11 +37,11 @@ public class Person implements Serializable {
     
     
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(double health) {
         this.health = health;
     }
 
@@ -60,11 +62,11 @@ public class Person implements Serializable {
     }
 
     public int getGatherhingSkill() {
-        return gatherhingSkill;
+        return gatheringSkill;
     }
 
     public void setGatherhingSkill(int gatherhingSkill) {
-        this.gatherhingSkill = gatherhingSkill;
+        this.gatheringSkill = gatherhingSkill;
     }
 
     public int getStamina() {
@@ -75,15 +77,33 @@ public class Person implements Serializable {
         this.stamina = stamina;
     }
 
+    public int getDailyProteinDraw() {
+        return dailyProteinDraw;
+    }
+
+    public void setDailyProteinDraw(int dailyProteinDraw) {
+        this.dailyProteinDraw = dailyProteinDraw;
+    }
+
+    public int getDailyVeggieDraw() {
+        return dailyVeggieDraw;
+    }
+
+    public void setDailyVeggieDraw(int dailyVeggieDraw) {
+        this.dailyVeggieDraw = dailyVeggieDraw;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + this.health;
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.startingMoney) ^ (Double.doubleToLongBits(this.startingMoney) >>> 32));
-        hash = 53 * hash + this.huntingSkill;
-        hash = 53 * hash + this.gatherhingSkill;
-        hash = 53 * hash + this.stamina;
-        hash = 53 * hash + (this.available ? 1 : 0);
+        int hash = 3;
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.health) ^ (Double.doubleToLongBits(this.health) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.startingMoney) ^ (Double.doubleToLongBits(this.startingMoney) >>> 32));
+        hash = 83 * hash + this.huntingSkill;
+        hash = 83 * hash + this.gatheringSkill;
+        hash = 83 * hash + this.stamina;
+        hash = 83 * hash + (this.available ? 1 : 0);
+        hash = 83 * hash + this.dailyProteinDraw;
+        hash = 83 * hash + this.dailyVeggieDraw;
         return hash;
     }
 
@@ -99,7 +119,7 @@ public class Person implements Serializable {
             return false;
         }
         final Person other = (Person) obj;
-        if (this.health != other.health) {
+        if (Double.doubleToLongBits(this.health) != Double.doubleToLongBits(other.health)) {
             return false;
         }
         if (Double.doubleToLongBits(this.startingMoney) != Double.doubleToLongBits(other.startingMoney)) {
@@ -108,7 +128,7 @@ public class Person implements Serializable {
         if (this.huntingSkill != other.huntingSkill) {
             return false;
         }
-        if (this.gatherhingSkill != other.gatherhingSkill) {
+        if (this.gatheringSkill != other.gatheringSkill) {
             return false;
         }
         if (this.stamina != other.stamina) {
@@ -117,12 +137,20 @@ public class Person implements Serializable {
         if (this.available != other.available) {
             return false;
         }
+        if (this.dailyProteinDraw != other.dailyProteinDraw) {
+            return false;
+        }
+        if (this.dailyVeggieDraw != other.dailyVeggieDraw) {
+            return false;
+        }
         return true;
     }
 
+   
+
     @Override
     public String toString() {
-        return "Person{" + "health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatherhingSkill=" + gatherhingSkill + ", stamina=" + stamina + ", available=" + available + '}';
+        return "Person{" + "health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatherhingSkill=" + gatheringSkill + ", stamina=" + stamina + ", available=" + available + '}';
     }
     
 //this is a test to see if commit will work .... ::::

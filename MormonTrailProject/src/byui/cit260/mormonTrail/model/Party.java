@@ -13,8 +13,7 @@ import java.io.Serializable;
  */
 public class Party implements Serializable {
     
-    private int dailyProteinDraw;
-    private int dailyVeggieDraw;
+    
     private String pace;
    //Array List of Person
     //Array list of inventory 
