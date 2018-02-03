@@ -5,13 +5,17 @@
  */
 package mormontrailproject;
 
+import byui.cit260.mormonTrail.model.Event;
+import byui.cit260.mormonTrail.model.Item;
+import byui.cit260.mormonTrail.model.Livestock;
 import byui.cit260.mormonTrail.model.Person;
+import byui.cit260.mormonTrail.model.Wagon;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  *
- * @author alyssahundley
+ * @author alyssahundley, Christopher, Sariah
  */
 public class MormonTrailProject {
 
@@ -19,16 +23,22 @@ public class MormonTrailProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Person personOne = new Person();
+       Wagon testWagon = new Wagon();
+       Event testEvent = new Event();
        
-       personOne.setHealth(4);
-       personOne.setGatherhingSkill(1);
-       personOne.setStartingMoney(10.00);
-       personOne.setHuntingSkill(2);
-       personOne.setStamina(3);
-       personOne.setAvailable(true);
+       testEvent.setDescription("You've probably died of dysentary or something.");
+       testEvent.setImpact(5);
        
-        System.out.println(personOne.toString());
+       testWagon.setName("Test Ox");
+       testWagon.setCost(5);
+       testWagon.setWeight(10);
+       testWagon.setCapacity(150);
+       
+       System.out.println(testEvent.toString());
+       System.out.println(testWagon.toString() + " " + testWagon.getName() + " " + 
+               testWagon.getWeight() + " " + testWagon.getCost());
+      
+       
    
     }
     
