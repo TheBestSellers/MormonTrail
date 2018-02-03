@@ -16,6 +16,8 @@ public class Location implements Serializable{
     
     private String type;
     private int locationDistance;
+    
+    Scene description = new Scene();
 
     public Location() {
     }

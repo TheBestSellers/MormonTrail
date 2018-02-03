@@ -14,6 +14,8 @@ import java.io.Serializable;
 public class Map implements Serializable{
     
     private int currentLocation;
+    
+    Location location = new Location();
 
     public Map() {
         
