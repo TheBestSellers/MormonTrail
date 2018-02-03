@@ -11,10 +11,11 @@ import java.io.Serializable;
  *
  * @author saria
  */
-public class GeneralStoreScene implements Serializable{
+public class GeneralStoreScene extends Scene implements Serializable{
     
     //class instance variables
     private int availableItems;
+    private int locationDistance;
 
     public GeneralStoreScene() {
     }
@@ -27,10 +28,19 @@ public class GeneralStoreScene implements Serializable{
         this.availableItems = availableItems;
     }
 
+    public int getLocationDistance() {
+        return locationDistance;
+    }
+
+    public void setLocationDistance(int locationDistance) {
+        this.locationDistance = locationDistance;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + this.availableItems;
+        int hash = 3;
+        hash = 41 * hash + this.availableItems;
+        hash = 41 * hash + this.locationDistance;
         return hash;
     }
 
@@ -49,12 +59,16 @@ public class GeneralStoreScene implements Serializable{
         if (this.availableItems != other.availableItems) {
             return false;
         }
+        if (this.locationDistance != other.locationDistance) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "GeneralStoreScene{" + "availableItems=" + availableItems + '}';
+        return "GeneralStoreScene{" + "availableItems=" + availableItems + ", locationDistance=" + locationDistance + '}';
     }
-      
+
+    
 }

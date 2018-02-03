@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author saria
  */
-public class RiverScene implements Serializable {
+public class RiverScene extends Scene implements Serializable {
     
     //class instance variables
     private int locationDistance;

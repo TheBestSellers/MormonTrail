@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author saria
  */
-public class TownScene implements Serializable {
+public class TownScene extends Scene implements Serializable {
     
     //class instance variables
     private int locationDistance;
