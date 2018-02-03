@@ -6,6 +6,7 @@
 package mormontrailproject;
 
 import byui.cit260.mormonTrail.model.Event;
+import byui.cit260.mormonTrail.model.Inventory;
 import byui.cit260.mormonTrail.model.Item;
 import byui.cit260.mormonTrail.model.Livestock;
 import byui.cit260.mormonTrail.model.Person;
@@ -27,6 +28,10 @@ public class MormonTrailProject {
        Event testEvent = new Event();
        Item testItem = new Item();
        Livestock testOx = new Livestock();
+       Item testItem2 = new Item();
+       Inventory partysStuff = new Inventory();
+       partysStuff.getItems().add(testItem2);
+       
        
        testEvent.setDescription("You've probably died of dysentary or something.");
        testEvent.setImpact(5);
@@ -40,12 +45,19 @@ public class MormonTrailProject {
        testItem.setCost(4);
        testItem.setWeight(5);
        
+       testItem2.setName("Test Item 2");
+       testItem2.setCost(41);
+       testItem2.setWeight(52);
+       
        testOx.setName("Test Ox");
        testOx.setCost(25);
        testOx.setWeight(100);
        testOx.setHealth(98);
        
+       
+       
        System.out.println(testEvent.toString());
+       System.out.println(partysStuff.toString());
        System.out.println(testItem.toString());
        System.out.println(testWagon.toString() + " " + testWagon.getName() + " " + 
                testWagon.getWeight() + " " + testWagon.getCost() + " " + testWagon.getCapacity());
