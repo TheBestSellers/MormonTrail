@@ -16,6 +16,7 @@ public class Item implements Serializable{
     private String name;
     private Integer cost;
     private Integer weight;
+    private int qty;
 
     //constructor
     public Item() {
@@ -47,6 +48,15 @@ public class Item implements Serializable{
         this.weight = weight;
     }
 
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    
     //
     @Override
     public int hashCode() {
@@ -83,7 +93,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "name=" + name + ", cost=" + cost + ", weight=" + weight + '}';
+        return "Item{" + "name=" + name + ", cost=" + cost + ", weight=" + weight + ", qty=" + qty + '}';
     }
     
     

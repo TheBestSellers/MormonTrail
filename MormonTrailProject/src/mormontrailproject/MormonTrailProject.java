@@ -40,19 +40,23 @@ public class MormonTrailProject {
        testWagon.setCost(50);
        testWagon.setWeight(1800);
        testWagon.setCapacity(150);
+       testWagon.setQty(1);
        
        testItem.setName("Test Item");
        testItem.setCost(4);
        testItem.setWeight(5);
+       testItem.setQty(2);
        
        testItem2.setName("Test Item 2");
        testItem2.setCost(41);
        testItem2.setWeight(52);
+       testItem2.setQty(3);
        
        testOx.setName("Test Ox");
        testOx.setCost(25);
        testOx.setWeight(100);
        testOx.setHealth(98);
+       testOx.setQty(4);
        
        
        
@@ -60,14 +64,12 @@ public class MormonTrailProject {
        System.out.println(partysStuff.toString());
        System.out.println(testItem.toString());
        System.out.println(testWagon.toString() + " " + testWagon.getName() + " " + 
-               testWagon.getWeight() + " " + testWagon.getCost() + " " + testWagon.getCapacity());
+               testWagon.getWeight() + " " + testWagon.getCost() + " " + testWagon.getCapacity() + " " + testWagon.getQty());
        System.out.println(testOx.toString() + " " + testOx.getName() + " " + 
-               testOx.getWeight() + " " + testOx.getCost() + " " + testOx.getHealth());
+               testOx.getWeight() + " " + testOx.getCost() + " " + testOx.getHealth()  + " " + testOx.getQty());
       
        
    
     }
     
 }
-
-//this is a test to see if the commit will work ....:::
