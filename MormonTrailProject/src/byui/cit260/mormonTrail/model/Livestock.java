@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Livestock extends Item implements Serializable{
     
     //Variables
-    private Integer health;
+    private int health;
   
     
     //Constructor
@@ -25,15 +25,13 @@ public class Livestock extends Item implements Serializable{
     
     //getters and setters
 
-    public Integer getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(Integer health) {
+    public void setHealth(int health) {
         this.health = health;
     }
-    
-    
     
     //
     @Override

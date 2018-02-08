@@ -14,16 +14,16 @@ import java.util.Objects;
  */
 public class Wagon extends Item implements Serializable{
     
-    private Integer capacity;
+    private int capacity;
 
     public Wagon() {
     }
 
-    public Integer getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(Integer capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 

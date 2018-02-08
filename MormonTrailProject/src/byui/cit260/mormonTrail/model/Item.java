@@ -14,8 +14,8 @@ public class Item implements Serializable{
     
     //variables
     private String name;
-    private Integer cost;
-    private Integer weight;
+    private int cost;
+    private int weight;
     private int qty;
 
     //constructor
@@ -32,19 +32,19 @@ public class Item implements Serializable{
         this.name = name;
     }
 
-    public Integer getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(Integer cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 
-    public Integer getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
