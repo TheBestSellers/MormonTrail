@@ -32,8 +32,7 @@ public class PeopleControlTest {
         int expResult = 5;
         int result = PeopleControl.calcHealthDraw(stamina, foodShortage, weather, pace);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       
+   
         
         System.out.println("\tTest Case 2");
         //test case 12
@@ -44,7 +43,6 @@ public class PeopleControlTest {
         expResult = -1;
         result = PeopleControl.calcHealthDraw(stamina, foodShortage, weather, pace);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
  
         
         System.out.println("\tTest Case 3");
@@ -68,8 +66,7 @@ public class PeopleControlTest {
         expResult = -1;
         result = PeopleControl.calcHealthDraw(stamina, foodShortage, weather, pace);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-
+    
         
         System.out.println("\tTest Case 5");
         //test case 12
@@ -80,8 +77,7 @@ public class PeopleControlTest {
         expResult = 5;
         result = PeopleControl.calcHealthDraw(stamina, foodShortage, weather, pace);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        
+    
         
         System.out.println("\tTest Case 6");
         //test case 12
@@ -92,7 +88,7 @@ public class PeopleControlTest {
         expResult = 26;
         result = PeopleControl.calcHealthDraw(stamina, foodShortage, weather, pace);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+
       
     }
     
