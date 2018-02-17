@@ -28,9 +28,7 @@ public class PeopleControl {
        int healthDraw = (int)Math.round((6-stamina)*(weather)*(pace) + foodShortage);
        
        return healthDraw;
-    }
-            
-            
+    }     
     //calcHealthDraw(Stamina: int, Food: int, Weather: double, Pace: double) returns int
     //If parameters are invalid, return -1;
     //If parameters are valid, calculate (6-Stamina)(Weather)(Pace) + foodShortage, round to nearest int and return;
@@ -41,5 +39,57 @@ public class PeopleControl {
     //Weather - Clear (1), Wind(1.5), Rain (2), Snow(3). Later in the season, there is more probability of bad weather.
     //Team Pace - Slow (1), Average(1.5), Fast(2)
 
+    public static int calcDayOfRest(int stamina){
+        if(stamina < 1 || stamina >5 ){
+            return -1;
+        }
+        int dayOfRest = (int)Math.round(stamina*1.5);
+        
+        return dayOfRest;
+        //If parameters are invalid, return -1;
+        //If parameters are valid, calculate Stamina*1.5, round to nearest int and return;
+    }
+    
+    public static int calcHealth(int currentHealth, int healthDraw, int dayOfRest){
+        
+        if(currentHealth < 1 || currentHealth > 100 ){
+            return -1;
+        }
+        if(healthDraw < 0 || healthDraw >50 ){
+            return -1;
+        }
+        if(dayOfRest < 0 || dayOfRest > 8 ){
+            return -1;
+        }
+        if(healthDraw > 0 && dayOfRest > 0){
+            return -1;   
+        }
+        if(healthDraw == 0 && dayOfRest == 0){
+            return -1;
+        }
+        if((currentHealth - healthDraw + dayOfRest)<1){
+            return currentHealth = 1;
+        }
+        if((currentHealth - healthDraw + dayOfRest)>100){
+            return currentHealth = 100;
+        }
+        
+        currentHealth = currentHealth - healthDraw + dayOfRest;
+        
+        return currentHealth;
+            
+        //If (CurrentHealth – DailyHealthDraw + DayOfRest) < 1, return CurrentHealth = 1 and give signal that party must rest;
+        //If (CurrentHealth – DailyHealthDraw + DayOfRest) > 100, return CurrentHealth = 100;
+        //If parameters are invalid, return -1;
+        //If parameters are valid, calculate CurrentHealth – DailyHealthDraw + DayOfRest, and return;
+
+        //Reset DailyHealthDraw and DayOfRest to 0;
+
+        
+        //CurrentHealth – 1-100 
+        //DailyHealthDraw – 1-50
+        //DayOfRest – 2-8
+        //DailyHealthDraw must be >0 OR DayOfRest must be >0
+    }
 
 }
