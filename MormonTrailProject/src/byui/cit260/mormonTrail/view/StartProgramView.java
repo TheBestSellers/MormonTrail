@@ -14,20 +14,32 @@ public class StartProgramView {
     public StartProgramView() {
     }
     
-    private displayStartProgramView() {
-        endOfView = false;
-        
+    public void display() {
+        boolean endOfView = false;
         do {
-            string [] inputs = this.getInputs();
-            
+            String[] inputs = this.getInputs();
             if (inputs[0] == null || inputs[0].equals("Q")) {
-            return;
-        }
-                    
-        } while (endOfView != true);
+                return;
+            }
+            endOfView = doAction(inputs);
+        } while(!endOfView);
         
-      
+    }
+
+    private String[] getInputs() {
+        System.out.println("Type your name: ");
         
+        String[] inputs = new String[1];
+        inputs[0] = "testInput";
+        
+        return inputs;
+    }
+    
+    private boolean doAction(String[] inputs) {
+        System.out.println("doAction Called");
+        System.out.println("\n\tinputs = " + inputs[0]);
+        
+        return true;
     }
     
 }
