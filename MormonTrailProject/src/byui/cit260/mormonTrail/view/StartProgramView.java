@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mormonTrail.view;
+
+import java.util.Scanner;
 
 /**
  *
- * @author saria
+ * @author Saria, Christopher and Alyssa
  */
 public class StartProgramView {
     
@@ -27,12 +24,34 @@ public class StartProgramView {
     }
 
     private String[] getInputs() {
-        System.out.println("Type your name: ");
         
+        //create scanner to receive user input
+        Scanner inFile;
+        inFile = new Scanner(System.in);
+        
+        boolean valid = false; 
         String[] inputs = new String[1];
-        inputs[0] = "testInput";
+        System.out.println("This is a description of the view."
+                + "\nSomething about entering your name, maybe.");
+
+        while(!valid) {
+            //prompt for user input
+            System.out.println("Type your name: ");
+            
+            //get the name entered by the user
+            inputs[0] = inFile.nextLine();
+            inputs[0] = inputs[0].trim().toLowerCase();
+            
+            if(inputs[0].length() < 1) {
+                System.out.println("You must enter a non-blank value");
+                continue;
+            }
+            
+            valid = true;
+        }
         
         return inputs;
+       
     }
     
     private boolean doAction(String[] inputs) {
@@ -43,14 +62,3 @@ public class StartProgramView {
     }
     
 }
-
-//displayStartProgramView() {
-//endOfView = false
-//DO
-//inputs = getInputs ()
-//IF no inputs were entered OR the first input is Q
-//RETURN
-//ENDIF
-//endOfView = doAction (inputs)
-//WHILE endOfView != true
-// }
