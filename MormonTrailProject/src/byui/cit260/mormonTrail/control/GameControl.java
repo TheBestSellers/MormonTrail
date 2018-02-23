@@ -8,7 +8,7 @@ import byui.cit260.mormonTrail.model.Player;
 
 /**
  *
- * @author alyssahundley
+ * @author alyssahundley, Sariah
  */
  public class GameControl {
     
@@ -22,9 +22,13 @@ import byui.cit260.mormonTrail.model.Player;
         Player player = new Player();
         player.setName(name);
         return player;
-        
-        
+   
     }
+    
+    public static void createNewGame(Player player) {
+       System.out.println("****startNewGame() called");
+    }
+
     
 }
 

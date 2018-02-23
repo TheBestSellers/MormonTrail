@@ -1,4 +1,4 @@
-package byui.cit260.mormonTrail.view;
+ackage byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
 import java.util.Scanner;
@@ -6,7 +6,7 @@ import byui.cit260.mormonTrail.model.Player;
 
 /**
  *
- * @author Saria, Christopher and Alyssa
+ * @author Sariah, Christopher and Alyssa
  */
 public class StartProgramView {
     

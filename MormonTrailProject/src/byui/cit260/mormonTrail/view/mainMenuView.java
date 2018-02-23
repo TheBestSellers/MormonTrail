@@ -5,14 +5,111 @@
  */
 package byui.cit260.mormonTrail.view;
 
+import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.model.Player;
+import java.util.Scanner;
+
 /**
  *
- * @author Admin
+ * @author Sariah, Christopher, Alyssa
  */
-class mainMenuView {
+public class mainMenuView {
 
-    void displayMainMenuView() {
-        System.out.println("displayMainMenuView() method called");
+    private gameMenuView gameMenuView;
+    private startExistingGameView startExistingGameView;
+    private helpMenuView helpMenuView;
+    
+  public mainMenuView(){
+        
     }
+    
+    String[] inputs = new String[1];
+
+        public void displayMainMenuView() {
+        boolean endView = false;
+        do {
+            String[] inputs = this.getInputs();
+            if (inputs[0] == null || inputs[0].equals("Q")) {
+                return;
+            }
+            endView = doAction(inputs);
+        } while(!endView);
+    }
+
+    private String[] getInputs() {
+        
+        //create scanner to receive user input
+        Scanner inFile;
+        inFile = new Scanner(System.in);
+        
+        boolean valid = false;
+        
+        System.out.println("Main Menu"
+                + "Please select an option"
+                + "N - Start new game"
+                + "R - Restart exisiting game"
+                + "H - Get help on how to play the game"
+                + "E - Exit");
+        
+        while(!valid) {
+            //prompt user for input
+            System.out.println("Select a menu option.");
+            
+            //get the input user entered, trim it
+            inputs[0] = inFile.nextLine();
+            inputs[0] = inputs[0].trim();
+            
+            //Validate that the user entered a letter
+            if(inputs[0].length() < 1) {
+                System.out.println("You must enter a value.");
+                continue;
+            }
+            valid = true;
+            
+        }
+        return inputs;
+    }
+
+    private boolean doAction(String[] inputs) {
+        char menuItem = 0;
+       
+        switch (menuItem) {
+            case 'N': startNewGame();
+                break;
+            case 'R': restartGame();
+                break;
+            case 'H': getHelp();
+                break;
+            case 'E': return true;
+               
+                default: System.out.println("Invalid menu item");
+        }
+        return false;
+        
+    }
+    
+
+
+    private void restartGame() {
+        startExistingGameView = new startExistingGameView();
+        startExistingGameView.displayStartExistingGameView();
+    }
+
+    private void startNewGame() {
+      Player Player = null;
+      GameControl.createNewGame(Player);
+        
+        gameMenuView = new gameMenuView();
+        gameMenuView.displayGameMenuView();
+       
+    }
+
+    private void getHelp() {
+       helpMenuView = new helpMenuView();
+       helpMenuView.displayHelpMenuView();
+       
+    }
+    
+    
     
 }
