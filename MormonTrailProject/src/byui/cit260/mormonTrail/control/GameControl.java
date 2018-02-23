@@ -4,11 +4,38 @@
  * and open the template in the editor.
  */
 package byui.cit260.mormonTrail.control;
+import byui.cit260.mormonTrail.model.Player;
 
 /**
  *
  * @author alyssahundley
  */
-public class GameControl {
+ public class GameControl {
+    
+    public static Player savePlayer (String name){
+        
+        if (name == null || name.length() <1){
+            return null;
+        }
+
+        System.out.println("***savePlayer() called");
+        Player player = new Player();
+        player.setName(name);
+        return player;
+        
+        
+    }
     
 }
+
+
+//savePlayer(name): Player
+//BEGIN
+// if name is null OR length of name is < 1 THEN
+// RETURN null
+// ENDIF
+// player = new Player object
+// save the name in the player object
+// save the player in the main class of the project
+// RETURN player
+//END
