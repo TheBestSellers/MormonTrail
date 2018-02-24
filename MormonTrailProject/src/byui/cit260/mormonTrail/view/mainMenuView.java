@@ -45,7 +45,7 @@ public class mainMenuView {
         boolean valid = false;
         
         System.out.println("Main Menu"
-                + "Please select an option"
+                + "\nPlease select an option"
                 + "\nN - Start new game"
                 + "\nR - Restart exisiting game"
                 + "\nH - Get help on how to play the game"
