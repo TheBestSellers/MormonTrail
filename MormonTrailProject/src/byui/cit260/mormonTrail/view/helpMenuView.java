@@ -22,7 +22,7 @@ public class helpMenuView {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
-            if (inputs[0] == null || inputs[0].equals("Q")) {
+            if (inputs[0] == null || inputs[0].equals("Q") || inputs[0].equals("q")) {
                 return;
             }
             endView = doAction(inputs);
