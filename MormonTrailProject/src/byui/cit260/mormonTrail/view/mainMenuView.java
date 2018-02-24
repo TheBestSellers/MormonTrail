@@ -29,7 +29,7 @@ public class mainMenuView {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
-            if (inputs[0] == null || inputs[0].equals("Q")) {
+            if (inputs[0] == null || inputs[0].toUpperCase().equals("Q")) {
                 return;
             }
             endView = doAction(inputs);

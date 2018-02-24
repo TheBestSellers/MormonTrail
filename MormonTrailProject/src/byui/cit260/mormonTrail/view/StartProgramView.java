@@ -34,8 +34,11 @@ public class StartProgramView {
         
         boolean valid = false; 
         
-        System.out.println("This is a description of the view."
-                + "\nSomething about entering your name, maybe.");
+        System.out.println("In the text-based game The Oregon Trail / Mormon"
+                + "Trail you play the role of the leader of a small wagon train"
+                + "heading to Oregon/Utah. It is your job to purchase supplies,"
+                + "assemble your party, and lead them to safety through the"
+                + "perils of the wild american west.");
 
         while(!valid) {
             //prompt for user input
@@ -43,7 +46,7 @@ public class StartProgramView {
             
             //get the name entered by the user, trim and lowercase it
             inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toLowerCase();
+            inputs[0] = inputs[0].trim();
             
             //Validate that the user entered something
             if(inputs[0].length() < 1) {
@@ -64,12 +67,13 @@ public class StartProgramView {
         Player player = GameControl.savePlayer(playersName);
         
         if(player == null){
-            System.out.println("Could not create the player. Enter a different name.");
+            System.out.println("Could not create the player."
+                    + "Enter a different name.");
             return false;
         }
         
         else{
-            System.out.println("=========================" + "Welcome to the game "
+            System.out.println("=========================" +"Welcome to the game "
                     + playersName + ". we hope you have a lot of fun!" + "========================");
         }
    
