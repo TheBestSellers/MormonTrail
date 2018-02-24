@@ -1,4 +1,4 @@
-ackage byui.cit260.mormonTrail.view;
+package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
 import java.util.Scanner;

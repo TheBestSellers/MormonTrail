@@ -17,7 +17,6 @@ import byui.cit260.mormonTrail.view.StartProgramView;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  *
  * @author alyssahundley, Christopher, Sariah

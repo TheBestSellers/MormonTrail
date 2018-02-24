@@ -46,18 +46,18 @@ public class mainMenuView {
         
         System.out.println("Main Menu"
                 + "Please select an option"
-                + "N - Start new game"
-                + "R - Restart exisiting game"
-                + "H - Get help on how to play the game"
-                + "E - Exit");
+                + "\nN - Start new game"
+                + "\nR - Restart exisiting game"
+                + "\nH - Get help on how to play the game"
+                + "\nE - Exit\n");
         
         while(!valid) {
             //prompt user for input
-            System.out.println("Select a menu option.");
+            System.out.println("Select a menu option.\n");
             
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim();
+            inputs[0] = inputs[0].trim().toUpperCase();
             
             //Validate that the user entered a letter
             if(inputs[0].length() < 1) {
@@ -71,18 +71,18 @@ public class mainMenuView {
     }
 
     private boolean doAction(String[] inputs) {
-        char menuItem = 0;
+        String menuItem = inputs[0];
        
         switch (menuItem) {
-            case 'N': startNewGame();
+            case "N": startNewGame();
                 break;
-            case 'R': restartGame();
+            case "R": restartGame();
                 break;
-            case 'H': getHelp();
+            case "H": getHelp();
                 break;
-            case 'E': return true;
-               
-                default: System.out.println("Invalid menu item");
+            case "E": return true;
+                
+            default: System.out.println("Invalid menu item");
         }
         return false;
         

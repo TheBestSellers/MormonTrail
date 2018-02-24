@@ -39,13 +39,13 @@ public class helpMenuView {
         boolean valid = false;
         
         System.out.println("Help Menu"
-                + "Please select an option"
-                + "G - What is the goal of the game?"
-                + "M - How to move"
-                + "E - Estimate the number of resources"
-                + "H - Harvest resources"
-                + "D - Delivering resources to warehouse"
-                + "Q - Quit");
+                + "\nPlease select an option"
+                + "\nG - What is the goal of the game?"
+                + "\nM - How to move"
+                + "\nE - Estimate the number of resources"
+                + "\nH - Harvest resources"
+                + "\nD - Delivering resources to warehouse"
+                + "\nQ - Quit");
         
         while(!valid) {
             //prompt user for input
@@ -53,7 +53,7 @@ public class helpMenuView {
             
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim();
+            inputs[0] = inputs[0].trim().toUpperCase();
             
             //Validate that the user entered a letter
             if(inputs[0].length() < 1) {
@@ -68,21 +68,21 @@ public class helpMenuView {
 
     private boolean doAction(String[] inputs) {
         
-        char menuItem = 0;
+        String menuItem = inputs[0];
         
         switch (menuItem) {
-            case 'G': System.out.println("The goal of the game is to....");
+            case "G": System.out.println("\nThe goal of the game is to....\n");
                 break;
-            case 'M': System.out.println("You move by....");
+            case "M": System.out.println("\nYou move by....\n");
                 break;
-            case 'E': System.out.println("Estimated resources are....");
+            case "E": System.out.println("\nEstimated resources are....\n");
                 break;
-            case 'H': System.out.println("Harvest resources by...");
+            case "H": System.out.println("\nHarvest resources by...\n");
                 break;
-            case 'D': System.out.println("Deliver resources to warehouse by....");
+            case "D": System.out.println("\nDeliver resources to warehouse by....\n");
                 break;
-            case 'Q': return true;
-            default: System.out.println("Invalid menu item");
+            case "Q": return true;
+            default: System.out.println("\nInvalid menu item\n\n");
             
         }
      return false;
