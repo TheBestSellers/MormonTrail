@@ -12,19 +12,19 @@ import java.util.Scanner;
  *
  * @author Sariah
  */
-public class townSceneView {
+public class fortSceneView {
 
-    private hotelSceneView hotelSceneView;
+
     private generalStoreView generalStoreView;
 
     
-  public townSceneView(){
+  public fortSceneView(){
         
     }
     
     String[] inputs = new String[1];
 
-        public void displayTownSceneView() {
+        public void displayFortSceneView() {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
@@ -43,9 +43,8 @@ public class townSceneView {
         
         boolean valid = false;
         
-        System.out.println("Wlsome to a Town"
+        System.out.println("Wlsome to a Fort"
                 + "\nPlease select an option"
-                + "\nH - Visit the Hotel"
                 + "\nG - Visit the General Store"
                 + "\nE - Exit & Return to Trail\n");
         
@@ -72,8 +71,6 @@ public class townSceneView {
         String menuItem = inputs[0];
        
         switch (menuItem) {
-            case "H": hotelSceneView();
-                break;
             case "G": generalStoreView();
                 break;
             case "E": return true;
@@ -82,11 +79,6 @@ public class townSceneView {
         }
         return false;
         
-    }
-
-    private void hotelSceneView() {
-       hotelSceneView = new hotelSceneView();
-       hotelSceneView.displayHotelSceneView();
     }
 
     private void generalStoreView() {
@@ -100,3 +92,4 @@ public class townSceneView {
     
     
 }
+

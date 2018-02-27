@@ -10,5 +10,9 @@ package byui.cit260.mormonTrail.view;
  * @author saria
  */
 public class generalStoreView {
+
+    static void displayGeneralStoreView() {
+        
+    }
     
 }
