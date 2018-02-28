@@ -27,7 +27,7 @@ public class mainMenuView {
     
     String[] inputs = new String[1];
 
-        public void displayMainMenuView() {
+    public void displayMainMenuView() {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();

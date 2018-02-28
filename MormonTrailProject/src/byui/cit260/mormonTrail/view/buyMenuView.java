@@ -1,21 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package byui.cit260.mormonTrail.view;
 
+import byui.cit260.mormonTrail.control.ItemControl;
 import java.util.Scanner;
 
 /**
  *
  * @author Christopher S
  */
-public class generalStoreView {
-
-    private buyMenuView buyMenuView;
+public class buyMenuView {
     
-    public generalStoreView() {
+    public buyMenuView() {
     }
     
     String[] inputs = new String[1];
 
-    public void displayGeneralStoreView() {
+    public void displayBuyMenuView() {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
@@ -35,11 +39,15 @@ public class generalStoreView {
         
         boolean valid = false;
         
-        System.out.println("----Welcome to the General Store!----"
-                + "\nBuy\\sell all the supplies you could need on your journey!"
-                + "\nPlease select an option"
-                + "\n\nB - Buy"
-                + "\nS - Sell"
+        System.out.println("\n----Buy Items----"
+                + "\nPlease select an item to buy"
+                + "\n\nA - Ammo"
+                + "\nL - Large Wagon"
+                + "\nM - Medium Wagon"
+                + "\nS - Small Wagon"
+                + "\nP - Protein"
+                + "\nV - Veggies"
+                + "\nW - Spare Wheel"
                 + "\nQ - Return to previous menu");
         
         while(!valid) {
@@ -66,10 +74,19 @@ public class generalStoreView {
         String menuItem = inputs[0];
         
         switch (menuItem) {
-            case "B": buyMenuView = new buyMenuView();
-                      buyMenuView.displayBuyMenuView();
+            case "A": ItemControl.addItem("ammo", 2);
                 break;
-            case "S": System.out.println("\nSELL MENU\n");
+            case "L": ItemControl.addItem("Large Wagon", 2);
+                break;
+            case "M": ItemControl.addItem("Medium Wagon", 2);
+                break;
+            case "S": ItemControl.addItem("Small Wagon", 2);
+                break;
+            case "P": ItemControl.addItem("Protein", 2);
+                break;
+            case "V": ItemControl.addItem("Veggie", 2);
+                break;
+            case "W": ItemControl.addItem("Wagon Wheel", 2);
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");
@@ -78,6 +95,5 @@ public class generalStoreView {
      return false;
         
     }
-    
     
 }

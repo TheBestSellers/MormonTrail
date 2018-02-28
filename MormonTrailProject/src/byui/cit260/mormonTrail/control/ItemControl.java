@@ -26,6 +26,10 @@ public class ItemControl {
         return foodDraw;
     }
     
+    public static void addItem(String item, int qty) {
+        System.out.println("You just " + qty + " " + item + "(s)");
+    }
+    
 }
 
 
