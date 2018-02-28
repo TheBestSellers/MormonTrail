@@ -24,8 +24,4 @@ public class ItemControl {
         System.out.println("You just added " + qty + " " + item + "(s)");
     }
     
-    public static void subtractMoney() {
-        System.out.println("subtractMoney() was called");
-    }
-    
 }

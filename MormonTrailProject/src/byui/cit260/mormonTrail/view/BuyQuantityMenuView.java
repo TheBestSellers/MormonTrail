@@ -44,7 +44,7 @@ public class BuyQuantityMenuView {
         
         while(!valid) {
             //prompt user for input
-            System.out.println("Enter the amount of " + item + " you wish to buy.");
+            System.out.println("Enter your amount.");
             
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
@@ -84,7 +84,6 @@ public class BuyQuantityMenuView {
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
             ItemControl.addItem(item, qty);
-            ItemControl.subtractMoney();
             return true;
         }
         
