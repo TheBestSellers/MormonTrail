@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class fortSceneView {
 
 
-    private generalStoreView generalStoreView;
+    private GeneralStoreView generalStoreView;
 
     
   public fortSceneView(){
@@ -82,7 +82,7 @@ public class fortSceneView {
     }
 
     private void generalStoreView() {
-        generalStoreView = new generalStoreView();
+        generalStoreView = new GeneralStoreView();
         generalStoreView.displayGeneralStoreView();
         
     }

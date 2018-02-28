@@ -8,7 +8,7 @@ package byui.cit260.mormonTrail.view;
 import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.model.Player;
 import java.util.Scanner;
-import byui.cit260.mormonTrail.view.generalStoreView;
+import byui.cit260.mormonTrail.view.GeneralStoreView;
 
 /**
  *
@@ -19,7 +19,7 @@ public class mainMenuView {
     private gameMenuView gameMenuView;
     private startExistingGameView startExistingGameView;
     private helpMenuView helpMenuView;
-    private generalStoreView generalStoreView;
+    private GeneralStoreView generalStoreView;
     
   public mainMenuView(){
         
@@ -116,7 +116,7 @@ public class mainMenuView {
     }
     
     private void generalStore() {
-        generalStoreView = new generalStoreView();
+        generalStoreView = new GeneralStoreView();
         generalStoreView.displayGeneralStoreView();
        
     }

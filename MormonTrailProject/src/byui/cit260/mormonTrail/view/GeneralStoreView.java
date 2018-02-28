@@ -1,34 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mormonTrail.view;
-
 
 import java.util.Scanner;
 
 /**
  *
- * @author Sariah
+ * @author Christopher S
  */
-public class townSceneView {
+public class GeneralStoreView {
 
-    private hotelSceneView hotelSceneView;
-    private GeneralStoreView generalStoreView;
-
+    private BuyMenuView buyMenuView;
     
-  public townSceneView(){
-        
+    public GeneralStoreView() {
     }
     
     String[] inputs = new String[1];
 
-        public void displayTownSceneView() {
+    public void displayGeneralStoreView() {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
-            if (inputs[0] == null || inputs[0].toUpperCase().equals("Q")){
+            inputs[0] = inputs[0].trim().toUpperCase();
+            if (inputs[0] == null || inputs[0].equals("Q")){
                 return;
             }
             endView = doAction(inputs);
@@ -43,15 +35,16 @@ public class townSceneView {
         
         boolean valid = false;
         
-        System.out.println("Welcome to a Town"
+        System.out.println("----Welcome to the General Store!----"
+                + "\nBuy\\sell all the supplies you could need on your journey!"
                 + "\nPlease select an option"
-                + "\nH - Visit the Hotel"
-                + "\nG - Visit the General Store"
-                + "\nE - Exit & Return to Trail\n");
+                + "\n\nB - Buy"
+                + "\nS - Sell"
+                + "\nQ - Return to previous menu");
         
         while(!valid) {
             //prompt user for input
-            System.out.println("Select a menu option.\n");
+            System.out.println("Select a menu option.");
             
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
@@ -69,34 +62,22 @@ public class townSceneView {
     }
 
     private boolean doAction(String[] inputs) {
+        
         String menuItem = inputs[0];
-       
+        
         switch (menuItem) {
-            case "H": hotelSceneView();
+            case "B": buyMenuView = new BuyMenuView();
+                      buyMenuView.displayBuyMenuView();
                 break;
-            case "G": generalStoreView();
+            case "S": System.out.println("\nSELL MENU\n");
                 break;
-            case "E": return true;
-                
-            default: System.out.println("Invalid menu item");
+            case "Q": return true;
+            default: System.out.println("\nInvalid menu item\n\n");
+            
         }
-        return false;
+     return false;
         
     }
-
-    private void hotelSceneView() {
-       hotelSceneView = new hotelSceneView();
-       hotelSceneView.displayHotelSceneView();
-    }
-
-    private void generalStoreView() {
-        generalStoreView = new GeneralStoreView();
-        generalStoreView.displayGeneralStoreView();
-        
-    }
-    
-
-    
     
     
 }
