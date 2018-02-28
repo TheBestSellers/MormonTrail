@@ -15,7 +15,7 @@ public class helpMenuView {
     
     public helpMenuView(){
             
-        }
+    }
     String[] inputs = new String[1];
     
     public void displayHelpMenuView() {

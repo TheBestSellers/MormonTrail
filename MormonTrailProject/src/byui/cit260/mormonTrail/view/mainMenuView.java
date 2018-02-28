@@ -8,6 +8,7 @@ package byui.cit260.mormonTrail.view;
 import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.model.Player;
 import java.util.Scanner;
+import byui.cit260.mormonTrail.view.generalStoreView;
 
 /**
  *
@@ -18,6 +19,7 @@ public class mainMenuView {
     private gameMenuView gameMenuView;
     private startExistingGameView startExistingGameView;
     private helpMenuView helpMenuView;
+    private generalStoreView generalStoreView;
     
   public mainMenuView(){
         
@@ -49,6 +51,7 @@ public class mainMenuView {
                 + "\nN - Start new game"
                 + "\nR - Restart exisiting game"
                 + "\nH - Get help on how to play the game"
+                + "\nG - Test the general store view"
                 + "\nE - Exit\n");
         
         while(!valid) {
@@ -80,6 +83,8 @@ public class mainMenuView {
                 break;
             case "H": getHelp();
                 break;
+            case "G": generalStore();
+                break;
             case "E": return true;
                 
             default: System.out.println("Invalid menu item");
@@ -101,7 +106,7 @@ public class mainMenuView {
         
         gameMenuView = new gameMenuView();
         gameMenuView.displayGameMenuView();
-       
+
     }
 
     private void getHelp() {
@@ -110,6 +115,10 @@ public class mainMenuView {
        
     }
     
-    
+    private void generalStore() {
+        generalStoreView = new generalStoreView();
+        generalStoreView.displayGeneralStoreView();
+       
+    }
     
 }
