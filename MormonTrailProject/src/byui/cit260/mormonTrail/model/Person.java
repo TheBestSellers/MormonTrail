@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class Person implements Serializable {
     
     //class instance varables
+    public String name;
     private double health;
     private double startingMoney;
     private int huntingSkill;
