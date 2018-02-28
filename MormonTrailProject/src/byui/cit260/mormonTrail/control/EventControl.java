@@ -28,5 +28,13 @@ public class EventControl {
         return riverProbability;
         
     }
+    
+    
+    public static int calcWagonSuppliesDrop(int wagonWeight, int wagonCurrentInventory, int dropSuppliesTotal){
+        
+        int newWagonWeight;
+        newWagonWeight = wagonWeight - dropSuppliesTotal;
+                return newWagonWeight;
+    }
    
 }

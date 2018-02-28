@@ -43,7 +43,7 @@ public class townSceneView {
         
         boolean valid = false;
         
-        System.out.println("Wlsome to a Town"
+        System.out.println("Welcome to a Town"
                 + "\nPlease select an option"
                 + "\nH - Visit the Hotel"
                 + "\nG - Visit the General Store"

@@ -5,26 +5,21 @@
  */
 package byui.cit260.mormonTrail.view;
 
-
 import java.util.Scanner;
 
 /**
  *
  * @author Sariah
  */
-public class fortSceneView {
-
-
-    private generalStoreView generalStoreView;
-
+public class riverProbabilityView {
     
-  public fortSceneView(){
+    public riverProbabilityView() {
         
     }
     
     String[] inputs = new String[1];
-
-        public void displayFortSceneView() {
+    
+    public void displayRiverProbabilityView() {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
@@ -34,8 +29,8 @@ public class fortSceneView {
             endView = doAction(inputs);
         } while(!endView);
     }
-
-    private String[] getInputs() {
+    
+     private String[] getInputs() {
         
         //create scanner to receive user input
         Scanner inFile;
@@ -43,14 +38,12 @@ public class fortSceneView {
         
         boolean valid = false;
         
-        System.out.println("Welcome to a Fort"
-                + "\nPlease select an option"
-                + "\nG - Visit the General Store"
+        System.out.println("River Crossing Probability"
                 + "\nE - Exit & Return to Trail\n");
         
         while(!valid) {
             //prompt user for input
-            System.out.println("Select a menu option.\n");
+            System.out.println("Select an item from your wagon.\n");
             
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
@@ -58,7 +51,7 @@ public class fortSceneView {
             
             //Validate that the user entered a letter
             if(inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
+                System.out.println("You must select an option");
                 continue;
             }
             valid = true;
@@ -68,28 +61,12 @@ public class fortSceneView {
     }
 
     private boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+        
        
-        switch (menuItem) {
-            case "G": generalStoreView();
-                break;
-            case "E": return true;
-                
-            default: System.out.println("Invalid menu item");
-        }
+     
         return false;
         
     }
 
-    private void generalStoreView() {
-        generalStoreView = new generalStoreView();
-        generalStoreView.displayGeneralStoreView();
-        
-    }
-    
-
-    
-    
     
 }
-
