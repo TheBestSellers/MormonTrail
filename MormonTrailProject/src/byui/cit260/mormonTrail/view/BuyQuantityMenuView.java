@@ -44,7 +44,7 @@ public class BuyQuantityMenuView {
         
         while(!valid) {
             //prompt user for input
-            System.out.println("Select a menu option.");
+            System.out.println("Enter your amount.");
             
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
@@ -69,19 +69,19 @@ public class BuyQuantityMenuView {
             qty = Integer.parseInt(inputs[0]);
         }
         catch (Exception e) {
+            System.out.println("Invalid value\nEnter a number between 1 and 100");
             return false;
         }
         
-        if (qty < 0 || qty >= 100) {
-            System.out.println("Invalid value");
-            return true;
+        if (qty < 0 || qty > 100) {
+            System.out.println("Invalid value\nEnter a number between 1 and 100");
         }
         
         else if (qty == 0) {
             System.out.println("0 entered, returning to previous menu");
             return true;
         }
-        else if (qty > 0 && qty < 100) {
+        else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
             ItemControl.addItem(item, qty);
             return true;
