@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mormonTrail.view;
 
-import byui.cit260.mormonTrail.control.ItemControl;
 import java.util.Scanner;
 
 /**
  *
- * @author Christopher S
+ * @author Christopher Sellers
  */
-public class buyMenuView {
+public class BuyMenuView {
     
-    public buyMenuView() {
+    private BuyQuantityMenuView buyQuantityMenuView;
+    
+    public BuyMenuView() {
     }
     
     String[] inputs = new String[1];
@@ -73,20 +69,22 @@ public class buyMenuView {
         
         String menuItem = inputs[0];
         
+        buyQuantityMenuView = new BuyQuantityMenuView();
+        
         switch (menuItem) {
-            case "A": ItemControl.addItem("ammo", 2);
+            case "A": buyQuantityMenuView.displayBuyQuantityMenuView("Ammo");
                 break;
-            case "L": ItemControl.addItem("Large Wagon", 2);
+            case "L": buyQuantityMenuView.displayBuyQuantityMenuView("Large Wagon");
                 break;
-            case "M": ItemControl.addItem("Medium Wagon", 2);
+            case "M": buyQuantityMenuView.displayBuyQuantityMenuView("Medium Wagon");
                 break;
-            case "S": ItemControl.addItem("Small Wagon", 2);
+            case "S": buyQuantityMenuView.displayBuyQuantityMenuView("Small Wagon");
                 break;
-            case "P": ItemControl.addItem("Protein", 2);
+            case "P": buyQuantityMenuView.displayBuyQuantityMenuView("Protein");
                 break;
-            case "V": ItemControl.addItem("Veggie", 2);
+            case "V": buyQuantityMenuView.displayBuyQuantityMenuView("Veggie");
                 break;
-            case "W": ItemControl.addItem("Wagon Wheel", 2);
+            case "W": buyQuantityMenuView.displayBuyQuantityMenuView("Wagon Wheel");
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");

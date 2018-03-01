@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 /**
  *
- * @author Christopher S
+ * @author Christopher Sellers
  */
-public class generalStoreView {
+public class GeneralStoreView {
 
-    private buyMenuView buyMenuView;
+    private BuyMenuView buyMenuView;
     
-    public generalStoreView() {
+    public GeneralStoreView() {
     }
     
     String[] inputs = new String[1];
@@ -66,7 +66,7 @@ public class generalStoreView {
         String menuItem = inputs[0];
         
         switch (menuItem) {
-            case "B": buyMenuView = new buyMenuView();
+            case "B": buyMenuView = new BuyMenuView();
                       buyMenuView.displayBuyMenuView();
                 break;
             case "S": System.out.println("\nSELL MENU\n");
