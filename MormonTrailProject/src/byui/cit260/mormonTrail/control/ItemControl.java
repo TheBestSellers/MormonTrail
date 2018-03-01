@@ -24,4 +24,7 @@ public class ItemControl {
         System.out.println("You just added " + qty + " " + item + "(s)");
     }
     
+    public static void subtractItem(String item, int qty){
+        System.out.println("You just sold " + qty + " " + item + "(s)");
+    }
 }

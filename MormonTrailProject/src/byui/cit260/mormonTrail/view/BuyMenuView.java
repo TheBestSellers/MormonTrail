@@ -12,9 +12,9 @@ import java.util.Scanner;
  *
  * @author Christopher S
  */
-public class buyMenuView {
+public class BuyMenuView {
     
-    public buyMenuView() {
+    public BuyMenuView() {
     }
     
     String[] inputs = new String[1];
