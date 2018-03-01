@@ -30,4 +30,7 @@ public class ItemControl {
     public static void subtractItem(String item, int qty){
         System.out.println("You just sold " + qty + " " + item + "(s)");
     }
+    public static void addMoney(){
+        System.out.println("addMoney()");
+    }
 }
