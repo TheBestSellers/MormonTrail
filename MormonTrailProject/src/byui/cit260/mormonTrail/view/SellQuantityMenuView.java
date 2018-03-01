@@ -10,7 +10,7 @@ public class SellQuantityMenuView {
     public SellQuantityMenuView() {
     }
     
-    String[] inputs = new String[1];
+    String[] inputs = new String[0];
 
     public void displayBuyQuantityMenuView(String item) {
         boolean endView = false;
