@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class GeneralStoreView {
 
     private BuyMenuView buyMenuView;
+    private SellMenuView sellMenuView;
     
     public GeneralStoreView() {
     }
@@ -69,7 +70,8 @@ public class GeneralStoreView {
             case "B": buyMenuView = new BuyMenuView();
                       buyMenuView.displayBuyMenuView();
                 break;
-            case "S": System.out.println("\nSELL MENU\n");
+            case "S": sellMenuView = new SellMenuView();
+                      sellMenuView.displaySellMenuView();
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");
