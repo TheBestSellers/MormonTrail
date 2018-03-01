@@ -6,11 +6,11 @@ import java.util.Scanner;
  *
  * @author Christopher S
  */
-public class GeneralStoreView {
+public class generalStoreView {
 
-    private BuyMenuView buyMenuView;
+    private buyMenuView buyMenuView;
     
-    public GeneralStoreView() {
+    public generalStoreView() {
     }
     
     String[] inputs = new String[1];
@@ -66,7 +66,7 @@ public class GeneralStoreView {
         String menuItem = inputs[0];
         
         switch (menuItem) {
-            case "B": buyMenuView = new BuyMenuView();
+            case "B": buyMenuView = new buyMenuView();
                       buyMenuView.displayBuyMenuView();
                 break;
             case "S": System.out.println("\nSELL MENU\n");

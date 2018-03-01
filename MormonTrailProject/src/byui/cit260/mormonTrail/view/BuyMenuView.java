@@ -1,16 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package byui.cit260.mormonTrail.view;
 
+import byui.cit260.mormonTrail.control.ItemControl;
 import java.util.Scanner;
 
 /**
  *
  * @author Christopher S
  */
-public class BuyMenuView {
+public class buyMenuView {
     
-    private BuyQuantityMenuView buyQuantityMenuView;
-    
-    public BuyMenuView() {
+    public buyMenuView() {
     }
     
     String[] inputs = new String[1];
@@ -69,22 +73,20 @@ public class BuyMenuView {
         
         String menuItem = inputs[0];
         
-        buyQuantityMenuView = new BuyQuantityMenuView();
-        
         switch (menuItem) {
-            case "A": buyQuantityMenuView.displayBuyQuantityMenuView("Ammo");
+            case "A": ItemControl.addItem("ammo", 2);
                 break;
-            case "L": buyQuantityMenuView.displayBuyQuantityMenuView("Large Wagon");
+            case "L": ItemControl.addItem("Large Wagon", 2);
                 break;
-            case "M": buyQuantityMenuView.displayBuyQuantityMenuView("Medium Wagon");
+            case "M": ItemControl.addItem("Medium Wagon", 2);
                 break;
-            case "S": buyQuantityMenuView.displayBuyQuantityMenuView("Small Wagon");
+            case "S": ItemControl.addItem("Small Wagon", 2);
                 break;
-            case "P": buyQuantityMenuView.displayBuyQuantityMenuView("Protein");
+            case "P": ItemControl.addItem("Protein", 2);
                 break;
-            case "V": buyQuantityMenuView.displayBuyQuantityMenuView("Veggie");
+            case "V": ItemControl.addItem("Veggie", 2);
                 break;
-            case "W": buyQuantityMenuView.displayBuyQuantityMenuView("Wagon Wheel");
+            case "W": ItemControl.addItem("Wagon Wheel", 2);
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");
