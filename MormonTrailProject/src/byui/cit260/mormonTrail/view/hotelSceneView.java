@@ -8,18 +8,24 @@ package byui.cit260.mormonTrail.view;
      
     
 private String[] availableCharacters;
-     private int locationDistance;
+    private int locationDistance;
     private int iCount;
     
      
-     public hotelSceneView() {
+    public hotelSceneView() {
      }
      
     int[] inputs = new int[1];
     
     public void displayHotelSceneView() {
         boolean endView = false;
-     
+        do {
+            int[] inputs = this.getInputs();
+            if (inputs[0] < 1){
+                return;
+            }
+            endView = doAction(inputs);
+        } while(!endView);
     }
     
     private int[] getInputs() {
@@ -30,7 +36,7 @@ private String[] availableCharacters;
         
         boolean valid = false;
         
-        System.out.println("Help Menu" + 
+        System.out.println("Hotel Menu" + 
                 "\nPlease select a person to add to your team");
         
         for(iCount = 0; iCount < availableCharacters.length; iCount++){

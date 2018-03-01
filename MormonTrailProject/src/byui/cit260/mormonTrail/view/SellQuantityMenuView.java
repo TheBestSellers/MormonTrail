@@ -39,11 +39,10 @@ public class SellQuantityMenuView {
             //prompt user for input
             System.out.println("Enter your amount.");
             
-            //get the input user entered, trim it
+            //get the input user entered
             inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
             
-            //Validate that the user entered a letter
+            //Validate that the user entered an integer
             if(inputs[0].length() < 1) {
                 System.out.println("You must enter an interger value.");
                 continue;
@@ -61,7 +60,7 @@ public class SellQuantityMenuView {
         try {
             qty = Integer.parseInt(inputs[0]);
         }
-        catch (Exception e) {
+        catch (NumberFormatException e) {
             System.out.println("Invalid value\nEnter a number between 1 and 100");
             return false;
         }
@@ -76,7 +75,7 @@ public class SellQuantityMenuView {
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-            ItemControl.addItem(item, qty);
+            ItemControl.subtractItem(item, qty);
             return true;
         }
         
