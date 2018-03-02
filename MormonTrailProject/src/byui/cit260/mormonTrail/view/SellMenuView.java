@@ -14,6 +14,8 @@ import java.util.Scanner;
  */
 public class SellMenuView {
     
+    private SellQuantityMenuView sellQuantityMenuView;
+    
     public SellMenuView() {
     }
     
@@ -73,20 +75,22 @@ public class SellMenuView {
         
         String menuItem = inputs[0];
         
+        sellQuantityMenuView = new SellQuantityMenuView();
+        
         switch (menuItem) {
-            case "A": ItemControl.subtractItem("ammo", 2);
+            case "A": sellQuantityMenuView.displaySellQuantityMenuView("Ammo");
                 break;
-            case "L": ItemControl.subtractItem("Large Wagon", 2);
+            case "L": sellQuantityMenuView.displaySellQuantityMenuView("Large Wagon");
                 break;
-            case "M": ItemControl.subtractItem("Medium Wagon", 2);
+            case "M": sellQuantityMenuView.displaySellQuantityMenuView("Medium Wagon");
                 break;
-            case "S": ItemControl.subtractItem("Small Wagon", 2);
+            case "S": sellQuantityMenuView.displaySellQuantityMenuView("Small Wagon");
                 break;
-            case "P": ItemControl.subtractItem("Protein", 2);
+            case "P": sellQuantityMenuView.displaySellQuantityMenuView("Protein");
                 break;
-            case "V": ItemControl.subtractItem("Veggie", 2);
+            case "V": sellQuantityMenuView.displaySellQuantityMenuView("Veggie");
                 break;
-            case "W": ItemControl.subtractItem("Wagon Wheel", 2);
+            case "W": sellQuantityMenuView.displaySellQuantityMenuView("Wagon Wheel");
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");
@@ -95,6 +99,5 @@ public class SellMenuView {
      return false;
         
     }
-    
 }
 

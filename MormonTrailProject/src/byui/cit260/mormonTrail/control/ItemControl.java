@@ -30,8 +30,13 @@ public class ItemControl {
     public static void subtractItem(String item, int qty){
         System.out.println("You just sold " + qty + " " + item + "(s)");
     }
+
     
     public static void subtractRiverItem(String item, int qty){
         System.out.println("You just dropped " + qty + " " + item + "(s)");
+
+    public static void addMoney(){
+        System.out.println("addMoney()");
+
     }
 }
