@@ -28,7 +28,7 @@ public class dropRiverQuantityView {
             if (inputs[0] == null || inputs[0].equals("Q")){
                 return;
    }
-            endView = doAction(items, inputs);
+            endView = doAction(item, inputs);
        } while(!endView);
     
 }
@@ -61,6 +61,7 @@ public class dropRiverQuantityView {
             
         }
         return inputs;
+   }
         
         private boolean doAction(String item, String[] inputs) {
         

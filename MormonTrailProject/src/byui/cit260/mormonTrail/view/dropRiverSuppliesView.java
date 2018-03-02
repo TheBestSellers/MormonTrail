@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public class dropRiverSuppliesView {
 
-    private dropRiverSuppliesView dropRiverQuantityView;
+    private dropRiverQuantityView dropRiverQuantityView;
 
      
   public dropRiverSuppliesView(){

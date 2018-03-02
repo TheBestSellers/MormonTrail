@@ -54,7 +54,7 @@ public class ItemControlTest {
         System.out.println("calcFoodDraw4");
         int stamina = 0;
         double pace = 0.5;
-        int expResult = -3;
+        int expResult = -1;
         int result = ItemControl.calcFoodDraw(stamina, pace);
         System.out.println(result + " vs " + expResult);
         assertEquals(expResult, result);

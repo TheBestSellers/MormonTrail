@@ -2,7 +2,7 @@ package byui.cit260.mormonTrail.control;
 
 /**
  *
- * @author ChristopherSellers
+ * @author ChristopherSellers, Sariah and Alyssa
  */
 public class ItemControl {
     
@@ -34,6 +34,8 @@ public class ItemControl {
     
     public static void subtractRiverItem(String item, int qty){
         System.out.println("You just dropped " + qty + " " + item + "(s)");
+        
+    }
 
     public static void addMoney(){
         System.out.println("addMoney()");
