@@ -14,7 +14,7 @@ import byui.cit260.mormonTrail.view.GeneralStoreView;
  *
  * @author Sariah, Christopher, Alyssa
  */
-public class mainMenuView {
+public class mainMenuView extends View{
 
     private gameMenuView gameMenuView;
     private startExistingGameView startExistingGameView;

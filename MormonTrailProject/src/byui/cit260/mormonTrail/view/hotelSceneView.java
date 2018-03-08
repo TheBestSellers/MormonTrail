@@ -67,7 +67,7 @@ private String[] availableCharacters;
     private boolean doAction(int[] inputs) {
         
      int menuItem = inputs[0];
-     for(iCount = 0; iCount < availableCharacters.length; iCount++){
+     for(int iCount = 0; iCount < availableCharacters.length; iCount++){
          
         if(iCount == menuItem){
             
