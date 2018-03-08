@@ -12,85 +12,44 @@ import java.util.Scanner;
  *
  * @author alyssahundley
  */
-public class SellMenuView {
+public class SellMenuView extends View{
     
     private SellQuantityMenuView sellQuantityMenuView;
     
     public SellMenuView() {
+        super("\nSell Items"
+             + "\nPlease select an item to sell"
+             + "\n\nA - Ammo"
+             + "\nL - Large Wagon"
+             + "\nM - Medium Wagon"
+             + "\nS - Small Wagon"
+             + "\nP - Protein"
+             + "\nV - Veggies"
+             + "\nW - Spare Wheel"
+             + "\nQ - Return to previous menu");
     }
     
-    String[] inputs = new String[1];
-
-    public void displaySellMenuView() {
-        boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            inputs[0] = inputs[0].trim().toUpperCase();
-            if (inputs[0] == null || inputs[0].equals("Q")){
-                return;
-            }
-            endView = doAction(inputs);
-        } while(!endView);
-    }
-
-    private String[] getInputs() {
-        
-        //create scanner to receive user input
-        Scanner inFile;
-        inFile = new Scanner(System.in);
-        
-        boolean valid = false;
-        
-        System.out.println("\nSell Items"
-                + "\nPlease select an item to sell"
-                + "\n\nA - Ammo"
-                + "\nL - Large Wagon"
-                + "\nM - Medium Wagon"
-                + "\nS - Small Wagon"
-                + "\nP - Protein"
-                + "\nV - Veggies"
-                + "\nW - Spare Wheel"
-                + "\nQ - Return to previous menu");
-        
-        while(!valid) {
-            //prompt user for input
-            System.out.println("Select a menu option.");
-            
-            //get the input user entered, trim it
-            inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
-            
-            //Validate that the user entered a letter
-            if(inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            valid = true;
-            
-        }
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         
         String menuItem = inputs[0];
         
         sellQuantityMenuView = new SellQuantityMenuView();
         
         switch (menuItem) {
-            case "A": sellQuantityMenuView.displaySellQuantityMenuView("Ammo");
+            case "A": sellQuantityMenuView.display("Ammo");
                 break;
-            case "L": sellQuantityMenuView.displaySellQuantityMenuView("Large Wagon");
+            case "L": sellQuantityMenuView.display("Large Wagon");
                 break;
-            case "M": sellQuantityMenuView.displaySellQuantityMenuView("Medium Wagon");
+            case "M": sellQuantityMenuView.display("Medium Wagon");
                 break;
-            case "S": sellQuantityMenuView.displaySellQuantityMenuView("Small Wagon");
+            case "S": sellQuantityMenuView.display("Small Wagon");
                 break;
-            case "P": sellQuantityMenuView.displaySellQuantityMenuView("Protein");
+            case "P": sellQuantityMenuView.display("Protein");
                 break;
-            case "V": sellQuantityMenuView.displaySellQuantityMenuView("Veggie");
+            case "V": sellQuantityMenuView.display("Veggie");
                 break;
-            case "W": sellQuantityMenuView.displaySellQuantityMenuView("Wagon Wheel");
+            case "W": sellQuantityMenuView.display("Wagon Wheel");
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");

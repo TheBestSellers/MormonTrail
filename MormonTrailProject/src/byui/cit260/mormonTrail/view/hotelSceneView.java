@@ -17,7 +17,7 @@ private String[] availableCharacters;
      
     int[] inputs = new int[1];
     
-    public void displayHotelSceneView() {
+    public void display() {
         boolean endView = false;
         do {
             int[] inputs = this.getInputs();

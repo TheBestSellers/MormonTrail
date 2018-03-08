@@ -22,59 +22,21 @@ public class mainMenuView extends View{
     private GeneralStoreView generalStoreView;
     
   public mainMenuView(){
-        
+    super("Main Menu"
+         + "\nPlease select an option"
+         + "\nN - Start new game"
+         + "\nR - Restart exisiting game"
+         + "\nH - Get help on how to play the game"
+         + "\nG - Test the general store view"
+         + "\nT - Test town scene"
+         + "\nE - Exit\n");
     }
     
-    String[] inputs = new String[1];
-
-    public void displayMainMenuView() {
-        boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            if (inputs[0] == null || inputs[0].toUpperCase().equals("Q")){
-                return;
-            }
-            endView = doAction(inputs);
-        } while(!endView);
-    }
-
-    private String[] getInputs() {
-        
-        //create scanner to receive user input
-        Scanner inFile;
-        inFile = new Scanner(System.in);
-        
-        boolean valid = false;
-        
-        System.out.println("Main Menu"
-                + "\nPlease select an option"
-                + "\nN - Start new game"
-                + "\nR - Restart exisiting game"
-                + "\nH - Get help on how to play the game"
-                + "\nG - Test the general store view"
-                + "\nE - Exit\n");
-        
-        while(!valid) {
-            //prompt user for input
-            System.out.println("Select a menu option.\n");
-            
-            //get the input user entered, trim it
-            inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
-            
-            //Validate that the user entered a letter
-            if(inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            valid = true;
-            
-        }
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs){
         String menuItem = inputs[0];
+        
+        inputs[0] = inputs[0].toUpperCase();
        
         switch (menuItem) {
             case "N": startNewGame();

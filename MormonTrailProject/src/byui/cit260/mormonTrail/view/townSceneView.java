@@ -12,63 +12,23 @@ import java.util.Scanner;
  *
  * @author Sariah
  */
-public class townSceneView {
+public class townSceneView extends View{
 
     private hotelSceneView hotelSceneView;
     private GeneralStoreView generalStoreView;
 
     
   public townSceneView(){
-        
-    }
-    
-    String[] inputs = new String[1];
-
-        public void displayTownSceneView() {
-        boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            if (inputs[0] == null || inputs[0].toUpperCase().equals("Q")){
-                return;
-            }
-            endView = doAction(inputs);
-        } while(!endView);
-    }
-
-    private String[] getInputs() {
-        
-        //create scanner to receive user input
-        Scanner inFile;
-        inFile = new Scanner(System.in);
-        
-        boolean valid = false;
-        
-        System.out.println("Welcome to a Town"
+      super("Welcome to a Town"
                 + "\nPlease select an option"
                 + "\nH - Visit the Hotel"
                 + "\nG - Visit the General Store"
                 + "\nE - Exit & Return to Trail\n");
         
-        while(!valid) {
-            //prompt user for input
-            System.out.println("Select a menu option.\n");
-            
-            //get the input user entered, trim it
-            inputs[0] = inFile.nextLine();
-            inputs[0] = inputs[0].trim().toUpperCase();
-            
-            //Validate that the user entered a letter
-            if(inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
-            valid = true;
-            
-        }
-        return inputs;
     }
-
-    private boolean doAction(String[] inputs) {
+    
+    @Override
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
        
         switch (menuItem) {
@@ -86,12 +46,12 @@ public class townSceneView {
 
     private void hotelSceneView() {
        hotelSceneView = new hotelSceneView();
-       hotelSceneView.displayHotelSceneView();
+       hotelSceneView.display();
     }
 
     private void generalStoreView() {
         generalStoreView = new GeneralStoreView();
-        generalStoreView.displayGeneralStoreView();
+        generalStoreView.display();
         
     }
     

@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
     protected String displayMessage;
+    String[] inputs = new String[1];
     
     public View(){
       
@@ -35,7 +36,7 @@ public abstract class View implements ViewInterface {
         } while(!endView);
     }
     @Override
-    public String getInput(){
+    public String[] getInputs(){
         Scanner inFile;
         inFile = new Scanner(System.in);
         
