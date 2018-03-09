@@ -28,7 +28,6 @@ public class mainMenuView extends View{
          + "\nR - Restart exisiting game"
          + "\nH - Get help on how to play the game"
          + "\nG - Test the general store view"
-         + "\nT - Test town scene"
          + "\nE - Exit\n");
     }
     
@@ -54,8 +53,6 @@ public class mainMenuView extends View{
         return false;
         
     }
-    
-
 
     private void restartGame() {
         startExistingGameView = new startExistingGameView();
@@ -73,13 +70,13 @@ public class mainMenuView extends View{
 
     private void getHelp() {
        helpMenuView = new helpMenuView();
-       helpMenuView.displayHelpMenuView();
+       helpMenuView.display();
        
     }
     
     private void generalStore() {
         generalStoreView = new GeneralStoreView();
-        generalStoreView.displayGeneralStoreView();
+        generalStoreView.display();
        
     }
     

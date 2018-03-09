@@ -11,11 +11,12 @@ import byui.cit260.mormonTrail.model.Player;
 public class StartProgramView extends View{
     
     public StartProgramView() {
-        super("In the text-based game The Oregon Trail / Mormon"
-              + "Trail you play the role of the leader of a small wagon train"
-              + "heading to Oregon/Utah. It is your job to purchase supplies,"
-              + "assemble your party, and lead them to safety through the"
-              + "perils of the wild american west.");
+        super("\nIn the text-based game The Oregon Trail / Mormon"
+              + "\nTrail you play the role of the leader of a small wagon train"
+              + "\nheading to Oregon/Utah. It is your job to purchase supplies,"
+              + "\nassemble your party, and lead them to safety through the"
+              + "\nperils of the wild american west."
+              + "\n\nPlease enter your name:");
     }
    
     @Override

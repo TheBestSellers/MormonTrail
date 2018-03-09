@@ -8,6 +8,7 @@ import java.util.Scanner;
  */
 public class BuyMenuView extends View{
     
+    static public String item;
     private BuyQuantityMenuView buyQuantityMenuView;
 
     public BuyMenuView() {
@@ -32,24 +33,25 @@ public class BuyMenuView extends View{
         buyQuantityMenuView = new BuyQuantityMenuView();
         
         switch (menuItem) {
-            case "A": buyQuantityMenuView.display("Ammo");
+            case "A": item = "Ammo";
                 break;
-            case "L": buyQuantityMenuView.display("Large Wagon");
+            case "L": item = "Large Wagon";
                 break;
-            case "M": buyQuantityMenuView.display("Medium Wagon");
+            case "M": item = "Medium Wagon";
                 break;
-            case "S": buyQuantityMenuView.display("Small Wagon");
+            case "S": item = "Small Wagon";
                 break;
-            case "P": buyQuantityMenuView.display("Protein");
+            case "P": item = "Protein";
                 break;
-            case "V": buyQuantityMenuView.display("Veggie");
+            case "V": item = "Veggie";
                 break;
-            case "W": buyQuantityMenuView.display("Wagon Wheel");
+            case "W": item = "Spare Wagon Wheel";
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");
-            
         }
+        buyQuantityMenuView.display();
+        
      return false;
         
     }

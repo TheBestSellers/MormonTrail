@@ -35,6 +35,7 @@ public abstract class View implements ViewInterface {
             endView = doAction(inputs);
         } while(!endView);
     }
+    
     @Override
     public String[] getInputs(){
         Scanner inFile;
@@ -45,10 +46,7 @@ public abstract class View implements ViewInterface {
         System.out.println("\n" + this.displayMessage);
                
         
-        while(!valid) {
-            //prompt user for input
-            System.out.println("Select a menu option.\n");
-            
+        while(!valid) {            
             //get the input user entered, trim it
             inputs[0] = inFile.nextLine();
             inputs[0] = inputs[0].trim().toUpperCase();

@@ -1,19 +1,25 @@
-
-
+/*
+ * I'M PRETTY SURE I WOULDN'T ACTUALLY BUILD THIS AS A SEPARATE VIEW
+ * BUT TO MEET THE REQUIREMENTS, IT SEEMS LIKE A NEED A SEPARATE VIEW
+ * IF IT IS WANTED, I CAN EASILY REFACTOR THESE BACK TOGETHER.
+ */
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.ItemControl;
 import java.util.Scanner;
 
+/**
+ *
+ * @author Christopher S
+ */
 public class SellQuantityMenuView extends View {
     
-    public SellQuantityMenuView(String items) {
-        super("\nHow many " + items + "(s) would you like to sell?"
+    public SellQuantityMenuView() {
+        super("\n----How many would you like to sell?----"
              + "\nQ - Return to previous menu");
     }
-    
     @Override
-    public boolean doAction(String item, String[] inputs) {
+    public boolean doAction(String[] inputs) {
         
         int qty = 0;
         
@@ -35,7 +41,7 @@ public class SellQuantityMenuView extends View {
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-            ItemControl.subtractItem(item, qty);
+            ItemControl.subtractItem(SellMenuView.item, qty);
             ItemControl.addMoney();
             return true;
         }
@@ -45,4 +51,3 @@ public class SellQuantityMenuView extends View {
         }
         
     }
-

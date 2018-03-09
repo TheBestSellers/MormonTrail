@@ -1,34 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mormonTrail.view;
 
-import byui.cit260.mormonTrail.control.ItemControl;
 import java.util.Scanner;
 
 /**
  *
- * @author alyssahundley
+ * @author Christopher Sellers
  */
 public class SellMenuView extends View{
     
+    static public String item;
     private SellQuantityMenuView sellQuantityMenuView;
-    
+
     public SellMenuView() {
-        super("\nSell Items"
-             + "\nPlease select an item to sell"
-             + "\n\nA - Ammo"
-             + "\nL - Large Wagon"
-             + "\nM - Medium Wagon"
-             + "\nS - Small Wagon"
-             + "\nP - Protein"
-             + "\nV - Veggies"
-             + "\nW - Spare Wheel"
-             + "\nQ - Return to previous menu");
+        super("\n----Sell Items----"
+              + "\nPlease select an item to sell"
+              + "\n\nA - Ammo"
+              + "\nL - Large Wagon"
+              + "\nM - Medium Wagon"
+              + "\nS - Small Wagon"
+              + "\nP - Protein"
+              + "\nV - Veggies"
+              + "\nW - Spare Wheel"
+              + "\nQ - Return to previous menu");
     }
-    
+        
+        
     @Override
     public boolean doAction(String[] inputs) {
         
@@ -37,26 +33,27 @@ public class SellMenuView extends View{
         sellQuantityMenuView = new SellQuantityMenuView();
         
         switch (menuItem) {
-            case "A": sellQuantityMenuView.display("Ammo");
+            case "A": item = "Ammo";
                 break;
-            case "L": sellQuantityMenuView.display("Large Wagon");
+            case "L": item = "Large Wagon";
                 break;
-            case "M": sellQuantityMenuView.display("Medium Wagon");
+            case "M": item = "Medium Wagon";
                 break;
-            case "S": sellQuantityMenuView.display("Small Wagon");
+            case "S": item = "Small Wagon";
                 break;
-            case "P": sellQuantityMenuView.display("Protein");
+            case "P": item = "Protein";
                 break;
-            case "V": sellQuantityMenuView.display("Veggie");
+            case "V": item = "Veggie";
                 break;
-            case "W": sellQuantityMenuView.display("Wagon Wheel");
+            case "W": item = "Spare Wagon Wheel";
                 break;
             case "Q": return true;
             default: System.out.println("\nInvalid menu item\n\n");
-            
         }
+        sellQuantityMenuView.display();
+        
      return false;
         
     }
+    
 }
-

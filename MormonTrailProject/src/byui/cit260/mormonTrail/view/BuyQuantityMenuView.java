@@ -14,12 +14,12 @@ import java.util.Scanner;
  */
 public class BuyQuantityMenuView extends View {
     
-    public BuyQuantityMenuView(String items) {
-        super("\n----How many " + items + "(s) would you like to buy?----"
+    public BuyQuantityMenuView() {
+        super("\n----How many would you like to buy?----"
              + "\nQ - Return to previous menu");
     }
     @Override
-    public boolean doAction(String item, String[] inputs) {
+    public boolean doAction(String[] inputs) {
         
         int qty = 0;
         
@@ -41,7 +41,7 @@ public class BuyQuantityMenuView extends View {
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-            ItemControl.addItem(item, qty);
+            ItemControl.addItem(BuyMenuView.item, qty);
             ItemControl.subtractMoney();
             return true;
         }

@@ -1,56 +1,59 @@
-/*
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.mormonTrail.view;
 
-
-import byui.cit260.mormonTrail.control.EventControl;
 import java.util.Scanner;
 
 /**
  *
- * @author Sariah
+ * @author Christopher Sellers
  */
 public class dropRiverSuppliesView extends View{
-
-    private dropRiverQuantityView dropRiverQuantityView;
-
-     
-  public dropRiverSuppliesView(){
-        super("Current Wagon Supplies"
-              + "\nPlease select an item you would like to drop"
-              + "\nF - Food"
-              + "\nT - Tools"
-              + "\nO - Other Items"
-              + "\nE - Exit & Return\n");
-    }
     
+    static public String item;
+    private dropRiverSuppliesView dropRiverSuppliesView;
+
+    public dropRiverSuppliesView() {
+        super("\n----Drop Items----"
+              + "\nPlease select an item to drop"
+              + "\n\nA - Ammo"
+              + "\nL - Large Wagon"
+              + "\nM - Medium Wagon"
+              + "\nS - Small Wagon"
+              + "\nP - Protein"
+              + "\nV - Veggies"
+              + "\nW - Spare Wheel"
+              + "\nQ - Return to previous menu");
+    }
+        
+        
     @Override
     public boolean doAction(String[] inputs) {
         
-           String menuItem = inputs[0];
-           
-           dropRiverQuantityView = new dropRiverQuantityView();
-           
-           switch (menuItem) {
-               case "F": dropRiverQuantityView.display("Food");
-                    break;
-               case "T": dropRiverQuantityView.display("Tools");
-                    break;
-               case "O": dropRiverQuantityView.display("Other");
-                    break;
-               case "E": return true;
-               default: System.out.println("\nInvalid menu item\n");
+        String menuItem = inputs[0];
+        
+        dropRiverSuppliesView = new dropRiverSuppliesView();
+        
+        switch (menuItem) {
+            case "A": item = "Ammo";
+                break;
+            case "L": item = "Large Wagon";
+                break;
+            case "M": item = "Medium Wagon";
+                break;
+            case "S": item = "Small Wagon";
+                break;
+            case "P": item = "Protein";
+                break;
+            case "V": item = "Veggie";
+                break;
+            case "W": item = "Spare Wagon Wheel";
+                break;
+            case "Q": return true;
+            default: System.out.println("\nInvalid menu item\n\n");
         }
+        dropRiverSuppliesView.display();
+        
      return false;
         
-        
     }
-
-    
-    
     
 }

@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * I'M PRETTY SURE I WOULDN'T ACTUALLY BUILD THIS AS A SEPARATE VIEW
+ * BUT TO MEET THE REQUIREMENTS, IT SEEMS LIKE A NEED A SEPARATE VIEW
+ * IF IT IS WANTED, I CAN EASILY REFACTOR THESE BACK TOGETHER.
  */
 package byui.cit260.mormonTrail.view;
 
@@ -10,18 +10,16 @@ import java.util.Scanner;
 
 /**
  *
- * @author Sariah
+ * @author Christopher S
  */
-public class dropRiverQuantityView extends View{
+public class dropRiverQuantityView extends View {
     
-    public dropRiverQuantityView(String item) {
-        super("\nHow many" + item + "(s) would you like to drop from your wagon?----"
-             + "\nE - Exit and Return to previous menu");
-        
+    public dropRiverQuantityView() {
+        super("\n----How many would you like to drop?----"
+             + "\nQ - Return to previous menu");
     }
-   
     @Override
-    public boolean doAction(String item, String[] inputs) {
+    public boolean doAction(String[] inputs) {
         
         int qty = 0;
         
@@ -43,7 +41,7 @@ public class dropRiverQuantityView extends View{
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-           ItemControl.subtractRiverItem(item, qty);
+            ItemControl.subtractItem(dropRiverSuppliesView.item, qty);
             return true;
         }
         
@@ -51,5 +49,4 @@ public class dropRiverQuantityView extends View{
             
         }
         
-   
-}
+    }
