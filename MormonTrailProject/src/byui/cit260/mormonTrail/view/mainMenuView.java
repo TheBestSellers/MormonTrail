@@ -16,68 +16,70 @@ import byui.cit260.mormonTrail.view.GeneralStoreView;
  */
 public class mainMenuView extends View{
 
-    private gameMenuView gameMenuView;
-    private startExistingGameView startExistingGameView;
-    private helpMenuView helpMenuView;
-    private GeneralStoreView generalStoreView;
+private gameMenuView gameMenuView;
+private SaveGameMenuView saveGameMenuView;
+private RestoreGameMenuView restoreGameMenuView;
+private startExistingGameView startExistingGameView;
+private helpMenuView helpMenuView;
+private GeneralStoreView generalStoreView;
     
-  public mainMenuView(){
+public mainMenuView(){
     super("Main Menu"
-         + "\nPlease select an option"
-         + "\nN - Start new game"
-         + "\nR - Restart exisiting game"
-         + "\nH - Get help on how to play the game"
-         + "\nG - Test the general store view"
-         + "\nE - Exit\n");
+        + "\nPlease select an option"
+        + "\nN - Start new game"
+        + "\nR - Restore a saved game"
+        + "\nS - Save current game"
+        + "\nH - Get help on how to play the game"
+        + "\nG - Test the general store view"
+        + "\nQ - Quit\n");
     }
     
     @Override
     public boolean doAction(String[] inputs){
-        String menuItem = inputs[0];
-        
-        inputs[0] = inputs[0].toUpperCase();
-       
-        switch (menuItem) {
-            case "N": startNewGame();
-                break;
-            case "R": restartGame();
-                break;
-            case "H": getHelp();
-                break;
-            case "G": generalStore();
-                break;
-            case "E": return true;
-                
-            default: System.out.println("Invalid menu item");
-        }
-        return false;
-        
-    }
+    String menuItem = inputs[0];
 
-    private void restartGame() {
-        startExistingGameView = new startExistingGameView();
-        startExistingGameView.displayStartExistingGameView();
+    inputs[0] = inputs[0].toUpperCase();
+
+    switch (menuItem) {
+        case "N": startNewGame();
+            break;
+        case "R": restoreSavedGame();
+            break;
+        case "S": saveGame();
+            break;
+        case "H": getHelp();
+            break;
+        case "G": generalStore();
+            break;
+        default: System.out.println("Invalid menu item");
+    }
+    return false;
     }
 
     private void startNewGame() {
-      Player Player = null;
-      GameControl.createNewGame(Player);
-        
+        Player Player = null;
+        GameControl.createNewGame(Player);    
         gameMenuView = new gameMenuView();
         gameMenuView.displayGameMenuView();
-
+    }
+    
+    private void restoreSavedGame() {
+        restoreGameMenuView = new RestoreGameMenuView();
+        restoreGameMenuView.display();
+    }
+    
+    private void saveGame() {
+        saveGameMenuView = new SaveGameMenuView();
+        saveGameMenuView.display();
     }
 
     private void getHelp() {
        helpMenuView = new helpMenuView();
        helpMenuView.display();
-       
     }
     
     private void generalStore() {
         generalStoreView = new GeneralStoreView();
         generalStoreView.display();
-       
     }
-    
 }

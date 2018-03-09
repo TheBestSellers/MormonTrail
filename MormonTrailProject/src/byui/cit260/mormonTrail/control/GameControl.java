@@ -22,14 +22,21 @@ import byui.cit260.mormonTrail.model.Player;
         Player player = new Player();
         player.setName(name);
         return player;
-   
     }
     
     public static void createNewGame(Player player) {
        System.out.println("****startNewGame() called");
     }
 
+    public static boolean restoreGame(String fileName) {
+        System.out.println("****restoreGame() called, file name: " +fileName);
+        return true;
+    }
     
+    public static boolean saveGame(String fileName) {
+        System.out.println("****saveGame() called, file name: " +fileName);
+        return true;
+    }
 }
 
 
