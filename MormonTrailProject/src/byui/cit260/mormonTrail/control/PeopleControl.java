@@ -91,5 +91,21 @@ public class PeopleControl {
         //DayOfRest – 2-8
         //DailyHealthDraw must be >0 OR DayOfRest must be >0
     }
-
+   
+    public static double teamPace(String pace){
+       double teamPace = 0;
+        
+       if(pace == "Slow"){
+           teamPace = 1;
+       }
+       if(pace == "Average"){
+           teamPace = 1.5;
+       }
+       if(pace == "Fast"){
+           teamPace = 2;
+       }
+       System.out.println("Your team pace is " + teamPace);
+       return teamPace;
+       
+    }     
 }

@@ -22,6 +22,7 @@ private RestoreGameMenuView restoreGameMenuView;
 private startExistingGameView startExistingGameView;
 private helpMenuView helpMenuView;
 private GeneralStoreView generalStoreView;
+private TeamPaceView teamPaceView;
     
 public mainMenuView(){
     super("Main Menu"
@@ -31,6 +32,7 @@ public mainMenuView(){
         + "\nS - Save current game"
         + "\nH - Get help on how to play the game"
         + "\nG - Test the general store view"
+        + "\nP - Test the team pace view"
         + "\nQ - Quit\n");
     }
     
@@ -50,6 +52,8 @@ public mainMenuView(){
         case "H": getHelp();
             break;
         case "G": generalStore();
+            break;
+        case "P": teamPace();
             break;
         default: System.out.println("Invalid menu item");
     }
@@ -81,5 +85,10 @@ public mainMenuView(){
     private void generalStore() {
         generalStoreView = new GeneralStoreView();
         generalStoreView.display();
+    }
+    
+    private void teamPace() {
+        teamPaceView = new TeamPaceView();
+        teamPaceView.display();
     }
 }
