@@ -5,10 +5,15 @@
  */
 package byui.cit260.mormonTrail.control;
 
+import byui.cit260.mormonTrail.model.Map;
+
 /**
  *
  * @author alyssahundley
  */
 public class MapControl {
-    
+     
+    public static Map createMap(noOfRows, noOfColumns, items){
+        System.out.println("createMap method called");
+    }
 }

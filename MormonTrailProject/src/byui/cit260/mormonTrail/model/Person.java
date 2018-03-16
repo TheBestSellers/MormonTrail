@@ -27,6 +27,8 @@ public class Person implements Serializable {
     
     public Person() {
     }
+    
+    
 
     public boolean isAvailable() {
         return available;
