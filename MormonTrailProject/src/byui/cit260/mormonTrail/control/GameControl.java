@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package byui.cit260.mormonTrail.control;
+import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Inventory;
+import byui.cit260.mormonTrail.model.Map;
+import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.model.Player;
 
 /**
@@ -27,7 +30,7 @@ import byui.cit260.mormonTrail.model.Player;
     
     public static int createNewGame(Player player) {
         
-        
+        Game.setPlayer(player);
         if(player == null){
            return -1;
        }
@@ -41,19 +44,49 @@ import byui.cit260.mormonTrail.model.Player;
        //Assign an actor to the player
        //items = createItems()
        //Save the list of items in the game
-       
-      
-       
-       if(map == null){
-           return -1;
-       }
+
        //Assign the map to the game
        
         return 1; 
     }
     
+    public static Person[] createPersons(){
+  
+        Person[] persons = new Person[10];
+        
+        public Person(String name, double health, double startingMoney, int huntingSkill, int gatheringSkill, int stamina, int dailyProteinDraw, int dailyVeggieDraw, boolean available){
+            this.name = name;
+            this.health = health;
+            this.startingMoney = startingMoney;
+            this.huntingSkill = huntingSkill;
+            this.gatheringSkill = gatheringSkill;
+            this.stamina = stamina;
+            this.dailyProteinDraw = dailyProteinDraw;
+            this.dailyVeggieDraw = dailyVeggieDraw;
+            this.available = available; 
+           
+            Person Benjamin = new Person("Bemjamin", 50, 100, 3, 3, 5, 5, 5, true);
+        }
+        
+        
+        
+        
+        
+       
+//        actors = create an array Actor objects
+//        actor1 = new Actor object
+//        Assign values to each attribute in the Actor object
+//        Assign actor1 to the next position in the actors array
+//        actor2 = new Actor object
+//        Assign values to each attribute in the Actor object
+//        Assign actor2 to the next position in the actors array
+
+        return items; 
+    }
+    
     public static Inventory[] createItems(){
         System.out.println("createItems has been called");
+        return null;
     }
 
     public static boolean restoreGame(String fileName) {

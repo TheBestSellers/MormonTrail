@@ -24,6 +24,25 @@ public class Person implements Serializable {
     private int dailyProteinDraw;
     private int dailyVeggieDraw;
     
+    public static Person[] createPersons(){
+        Person[] persons = new Person[10];
+        
+        Person person1 = persons[PersonType.Benjamin.ordinal()];
+        Person person2 = persons[PersonType.Peter.ordinal()];
+        Person person3 = persons[PersonType.Sarah.ordinal()];
+        Person person4 = persons[PersonType.Daniel.ordinal()];
+        Person person5 = persons[PersonType.Alexander.ordinal()];
+        Person person6 = persons[PersonType.Mary.ordinal()];
+        Person person7 = persons[PersonType.Beth.ordinal()];
+        Person person8 = persons[PersonType.Joseph.ordinal()];
+        Person person9 = persons[PersonType.Harriett.ordinal()];
+        Person person10 = persons[PersonType.George.ordinal()];
+        
+  
+        
+        return items;
+    } 
+    
     
     public Person() {
     }

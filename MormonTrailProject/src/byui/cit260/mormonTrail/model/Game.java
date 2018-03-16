@@ -21,6 +21,9 @@ public class Game implements Serializable{
     private int date;
     private String dayOfWeek;
     private String weather;
+    private Player player;
+    private Inventory[] inventory;
+    private Map map;
     
     Map currentLocation = new Map();
 
@@ -28,6 +31,30 @@ public class Game implements Serializable{
         
     }
 
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    
+    public Player getPlayer(){
+        return player;
+    }
+    
+    public void setPlayer (Player player) {
+        this.player = player; 
+    }
     public int getLocationOfParty() {
         return locationOfParty;
     }
