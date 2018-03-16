@@ -8,6 +8,7 @@ import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Inventory;
 import byui.cit260.mormonTrail.model.Map;
 import byui.cit260.mormonTrail.model.Person;
+import byui.cit260.mormonTrail.model.PersonType;
 import byui.cit260.mormonTrail.model.Player;
 
 /**
@@ -65,7 +66,36 @@ import byui.cit260.mormonTrail.model.Player;
             this.dailyVeggieDraw = dailyVeggieDraw;
             this.available = available; 
            
-            Person Benjamin = new Person("Bemjamin", 50, 100, 3, 3, 5, 5, 5, true);
+            Person Benjamin = new Person("Benjamin", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Benjamin.ordinal()] = Benjamin;
+            
+            Person Peter = new Person("Peter", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Peter.ordinal()] = Peter;
+            
+            Person Sarah = new Person("Sarah", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Sarah.ordinal()] = Sarah;
+
+            Person Daniel = new Person("Daniel", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Daniel.ordinal()] = Daniel;
+            
+            Person Alexander = new Person("Alexander", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Alexander.ordinal()] = Alexander;
+            
+            Person Mary = new Person("mary", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Mary.ordinal()] = Mary;
+            
+            Person Beth = new Person("Beth", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Beth.ordinal()] = Beth;
+            
+            Person Joseph = new Person("Joseph", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Joseph.ordinal()] = Joseph;
+            
+            Person Harriett = new Person("Harriett", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.Harriett.ordinal()] = Harriett;
+            
+            Person George = new Person("George", 50, 100, 3, 3, 5, 5, 5, true);
+            persons[PersonType.George.ordinal()] = George;
+  
         }
         
         
