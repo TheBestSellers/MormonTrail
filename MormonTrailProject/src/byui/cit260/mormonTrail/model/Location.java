@@ -14,12 +14,19 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
+    private String name;
     private String type;
     private int locationDistance;
     
     Scene description = new Scene();
 
     public Location() {
+    }
+    
+    public Location(String name, String type, int locationDistance) {
+        this.name = name;
+        this.type = type;
+        this.locationDistance = locationDistance;
     }
 
     public String getType() {

@@ -6,17 +6,19 @@
 package byui.cit260.mormonTrail.control;
 
 import byui.cit260.mormonTrail.model.Item;
+import byui.cit260.mormonTrail.model.Location;
+import byui.cit260.mormonTrail.model.LocationType;
 import byui.cit260.mormonTrail.model.Map;
 
 /**
  *
- * @author alyssahundley
+ * @author alyssahundley, Christopher, Sariah
  */
 public class MapControl {
      
-    public static Map createMap(int miles, Item[] items){
+    public static Map createMap(int miles){
         if (miles < 0) {return null;};
-        if (items == null || items.length < 0) { return null;}
+       // if (items == null || items.length < 0) { return null;}
         
         Map map = new Map();
         
@@ -33,12 +35,32 @@ public class MapControl {
         return map;
     }
     
-    private static Location[] createLocations(int miles){
-        if (miles < 0) {return null;};
-        //if (items == null || items.length < 0) { return null;}
+    public static Location[] createLocations(){
+        Location[] locations = new Location[11];
+        Location GardenGrove = new Location("GardenGrove", "Town", 15);
+        locations[LocationType.GardenGrove.ordinal()] = GardenGrove;
+        Location MountPisgah = new Location("MountPisgah", "Town", 30);
+        locations[LocationType.MountPisgah.ordinal()] = MountPisgah;
+        Location Kanesville = new Location("Kanesville", "Town", 45);
+        locations[LocationType.Kanesville.ordinal()] = Kanesville;
+        Location WinterQuarters = new Location("WinterQuarters", "Town", 60);
+        locations[LocationType.WinterQuarters.ordinal()] = WinterQuarters;
+        Location FortKearny = new Location("FortKearny", "Fort", 100);
+        locations[LocationType.FortKearny.ordinal()] = FortKearny;
+        Location ChimneyRock = new Location("ChimneyRock", "Landmark", 115);
+        locations[LocationType.ChimneyRock.ordinal()] = ChimneyRock;
+        Location FortLaramie = new Location("FortLaramie", "Fort", 130);
+        locations[LocationType.FortLaramie.ordinal()] = FortLaramie;
+        Location IndependenceRock = new Location("IndependenceRock", "Landmark", 200);
+        locations[LocationType.IndependenceRock.ordinal()] = IndependenceRock;
+        Location MartinsCove = new Location("MartinsCove", "Landmark", 215);
+        locations[LocationType.MartinsCove.ordinal()] = MartinsCove;
+        Location FortBridger = new Location("FortBridger", "Fort", 230);
+        locations[LocationType.FortBridger.ordinal()] = FortBridger;
+        Location SaltLake = new Location("SaltLake", "Town", 275);
+        locations[LocationType.SaltLake.ordinal()] = SaltLake;
         
-        
-        return location;
+        return locations;
         
 //        
 //        locations = new two-dimensional Location array
