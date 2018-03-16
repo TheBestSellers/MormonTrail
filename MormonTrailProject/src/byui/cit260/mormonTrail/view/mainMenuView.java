@@ -61,8 +61,8 @@ public mainMenuView(){
     }
 
     private void startNewGame() {
-        Player Player = null;
-        GameControl.createNewGame(Player);    
+        Player player = null;
+        GameControl.createNewGame(player);    
         gameMenuView = new gameMenuView();
         gameMenuView.displayGameMenuView();
     }

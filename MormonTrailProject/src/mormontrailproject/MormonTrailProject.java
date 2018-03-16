@@ -6,7 +6,6 @@
 package mormontrailproject;
 
 import byui.cit260.mormonTrail.model.Event;
-import byui.cit260.mormonTrail.model.Inventory;
 import byui.cit260.mormonTrail.model.Item;
 import byui.cit260.mormonTrail.model.Livestock;
 import byui.cit260.mormonTrail.model.Person;

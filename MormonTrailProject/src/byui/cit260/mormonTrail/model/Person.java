@@ -25,17 +25,17 @@ public class Person implements Serializable {
     private int dailyVeggieDraw;
 
     public Person(String name, int health, int startingMoney, int huntingSkill, int gatheringSkill, int stamina, int dailyProteinDraw, int dailyVeggieDraw, boolean available){
-            this.name = name;
-            this.health = health;
-            this.startingMoney = startingMoney;
-            this.huntingSkill = huntingSkill;
-            this.gatheringSkill = gatheringSkill;
-            this.stamina = stamina;
-            this.dailyProteinDraw = dailyProteinDraw;
-            this.dailyVeggieDraw = dailyVeggieDraw;
-            this.available = available; 
-          
-        }
+        this.name = name;
+        this.health = health;
+        this.startingMoney = startingMoney;
+        this.huntingSkill = huntingSkill;
+        this.gatheringSkill = gatheringSkill;
+        this.stamina = stamina;
+        this.dailyProteinDraw = dailyProteinDraw;
+        this.dailyVeggieDraw = dailyVeggieDraw;
+        this.available = available; 
+
+    }
     
     public Person() {
     }

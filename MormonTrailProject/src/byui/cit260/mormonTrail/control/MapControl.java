@@ -5,6 +5,7 @@
  */
 package byui.cit260.mormonTrail.control;
 
+import byui.cit260.mormonTrail.model.Item;
 import byui.cit260.mormonTrail.model.Map;
 
 /**
@@ -13,8 +14,22 @@ import byui.cit260.mormonTrail.model.Map;
  */
 public class MapControl {
      
-    public static Map createMap(int miles){
-        System.out.println("createMap method called");
-        return null;
+    public static Map createMap(int miles, Item[] items){
+        if (miles < 0) {return null;};
+        if (items == null || items.length < 0) { return null;}
+        
+        Map map = new Map();
+        
+//        save the noOfRows in the map
+//        save the noOfColumns in the map
+//        locations = createLocations(noOfRows, noOfColumns)
+//        Assign the locations array to the map
+//        scenes = createScenes()
+//        questions = createQuestions()
+//        assignQuestionsToScenes()
+//        assignItemsToScenes()
+//        assignScenesToLocations() 
+        
+        return map;
     }
 }

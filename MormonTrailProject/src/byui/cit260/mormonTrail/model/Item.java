@@ -22,6 +22,13 @@ public class Item implements Serializable{
     public Item() {
     }
     
+    public Item(String name, int cost, int weight, int qty) {
+        this.name = name;
+        this.cost = cost;
+        this.weight = weight;
+        this.qty = qty;
+    }
+    
     //getters and setters
 
     public String getName() {
