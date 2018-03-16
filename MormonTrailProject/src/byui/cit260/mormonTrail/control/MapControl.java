@@ -32,4 +32,37 @@ public class MapControl {
         
         return map;
     }
+    
+    private static Location[] createLocations(int miles){
+        if (miles < 0) {return null;};
+        //if (items == null || items.length < 0) { return null;}
+        
+        
+        return location;
+        
+//        
+//        locations = new two-dimensional Location array
+//        FOR every row in the locations array
+//        FOR every column in the locations array
+//        location = create a new Location object
+//        set the row, and column attributes in the location
+//        set visited attribute to false
+//        Assign location to the row, and column in array
+//        ENDFOR
+//        RETURN locations 
+    }
+    
+    private static Scene[] createScenes(){
+        System.out.println("called createScenes");
+        return scene;
+    }
+    
+    
+    private static void assignItemsToScene(Item[] items, Scene[] scenes){
+        System.out.println("called assignItemsToScene");
+    }
+    
+    private static void assignScenesToLocations(Scene[] scenes, Location[] locations){
+        System.out.println("called assignScenesToLocations");
+    }
 }
