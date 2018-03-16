@@ -13,7 +13,7 @@ import byui.cit260.mormonTrail.model.Map;
  */
 public class MapControl {
      
-    public static Map createMap(int noOfRows, int noOfColumns){
+    public static Map createMap(int miles){
         System.out.println("createMap method called");
         return null;
     }

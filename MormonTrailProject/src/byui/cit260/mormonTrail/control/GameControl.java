@@ -30,13 +30,14 @@ import byui.cit260.mormonTrail.model.Player;
     }
     
     public static int createNewGame(Player player) {
-        
-        Game.setPlayer(player);
         if(player == null){
            return -1;
        }
+        Game game = new Game();
+        game.setPlayer(player);
+        
        
-       //game = create a new Game object
+
        //Save a reference to the Player object in the game
        //Save a reference to the game in the main class
        
@@ -55,54 +56,42 @@ import byui.cit260.mormonTrail.model.Player;
   
         Person[] persons = new Person[10];
         
-        public Person(String name, double health, double startingMoney, int huntingSkill, int gatheringSkill, int stamina, int dailyProteinDraw, int dailyVeggieDraw, boolean available){
-            this.name = name;
-            this.health = health;
-            this.startingMoney = startingMoney;
-            this.huntingSkill = huntingSkill;
-            this.gatheringSkill = gatheringSkill;
-            this.stamina = stamina;
-            this.dailyProteinDraw = dailyProteinDraw;
-            this.dailyVeggieDraw = dailyVeggieDraw;
-            this.available = available; 
-           
-            Person Benjamin = new Person("Benjamin", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Benjamin.ordinal()] = Benjamin;
-            
-            Person Peter = new Person("Peter", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Peter.ordinal()] = Peter;
-            
-            Person Sarah = new Person("Sarah", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Sarah.ordinal()] = Sarah;
+        
+        Person Benjamin = new Person("Benjamin", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Benjamin.ordinal()] = Benjamin;
 
-            Person Daniel = new Person("Daniel", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Daniel.ordinal()] = Daniel;
-            
-            Person Alexander = new Person("Alexander", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Alexander.ordinal()] = Alexander;
-            
-            Person Mary = new Person("mary", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Mary.ordinal()] = Mary;
-            
-            Person Beth = new Person("Beth", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Beth.ordinal()] = Beth;
-            
-            Person Joseph = new Person("Joseph", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Joseph.ordinal()] = Joseph;
-            
-            Person Harriett = new Person("Harriett", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.Harriett.ordinal()] = Harriett;
-            
-            Person George = new Person("George", 50, 100, 3, 3, 5, 5, 5, true);
-            persons[PersonType.George.ordinal()] = George;
-  
+        Person Peter = new Person("Peter", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Peter.ordinal()] = Peter;
+
+        Person Sarah = new Person("Sarah", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Sarah.ordinal()] = Sarah;
+
+        Person Daniel = new Person("Daniel", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Daniel.ordinal()] = Daniel;
+
+        Person Alexander = new Person("Alexander", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Alexander.ordinal()] = Alexander;
+
+        Person Mary = new Person("Mary", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Mary.ordinal()] = Mary;
+
+        Person Beth = new Person("Beth", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Beth.ordinal()] = Beth;
+
+        Person Joseph = new Person("Joseph", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Joseph.ordinal()] = Joseph;
+
+        Person Harriett = new Person("Harriett", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.Harriett.ordinal()] = Harriett;
+
+        Person George = new Person("George", 50, 100, 3, 3, 5, 5, 5, true);
+        persons[PersonType.George.ordinal()] = George;
+        
+        
+        for(Person person: persons){
+            System.out.println(person.toString());
         }
-        
-        
-        
-        
-        
-       
+
 //        actors = create an array Actor objects
 //        actor1 = new Actor object
 //        Assign values to each attribute in the Actor object
@@ -111,7 +100,7 @@ import byui.cit260.mormonTrail.model.Player;
 //        Assign values to each attribute in the Actor object
 //        Assign actor2 to the next position in the actors array
 
-        return items; 
+        return persons; 
     }
     
     public static Inventory[] createItems(){

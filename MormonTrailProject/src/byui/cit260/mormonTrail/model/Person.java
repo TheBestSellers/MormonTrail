@@ -15,34 +15,27 @@ public class Person implements Serializable {
     
     //class instance varables
     public String name;
-    private double health;
-    private double startingMoney;
+    private int health;
+    private int startingMoney;
     private int huntingSkill;
     private int gatheringSkill;
     private int stamina;
     private boolean available;
     private int dailyProteinDraw;
     private int dailyVeggieDraw;
-    
-    public static Person[] createPersons(){
-        Person[] persons = new Person[10];
-        
-        Person person1 = persons[PersonType.Benjamin.ordinal()];
-        Person person2 = persons[PersonType.Peter.ordinal()];
-        Person person3 = persons[PersonType.Sarah.ordinal()];
-        Person person4 = persons[PersonType.Daniel.ordinal()];
-        Person person5 = persons[PersonType.Alexander.ordinal()];
-        Person person6 = persons[PersonType.Mary.ordinal()];
-        Person person7 = persons[PersonType.Beth.ordinal()];
-        Person person8 = persons[PersonType.Joseph.ordinal()];
-        Person person9 = persons[PersonType.Harriett.ordinal()];
-        Person person10 = persons[PersonType.George.ordinal()];
-        
-  
-        
-        return items;
-    } 
-    
+
+    public Person(String name, int health, int startingMoney, int huntingSkill, int gatheringSkill, int stamina, int dailyProteinDraw, int dailyVeggieDraw, boolean available){
+            this.name = name;
+            this.health = health;
+            this.startingMoney = startingMoney;
+            this.huntingSkill = huntingSkill;
+            this.gatheringSkill = gatheringSkill;
+            this.stamina = stamina;
+            this.dailyProteinDraw = dailyProteinDraw;
+            this.dailyVeggieDraw = dailyVeggieDraw;
+            this.available = available; 
+          
+        }
     
     public Person() {
     }
@@ -57,19 +50,19 @@ public class Person implements Serializable {
         this.available = available;
     }
 
-    public double getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(double health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 
-    public double getStartingMoney() {
+    public int getStartingMoney() {
         return startingMoney;
     }
 
-    public void setStartingMoney(double startingMoney) {
+    public void setStartingMoney(int startingMoney) {
         this.startingMoney = startingMoney;
     }
 
@@ -168,12 +161,14 @@ public class Person implements Serializable {
 
    
 
-    @Override
-    public String toString() {
-        return "Person{" + "health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatherhingSkill=" + gatheringSkill + ", stamina=" + stamina + ", available=" + available + '}';
-    }
+    
     
 //this is a test to see if commit will work .... ::::
+
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", stamina=" + stamina + ", available=" + available + ", dailyProteinDraw=" + dailyProteinDraw + ", dailyVeggieDraw=" + dailyVeggieDraw + '}';
+    }
   
 
 

@@ -23,6 +23,7 @@ import java.util.Set;
  */
 public class MormonTrailProject {
     
+    
     private static Game currentGame = null;
     private static Player player = null;
     
