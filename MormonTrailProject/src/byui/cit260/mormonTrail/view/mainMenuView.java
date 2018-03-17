@@ -57,7 +57,7 @@ public mainMenuView(){
             break;
         case "P": teamPace();
             break;
-        case "C": riverCrossingView();
+        case "C": riverCrossingMenuView();
             break;
         default: System.out.println("Invalid menu item");
     }
