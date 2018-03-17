@@ -23,10 +23,8 @@ public class MapControl {
        // if (items == null || items.length < 0) { return null;}
         
         Map map = new Map();
-        
-//        save the noOfRows in the map
-//        save the noOfColumns in the map
-//        locations = createLocations(noOfRows, noOfColumns)
+
+        Location[] locations = createLocations();
 //        Assign the locations array to the map
         Scene[] scenes = createScenes();
 //        questions = createQuestions()

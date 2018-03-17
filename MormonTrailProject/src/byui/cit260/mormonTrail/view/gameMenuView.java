@@ -46,7 +46,8 @@ public gameMenuView(){
     }
 
     public void displayMap(){
-        Game game = new Game();
+        System.out.println("---Mormon Trail Map----");
+       // for (Location location : locations)
         
     }
 //game = get the currentGame from the main class
