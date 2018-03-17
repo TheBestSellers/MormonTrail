@@ -6,6 +6,7 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.control.ItemControl;
 import byui.cit260.mormonTrail.control.PeopleControl;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Player;
@@ -43,6 +44,8 @@ public gameMenuView(){
            case "I": displayInventory();
             break;
             case "H": PeopleControl.calculateAverageHealth(GameControl.createPersons());
+            break;
+            case "S": ItemControl.sumWagonWeight(ItemControl.addItem());
             break;
         default: System.out.println("Invalid menu item");
     }

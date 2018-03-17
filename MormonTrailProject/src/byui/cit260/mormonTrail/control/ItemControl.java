@@ -1,10 +1,15 @@
 package byui.cit260.mormonTrail.control;
 
+import byui.cit260.mormonTrail.model.Item;
+import static byui.cit260.mormonTrail.view.BuyMenuView.item;
+
+
 /**
  *
  * @author ChristopherSellers, Sariah and Alyssa
  */
 public class ItemControl {
+
     
     public static int calcFoodDraw(double stamina, double pace) {
         
@@ -34,11 +39,31 @@ public class ItemControl {
     
     public static void subtractRiverItem(String item, int qty){
         System.out.println("You just dropped " + qty + " " + item + "(s)");
-        
     }
 
     public static void addMoney(){
         System.out.println("addMoney()");
-
     }
+ public static int sumWagonWeight(ItemControl.addItem() {
+           if(item == null) {
+            return -1;
+        }
+            int qty = 0;
+            int totalWeight = 0;
+           
+            for (Item[] item : item) {
+                    totalWeight += items.getTotalWeight();
+                  
+                } return totalWeight;
+                
+            //BEGIN
+            //total = 0
+            //FOR index = 0 TO list.length -1
+            // total = total + list[index]
+            //ENDFOR
+            //RETURN total
+            //END 
+    }
+        
+  
 }
