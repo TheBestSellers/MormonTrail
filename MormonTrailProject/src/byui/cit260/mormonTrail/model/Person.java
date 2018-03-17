@@ -45,6 +45,14 @@ public class Person implements Serializable {
     public boolean isAvailable() {
         return available;
     }
+    
+    public String getName () {
+        return name;
+    }
+    
+    public void setName (String name) {
+        this.name = name;
+    }
 
     public void setAvailable(boolean available) {
         this.available = available;
