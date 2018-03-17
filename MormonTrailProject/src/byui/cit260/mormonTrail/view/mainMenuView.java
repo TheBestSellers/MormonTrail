@@ -64,7 +64,8 @@ public mainMenuView(){
         Player player = null;
         GameControl.createNewGame(player);    
         gameMenuView = new gameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
+        
     }
     
     private void restoreSavedGame() {
@@ -91,4 +92,5 @@ public mainMenuView(){
         teamPaceView = new TeamPaceView();
         teamPaceView.display();
     }
+   
 }
