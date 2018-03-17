@@ -5,6 +5,7 @@
  */
 package byui.cit260.mormonTrail.model;
 
+import byui.cit260.mormonTrail.control.MapControl;
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,10 @@ public class Map implements Serializable{
     public Map() {
         
     }
-
+    public Location[] getLocations(){
+        Location[] locations = MapControl.createLocations();
+        return locations;
+    }
     public int getCurrentLocation() {
         return currentLocation;
     }

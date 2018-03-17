@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     private String name;
-    private String type;
+    private int type;
     private int locationDistance;
     
     Scene description = new Scene();
@@ -23,17 +23,17 @@ public class Location implements Serializable{
     public Location() {
     }
     
-    public Location(String name, String type, int locationDistance) {
+    public Location(String name, int type, int locationDistance) {
         this.name = name;
         this.type = type;
         this.locationDistance = locationDistance;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 

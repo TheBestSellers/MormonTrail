@@ -40,7 +40,6 @@ import byui.cit260.mormonTrail.model.ItemType;
     game.setPlayer(player);
     createPersons();
     createItems();
-    MapControl.createLocations();
     MapControl.createMap(0);
 
         return 1; 

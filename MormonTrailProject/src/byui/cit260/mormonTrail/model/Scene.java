@@ -14,23 +14,29 @@ import java.util.Objects;
  */
 public class Scene implements Serializable{
     
-    private String description;
+    private String name;
+    
 
     public Scene() {
     }
-
-    public String getDescription() {
-        return description;
+    
+    public Scene(String name){
+        this.name = name;
+        
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String description) {
+        this.name = description;
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.description);
+        hash = 89 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -46,7 +52,7 @@ public class Scene implements Serializable{
             return false;
         }
         final Scene other = (Scene) obj;
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;
@@ -54,7 +60,7 @@ public class Scene implements Serializable{
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + '}';
+        return "Scene{" + "description=" + name + '}';
     }
     
     
