@@ -23,6 +23,7 @@ private startExistingGameView startExistingGameView;
 private helpMenuView helpMenuView;
 private GeneralStoreView generalStoreView;
 private TeamPaceView teamPaceView;
+private riverCrossingMenuView riverCrossingMenuView;
     
 public mainMenuView(){
     super("Main Menu"
@@ -33,6 +34,7 @@ public mainMenuView(){
         + "\nH - Get help on how to play the game"
         + "\nG - Test the general store view"
         + "\nP - Test the team pace view"
+        + "\nC - Test the River Crossing view"
         + "\nQ - Quit\n");
     }
     
@@ -54,6 +56,8 @@ public mainMenuView(){
         case "G": generalStore();
             break;
         case "P": teamPace();
+            break;
+        case "C": riverCrossingMenuView();
             break;
         default: System.out.println("Invalid menu item");
     }
@@ -91,6 +95,11 @@ public mainMenuView(){
     private void teamPace() {
         teamPaceView = new TeamPaceView();
         teamPaceView.display();
+    }
+
+    private void riverCrossingMenuView() {
+        riverCrossingMenuView = new riverCrossingMenuView();
+        riverCrossingMenuView.display();
     }
    
 }

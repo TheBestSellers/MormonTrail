@@ -5,6 +5,8 @@
  */
 package byui.cit260.mormonTrail.control;
 
+import byui.cit260.mormonTrail.model.Person;
+
 /**
  *
  * @author alyssahundley
@@ -107,5 +109,47 @@ public class PeopleControl {
        System.out.println("Your team pace is " + teamPace);
        return teamPace;
        
-    }     
+    }
+    
+    public static double calculateAverageHealth(Person[] people) {
+        // valid people array is not null
+        if (people == null) {return -1;}
+
+        double averageHealth = 0;
+        double totalHealth = 0;
+        int highestHealth = 0;
+        String healthiestPerson = "";
+        
+        // loop through array, adding each health value to totalHealth
+        try {
+            for (Person person : people) {
+                totalHealth += person.getHealth();
+                if (person.getHealth() < 1 || person.getHealth() > 100 
+                        || person.getName() == null ) {
+                    return -1;
+                }
+                if (highestHealth < person.getHealth()) {
+                    healthiestPerson = person.getName();
+                    highestHealth = person.getHealth();
+                }
+            }
+
+            // divide totalHealth by number of people
+            averageHealth = totalHealth / (double)people.length;
+        }
+        
+        // return -1 if failure and averageHealth if successful
+        catch (Exception e) {
+            return -1;
+        }
+        
+        System.out.println("\nThe average health of the people is: " 
+                + averageHealth);
+        System.out.println("Just for fun, the person with the highest"
+                + " health is: " + healthiestPerson + " with " + highestHealth
+                + ".\nThis should be it's own method. "
+                + "We can split this out later if it will help.");
+        
+        return averageHealth;
+    }
 }
