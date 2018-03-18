@@ -1,4 +1,6 @@
 package byui.cit260.mormonTrail.control;
+import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.model.Item;
 
 /**
  *
@@ -23,8 +25,18 @@ public class ItemControl {
     public static void addItem(String item, int qty) {
         System.out.println("You just added " + qty + " " + item + "(s)");
     }
-    public static void subtractMoney() {
-        System.out.println("subractMoney()");
+    public static void subtractMoney(String item, int qty) {
+        
+        GameControl gc = new GameControl();
+        Item[] items = gc.createItems();
+        int total = 0;
+        
+        for(int iCount = 0; iCount < items.length; iCount++){
+            if(items[iCount].getName() == item){
+                total = total + ((items[iCount].getCost()) * (items[iCount].getQty()));
+            }
+            System.out.println(total);
+        }
     }
     
     public static void subtractItem(String item, int qty){

@@ -42,7 +42,7 @@ public class BuyQuantityMenuView extends View {
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
             ItemControl.addItem(BuyMenuView.item, qty);
-            ItemControl.subtractMoney();
+            ItemControl.subtractMoney(BuyMenuView.item, qty);
             return true;
         }
         

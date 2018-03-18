@@ -18,6 +18,7 @@ public class Item implements Serializable{
     private int weight;
     private int qty;
 
+
     //constructor
     public Item() {
     }
