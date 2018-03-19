@@ -56,17 +56,17 @@ public class ItemControl {
     public static void addMoney(){
         System.out.println("addMoney()");
     }
- public static int sumWagonWeight(ItemControl.addItem() {
-           if(item == null) {
-            return -1;
-        }
-            int qty = 0;
-            int totalWeight = 0;
-           
-            for (Item[] item : item) {
-                    totalWeight += items.getTotalWeight();
-                  
-                } return totalWeight;
+// public static int sumWagonWeight(ItemControl.addItem() {
+//           if(item == null) {
+//            return -1;
+//        }
+//            int qty = 0;
+//            int totalWeight = 0;
+//           
+//            for (Item[] item : item) {
+//                    totalWeight += items.getTotalWeight();
+//                  
+//                } return totalWeight;
                 
             //BEGIN
             //total = 0
@@ -75,7 +75,7 @@ public class ItemControl {
             //ENDFOR
             //RETURN total
             //END 
-    }
+    //}
         
   
 }

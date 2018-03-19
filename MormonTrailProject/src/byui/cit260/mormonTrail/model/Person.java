@@ -6,6 +6,7 @@
 package byui.cit260.mormonTrail.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -20,11 +21,13 @@ public class Person implements Serializable {
     private int huntingSkill;
     private int gatheringSkill;
     private int stamina;
-    private boolean available;
+    private String status;
     private int dailyProteinDraw;
     private int dailyVeggieDraw;
 
-    public Person(String name, int health, int startingMoney, int huntingSkill, int gatheringSkill, int stamina, int dailyProteinDraw, int dailyVeggieDraw, boolean available){
+    public Person(String name, int health, int startingMoney, int huntingSkill, 
+            int gatheringSkill, int stamina, int dailyProteinDraw, 
+            int dailyVeggieDraw, String status){
         this.name = name;
         this.health = health;
         this.startingMoney = startingMoney;
@@ -33,7 +36,7 @@ public class Person implements Serializable {
         this.stamina = stamina;
         this.dailyProteinDraw = dailyProteinDraw;
         this.dailyVeggieDraw = dailyVeggieDraw;
-        this.available = available; 
+        this.status = status; 
 
     }
     
@@ -42,8 +45,8 @@ public class Person implements Serializable {
     
     
 
-    public boolean isAvailable() {
-        return available;
+    public String getStatus() {
+        return status;
     }
     
     public String getName () {
@@ -54,8 +57,8 @@ public class Person implements Serializable {
         this.name = name;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getHealth() {
@@ -82,11 +85,11 @@ public class Person implements Serializable {
         this.huntingSkill = huntingSkill;
     }
 
-    public int getGatherhingSkill() {
+    public int getGatheringSkill() {
         return gatheringSkill;
     }
 
-    public void setGatherhingSkill(int gatherhingSkill) {
+    public void setGatheringSkill(int gatherhingSkill) {
         this.gatheringSkill = gatherhingSkill;
     }
 
@@ -117,14 +120,15 @@ public class Person implements Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.health) ^ (Double.doubleToLongBits(this.health) >>> 32));
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.startingMoney) ^ (Double.doubleToLongBits(this.startingMoney) >>> 32));
-        hash = 83 * hash + this.huntingSkill;
-        hash = 83 * hash + this.gatheringSkill;
-        hash = 83 * hash + this.stamina;
-        hash = 83 * hash + (this.available ? 1 : 0);
-        hash = 83 * hash + this.dailyProteinDraw;
-        hash = 83 * hash + this.dailyVeggieDraw;
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + this.health;
+        hash = 37 * hash + this.startingMoney;
+        hash = 37 * hash + this.huntingSkill;
+        hash = 37 * hash + this.gatheringSkill;
+        hash = 37 * hash + this.stamina;
+        hash = 37 * hash + Objects.hashCode(this.status);
+        hash = 37 * hash + this.dailyProteinDraw;
+        hash = 37 * hash + this.dailyVeggieDraw;
         return hash;
     }
 
@@ -140,10 +144,10 @@ public class Person implements Serializable {
             return false;
         }
         final Person other = (Person) obj;
-        if (Double.doubleToLongBits(this.health) != Double.doubleToLongBits(other.health)) {
+        if (this.health != other.health) {
             return false;
         }
-        if (Double.doubleToLongBits(this.startingMoney) != Double.doubleToLongBits(other.startingMoney)) {
+        if (this.startingMoney != other.startingMoney) {
             return false;
         }
         if (this.huntingSkill != other.huntingSkill) {
@@ -155,31 +159,19 @@ public class Person implements Serializable {
         if (this.stamina != other.stamina) {
             return false;
         }
-        if (this.available != other.available) {
-            return false;
-        }
         if (this.dailyProteinDraw != other.dailyProteinDraw) {
             return false;
         }
         if (this.dailyVeggieDraw != other.dailyVeggieDraw) {
             return false;
         }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.status, other.status)) {
+            return false;
+        }
         return true;
     }
-
-   
-
-    
-    
-//this is a test to see if commit will work .... ::::
-
-    @Override
-    public String toString() {
-        return "Person{" + "name=" + name + ", health=" + health + ", startingMoney=" + startingMoney + ", huntingSkill=" + huntingSkill + ", gatheringSkill=" + gatheringSkill + ", stamina=" + stamina + ", available=" + available + ", dailyProteinDraw=" + dailyProteinDraw + ", dailyVeggieDraw=" + dailyVeggieDraw + '}';
-    }
-  
-
-
-    
     
 }

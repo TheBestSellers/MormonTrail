@@ -83,16 +83,16 @@ public class ItemControlTest {
     }
     
     
-    @Test
-    public void testSubtractMoney1() {
-        System.out.println("subtractMoney1");
-        String item = "";
-        int qty = 1;
-        int expResult = 9;
-        int result = ItemControl.subtractMoney(item, qty);
-        System.out.println(result + " vs " + expResult);
-        assertEquals(expResult, result);
-}
+//    @Test
+//    public void testSubtractMoney1() {
+//        System.out.println("subtractMoney1");
+//        String item = "";
+//        int qty = 1;
+//        int expResult = 9;
+//        int result = ItemControl.subtractMoney(item, qty);
+//        System.out.println(result + " vs " + expResult);
+//        assertEquals(expResult, result);
+//    }
     
     
 }

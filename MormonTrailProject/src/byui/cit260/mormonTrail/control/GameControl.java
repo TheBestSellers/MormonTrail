@@ -6,11 +6,9 @@
 package byui.cit260.mormonTrail.control;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Item;
-import byui.cit260.mormonTrail.model.Map;
 import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.model.PersonType;
 import byui.cit260.mormonTrail.model.Player;
-import byui.cit260.mormonTrail.control.MapControl;
 import byui.cit260.mormonTrail.model.ItemType;
 
 
@@ -38,7 +36,7 @@ import byui.cit260.mormonTrail.model.ItemType;
 //    }
     Game game = new Game();
     game.setPlayer(player);
-    createPersons();
+    Person[] people = createPersons();
     createItems();
     MapControl.createMap(0);
 
@@ -48,25 +46,25 @@ import byui.cit260.mormonTrail.model.ItemType;
     public static Person[] createPersons(){
   
         Person[] persons = new Person[10];
-        Person Benjamin = new Person("Benjamin", 50, 100, 3, 3, 5, 5, 5, true);
+        Person Benjamin = new Person("Benjamin", 50, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Benjamin.ordinal()] = Benjamin;
-        Person Peter = new Person("Peter", 90, 100, 3, 3, 5, 5, 5, true);
+        Person Peter = new Person("Peter", 90, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Peter.ordinal()] = Peter;
-        Person Sarah = new Person("Sarah", 75, 100, 3, 3, 5, 5, 5, true);
+        Person Sarah = new Person("Sarah", 75, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Sarah.ordinal()] = Sarah;
-        Person Daniel = new Person("Daniel", 25, 100, 3, 3, 5, 5, 5, true);
+        Person Daniel = new Person("Daniel", 25, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Daniel.ordinal()] = Daniel;
-        Person Alexander = new Person("Alexander", 88, 100, 3, 3, 5, 5, 5, true);
+        Person Alexander = new Person("Alexander", 88, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Alexander.ordinal()] = Alexander;
-        Person Mary = new Person("Mary", 90, 100, 3, 3, 5, 5, 5, true);
+        Person Mary = new Person("Mary", 90, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Mary.ordinal()] = Mary;
-        Person Beth = new Person("Beth", 85, 100, 3, 3, 5, 5, 5, true);
+        Person Beth = new Person("Beth", 85, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Beth.ordinal()] = Beth;
-        Person Joseph = new Person("Joseph", 95, 100, 3, 3, 5, 5, 5, true);
+        Person Joseph = new Person("Joseph", 95, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Joseph.ordinal()] = Joseph;
-        Person Harriett = new Person("Harriett", 100, 100, 3, 3, 5, 5, 5, true);
+        Person Harriett = new Person("Harriett", 100, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Harriett.ordinal()] = Harriett;
-        Person George = new Person("George", 65, 100, 3, 3, 5, 5, 5, true);
+        Person George = new Person("George", 65, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.George.ordinal()] = George;
         
         return persons; 

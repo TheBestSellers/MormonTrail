@@ -6,9 +6,8 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Player;
-import java.util.Scanner;
-import byui.cit260.mormonTrail.view.GeneralStoreView;
 
 /**
  *
