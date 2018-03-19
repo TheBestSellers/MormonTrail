@@ -17,16 +17,18 @@ public class Location implements Serializable{
     private String name;
     private int type;
     private int locationDistance;
-    
-    Scene description = new Scene();
+    private char symbol;
+    String description;
 
     public Location() {
     }
     
-    public Location(String name, int type, int locationDistance) {
+    public Location(String name, int type, int locationDistance, char symbol, String description) {
         this.name = name;
         this.type = type;
         this.locationDistance = locationDistance;
+        this.symbol = symbol;
+        this.description = description;
     }
 
     public int getType() {
@@ -45,6 +47,32 @@ public class Location implements Serializable{
         this.locationDistance = locationDistance;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public char getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -76,7 +104,10 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "type=" + type + ", locationDistance=" + locationDistance + '}';
+        return "Location{" + "name=" + name + ", type=" + type + ", locationDistance=" + locationDistance + ", symbol=" + symbol + ", description=" + description + '}';
     }
+
+    
+
     
 }

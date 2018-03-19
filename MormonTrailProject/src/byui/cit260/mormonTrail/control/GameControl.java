@@ -10,6 +10,7 @@ import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.model.PersonType;
 import byui.cit260.mormonTrail.model.Player;
 import byui.cit260.mormonTrail.model.ItemType;
+import mormontrailproject.MormonTrailProject;
 
 
 /**
@@ -26,19 +27,21 @@ import byui.cit260.mormonTrail.model.ItemType;
 
         System.out.println("***savePlayer() called");
         Player player = new Player();
-        player.setName(name);
+        MormonTrailProject.setPlayer(player);
+        MormonTrailProject.getPlayer().setName(name);
         return player;
     }
     
     public static int createNewGame(Player player) {
-//    if(player == null){
-//       return -1;
-//    }
-    Game game = new Game();
-    game.setPlayer(player);
-    Person[] people = createPersons();
-    createItems();
-    MapControl.createMap(0);
+    //    if(player == null){
+    //       return -1;
+    //    }
+        Game game = new Game();
+        MormonTrailProject.setCurrentGame(game);
+        MormonTrailProject.getCurrentGame().setPlayer(player);
+        Person[] people = createPersons();
+        createItems();
+        MapControl.createMap(0);
 
         return 1; 
     }

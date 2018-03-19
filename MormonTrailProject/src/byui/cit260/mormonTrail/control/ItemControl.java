@@ -1,9 +1,6 @@
 package byui.cit260.mormonTrail.control;
-import byui.cit260.mormonTrail.control.GameControl;
-import byui.cit260.mormonTrail.model.Item;
 
 import byui.cit260.mormonTrail.model.Item;
-import static byui.cit260.mormonTrail.view.BuyMenuView.item;
 
 
 /**
@@ -45,7 +42,7 @@ public class ItemControl {
     }
     
     public static void subtractItem(String item, int qty){
-        System.out.println("You just sold " + qty + " " + item + "(s)");
+        System.out.println("You just removed " + qty + " " + item + "(s)");
     }
 
     

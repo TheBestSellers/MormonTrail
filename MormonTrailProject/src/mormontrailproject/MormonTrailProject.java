@@ -5,16 +5,10 @@
  */
 package mormontrailproject;
 
-import byui.cit260.mormonTrail.model.Event;
-import byui.cit260.mormonTrail.model.Item;
-import byui.cit260.mormonTrail.model.Livestock;
-import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.model.Player;
-import byui.cit260.mormonTrail.model.Wagon;
 import byui.cit260.mormonTrail.model.Game;
+import byui.cit260.mormonTrail.model.Map;
 import byui.cit260.mormonTrail.view.StartProgramView;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  *
@@ -25,6 +19,7 @@ public class MormonTrailProject {
     
     private static Game currentGame = null;
     private static Player player = null;
+    private static Map map = null;
     
     public static Game getCurrentGame() {
         return currentGame;
@@ -32,6 +27,14 @@ public class MormonTrailProject {
     
     public static void setCurrentGame(Game currentGame) {
         MormonTrailProject.currentGame = currentGame;
+    }
+    
+    public static Map getMap() {
+        return map;
+    }
+    
+    public static void setMap(Map map) {
+        MormonTrailProject.map = map;
     }
     
     public static Player getPlayer() {

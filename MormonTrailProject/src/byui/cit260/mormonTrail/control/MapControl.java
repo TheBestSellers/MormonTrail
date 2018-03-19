@@ -5,12 +5,12 @@
  */
 package byui.cit260.mormonTrail.control;
 
-import byui.cit260.mormonTrail.model.Item;
 import byui.cit260.mormonTrail.model.Location;
 import byui.cit260.mormonTrail.model.LocationType;
 import byui.cit260.mormonTrail.model.Map;
 import byui.cit260.mormonTrail.model.Scene;
 import byui.cit260.mormonTrail.model.SceneType;
+import mormontrailproject.MormonTrailProject;
 
 /**
  *
@@ -20,58 +20,41 @@ public class MapControl {
      
     public static Map createMap(int miles){
         if (miles < 0) {return null;};
-       // if (items == null || items.length < 0) { return null;}
-        
-        Map map = new Map();
+        // if (items == null || items.length < 0) { return null;}
 
-        Location[] locations = createLocations();
-//        Assign the locations array to the map
         Scene[] scenes = createScenes();
-//        questions = createQuestions()
-//        assignQuestionsToScenes()
-//        assignItemsToScenes()
-        assignScenesToLocations(map, scenes);
-        
+        Map map = new Map();
+        MormonTrailProject.setMap(map);
+
         return map;
     }
     
     public static Location[] createLocations(){
         Location[] locations = new Location[11];
-        Location GardenGrove = new Location("GardenGrove", SceneType.TownScene.ordinal(), 15);
+        Location GardenGrove = new Location("GardenGrove", SceneType.TownScene.ordinal(), 15, 'T', null);
         locations[LocationType.GardenGrove.ordinal()] = GardenGrove;
-        Location MountPisgah = new Location("MountPisgah", SceneType.TownScene.ordinal(), 30);
+        Location MountPisgah = new Location("MountPisgah", SceneType.TownScene.ordinal(), 30, 'T', null);
         locations[LocationType.MountPisgah.ordinal()] = MountPisgah;
-        Location Kanesville = new Location("Kanesville", SceneType.TownScene.ordinal(), 45);
+        Location Kanesville = new Location("Kanesville", SceneType.TownScene.ordinal(), 45, 'T', null);
         locations[LocationType.Kanesville.ordinal()] = Kanesville;
-        Location WinterQuarters = new Location("WinterQuarters", SceneType.TownScene.ordinal(), 60);
+        Location WinterQuarters = new Location("WinterQuarters", SceneType.TownScene.ordinal(), 60, 'T', null);
         locations[LocationType.WinterQuarters.ordinal()] = WinterQuarters;
-        Location FortKearny = new Location("FortKearny", SceneType.FortScene.ordinal(), 100);
+        Location FortKearny = new Location("FortKearny", SceneType.FortScene.ordinal(), 100, 'T', null);
         locations[LocationType.FortKearny.ordinal()] = FortKearny;
-        Location ChimneyRock = new Location("ChimneyRock", SceneType.DailyStopScene.ordinal(), 115);
+        Location ChimneyRock = new Location("ChimneyRock", SceneType.DailyStopScene.ordinal(), 115, 'T', null);
         locations[LocationType.ChimneyRock.ordinal()] = ChimneyRock;
-        Location FortLaramie = new Location("FortLaramie", SceneType.FortScene.ordinal(), 130);
+        Location FortLaramie = new Location("FortLaramie", SceneType.FortScene.ordinal(), 130, 'T', null);
         locations[LocationType.FortLaramie.ordinal()] = FortLaramie;
-        Location IndependenceRock = new Location("IndependenceRock", SceneType.DailyStopScene.ordinal(), 200);
+        Location IndependenceRock = new Location("IndependenceRock", SceneType.DailyStopScene.ordinal(), 200, 'T', null);
         locations[LocationType.IndependenceRock.ordinal()] = IndependenceRock;
-        Location MartinsCove = new Location("MartinsCove", SceneType.DailyStopScene.ordinal(), 215);
+        Location MartinsCove = new Location("MartinsCove", SceneType.DailyStopScene.ordinal(), 215, 'T', null);
         locations[LocationType.MartinsCove.ordinal()] = MartinsCove;
-        Location FortBridger = new Location("FortBridger", SceneType.FortScene.ordinal(), 230);
+        Location FortBridger = new Location("FortBridger", SceneType.FortScene.ordinal(), 230, 'T', null);
         locations[LocationType.FortBridger.ordinal()] = FortBridger;
-        Location SaltLake = new Location("SaltLake", SceneType.TownScene.ordinal(), 275);
+        Location SaltLake = new Location("SaltLake", SceneType.TownScene.ordinal(), 275, 'T', null);
         locations[LocationType.SaltLake.ordinal()] = SaltLake;
         
         return locations;
-        
-//        
-//        locations = new two-dimensional Location array
-//        FOR every row in the locations array
-//        FOR every column in the locations array
-//        location = create a new Location object
-//        set the row, and column attributes in the location
-//        set visited attribute to false
-//        Assign location to the row, and column in array
-//        ENDFOR
-//        RETURN locations 
     }
     
     public static Scene[] createScenes(){
@@ -89,18 +72,14 @@ public class MapControl {
         return scenes;
     }
     
-    
-//    private static void assignItemsToScene(Item[] items, Scene[] scenes){
-//        System.out.println("called assignItemsToScene");
+//    public static void assignScenesToLocations(Map map, Scene[] scenes){
+//        Location[] locations = map.getLocations();
+//        
+//        locations[0].setType(SceneType.DailyStopScene.ordinal());
+//        locations[1].setType(SceneType.FortScene.ordinal());
+//        locations[2].setType(SceneType.TownScene.ordinal());
+//        locations[3].setType(SceneType.RiverScene.ordinal());
+// 
 //    }
     
-    public static void assignScenesToLocations(Map map, Scene[] scenes){
-        Location[] locations = map.getLocations();
-        
-        locations[0].setType(SceneType.DailyStopScene.ordinal());
-        locations[0].setType(SceneType.FortScene.ordinal());
-        locations[0].setType(SceneType.TownScene.ordinal());
-        locations[0].setType(SceneType.RiverScene.ordinal());
- 
-    }
 }

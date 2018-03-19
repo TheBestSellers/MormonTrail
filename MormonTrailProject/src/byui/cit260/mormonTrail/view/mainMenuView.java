@@ -8,6 +8,7 @@ package byui.cit260.mormonTrail.view;
 import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Player;
+import mormontrailproject.MormonTrailProject;
 
 /**
  *
@@ -65,7 +66,7 @@ public mainMenuView(){
 
     private void startNewGame() {
         Player player = null;
-        GameControl.createNewGame(player);    
+        GameControl.createNewGame(player);
         gameMenuView = new gameMenuView();
         gameMenuView.display();
         

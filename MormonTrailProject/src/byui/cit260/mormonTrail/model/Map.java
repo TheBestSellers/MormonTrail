@@ -15,16 +15,19 @@ import java.io.Serializable;
 public class Map implements Serializable{
     
     private int currentLocation;
-    
-    Location location = new Location();
+    public Location[] locations = MapControl.createLocations();
 
     public Map() {
         
     }
     public Location[] getLocations(){
-        Location[] locations = MapControl.createLocations();
         return locations;
     }
+
+    public void setLocations(Location[] locations) {
+        this.locations = locations;
+    }
+    
     public int getCurrentLocation() {
         return currentLocation;
     }

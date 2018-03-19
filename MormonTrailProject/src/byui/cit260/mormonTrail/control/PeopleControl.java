@@ -31,15 +31,6 @@ public class PeopleControl {
        
        return healthDraw;
     }     
-    //calcHealthDraw(Stamina: int, Food: int, Weather: double, Pace: double) returns int
-    //If parameters are invalid, return -1;
-    //If parameters are valid, calculate (6-Stamina)(Weather)(Pace) + foodShortage, round to nearest int and return;
-    
-    //PARAMETERS
-    //Stamina - (constant for each person, 1-5)
-    //Amount of food, calcDailyHealthDraw. Subtract shortage of food available from food drawn from each person’s health.
-    //Weather - Clear (1), Wind(1.5), Rain (2), Snow(3). Later in the season, there is more probability of bad weather.
-    //Team Pace - Slow (1), Average(1.5), Fast(2)
 
     public static int calcDayOfRest(int stamina){
         if(stamina < 1 || stamina >5 ){
@@ -117,8 +108,6 @@ public class PeopleControl {
 
         double averageHealth = 0;
         double totalHealth = 0;
-        int highestHealth = 0;
-        String healthiestPerson = "";
         
         // loop through array, adding each health value to totalHealth
         try {
@@ -127,10 +116,6 @@ public class PeopleControl {
                 if (person.getHealth() < 1 || person.getHealth() > 100 
                         || person.getName() == null ) {
                     return -1;
-                }
-                if (highestHealth < person.getHealth()) {
-                    healthiestPerson = person.getName();
-                    highestHealth = person.getHealth();
                 }
             }
 
@@ -145,10 +130,6 @@ public class PeopleControl {
         
         System.out.println("\nThe average health of the people is: " 
                 + averageHealth);
-        System.out.println("Just for fun, the person with the highest"
-                + " health is: " + healthiestPerson + " with " + highestHealth
-                + ".\nThis should be it's own method. "
-                + "We can split this out later if it will help.");
         
         return averageHealth;
     }

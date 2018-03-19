@@ -7,6 +7,8 @@ package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.control.PeopleControl;
+import byui.cit260.mormonTrail.model.Location;
+import mormontrailproject.MormonTrailProject;
 
 /**
  *
@@ -48,9 +50,9 @@ public gameMenuView(){
     }
 
     public void displayMap(){
-        System.out.println("---Mormon Trail Map----");
-       // for (Location location : locations)
-        
+       for (Location location : MormonTrailProject.getMap().locations) {
+           System.out.println(location);
+       }
     }
     
     private void displayCharacters() {
