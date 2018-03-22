@@ -1,6 +1,7 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.exceptions.GameControlException;
 import java.util.Scanner;
 import byui.cit260.mormonTrail.model.Player;
 
@@ -23,7 +24,13 @@ public class StartProgramView extends View{
     public boolean doAction(String[] inputs){
     
         String playersName = inputs[0];
-        Player player = GameControl.savePlayer(playersName);
+        try {
+            Player player = GameControl.savePlayer(playersName);
+        } catch (GameControlException mce) {
+            System.out.println(mce.getMessage());
+            return false;
+                
+        }
         
         if(player == null){
             System.out.println("Could not create the player."

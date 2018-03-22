@@ -29,6 +29,11 @@ public class MapControl {
         return map;
     }
     
+    public static Location movePlayer (player, ???) {
+        if (player == null)
+            throw new MapControlException("");
+    }    
+    
     public static Location[] createLocations(){
         Location[] locations = new Location[11];
         Location GardenGrove = new Location("GardenGrove", SceneType.TownScene.ordinal(), 15, 'T', null);

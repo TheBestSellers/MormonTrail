@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.mormonTrail.control;
+import byui.cit260.mormonTrail.exceptions.GameControlException;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Item;
 import byui.cit260.mormonTrail.model.Person;
@@ -19,10 +20,11 @@ import mormontrailproject.MormonTrailProject;
  */
  public class GameControl {
     
-    public static Player savePlayer (String name){
+    public static Player savePlayer (String name)
+        throws GameControlException {
         
         if (name == null || name.length() <1){
-            return null;
+            throw new GameControlException("Could not create name, please try again");
         }
 
         System.out.println("***savePlayer() called");

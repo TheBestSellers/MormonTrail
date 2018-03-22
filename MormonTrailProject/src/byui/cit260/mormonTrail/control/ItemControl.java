@@ -1,5 +1,6 @@
 package byui.cit260.mormonTrail.control;
 
+import byui.cit260.mormonTrail.exceptions.ItemControlException;
 import byui.cit260.mormonTrail.model.Item;
 
 
@@ -10,19 +11,21 @@ import byui.cit260.mormonTrail.model.Item;
 public class ItemControl {
 
     
-    public static int calcFoodDraw(double stamina, double pace) {
+    public static void calcFoodDraw(double stamina, double pace)
+            throws ItemControlException {
+
         
         if(stamina < 1 || stamina > 5) {
-            return -1;
+            throw new ItemControlException("Stamina needs to be between 1 and 5");
         }
         
         if(pace < 1 || pace > 2) {
-            return -2;
+            throw new ItemControlException("Pace needs to be between 1 and 2");
         }
         
         int foodDraw = (int)Math.round((((stamina/2)*pace)+2)*2);
-        return foodDraw;
     }
+    
     
     public static void addItem(String item, int qty) {
         System.out.println("You just added " + qty + " " + item + "(s)");

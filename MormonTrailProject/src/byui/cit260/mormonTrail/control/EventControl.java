@@ -14,13 +14,13 @@ public class EventControl {
     
     public static int calcRiverCrossingProbability(int riverDepth, int wagonWeight, int oxenStrength){
         if(riverDepth < 1 || riverDepth > 10){
-            return 0;
+            return -1;
         }
         if(wagonWeight < 1 || wagonWeight > 10){
-            return 0;
+            return -1;
         }
         if(oxenStrength < 1 || oxenStrength > 10){
-            return 0;
+            return -1;
         }
         
         int riverProbability = (riverDepth + wagonWeight + oxenStrength);
