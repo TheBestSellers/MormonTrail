@@ -11,16 +11,29 @@ package byui.cit260.mormonTrail.model;
  */
 public enum LocationType {
    GardenGrove,
+   OpenMeadow,
+   DenseWoods,
+   MapleValley,
    MountPisgah,
+   GrassyKnoll,
+   MinerPark,
    Kanesville,
+   AlcoveSpring,
+   CourthouseRock,
    WinterQuarters,
+   JailRock,
+   SodaSprings,
+   CoolBrook,
+   IndependenceRock,
+   OpenField,
    FortKearny,
    ChimneyRock,
    FortLaramie,
-   IndependenceRock,
+   ThickUnderbrush,
+   GreenMeadow,
    MartinsCove,
    FortBridger,
+   PeacefulLake,
    SaltLake;
-   
     
 }

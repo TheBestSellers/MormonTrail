@@ -5,9 +5,11 @@
  */
 package mormontrailproject;
 
+import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.model.Player;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Map;
+import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.view.StartProgramView;
 
 /**
@@ -16,10 +18,10 @@ import byui.cit260.mormonTrail.view.StartProgramView;
  */
 public class MormonTrailProject {
     
-    
     private static Game currentGame = null;
     private static Player player = null;
     private static Map map = null;
+    private static Person[] party = GameControl.createPersons();
     
     public static Game getCurrentGame() {
         return currentGame;
@@ -49,9 +51,13 @@ public class MormonTrailProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-        MormonTrailProject.setPlayer(player);
+        try {
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            MormonTrailProject.setPlayer(player);
+        } catch (Throwable e) {
+            System.out.println("Something happened: " + e);
+        }
     }
     
 }

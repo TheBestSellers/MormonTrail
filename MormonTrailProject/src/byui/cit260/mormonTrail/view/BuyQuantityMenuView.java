@@ -25,9 +25,11 @@ public class BuyQuantityMenuView extends View {
         
         try {
             qty = Integer.parseInt(inputs[0]);
-        }
-        catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println("Invalid value\nEnter a number between 1 and 100");
+            return false;
+        } catch (Throwable e) {
+            System.out.println("Something happened: " + e);
             return false;
         }
         

@@ -52,10 +52,10 @@ public abstract class View implements ViewInterface {
             inputs[0] = inputs[0].trim().toUpperCase();
             
             //Validate that the user entered a letter
-            if(inputs[0].length() < 1) {
-                System.out.println("You must enter a value.");
-                continue;
-            }
+//            if(inputs[0].length() < 1) {
+//                System.out.println("You must enter a value.");
+//                continue;
+//            }
             valid = true;
             
         }

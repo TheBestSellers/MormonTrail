@@ -13,7 +13,6 @@ import byui.cit260.mormonTrail.model.Player;
 import byui.cit260.mormonTrail.model.ItemType;
 import mormontrailproject.MormonTrailProject;
 
-
 /**
  *
  * @author alyssahundley, Sariah
@@ -34,18 +33,16 @@ import mormontrailproject.MormonTrailProject;
         return player;
     }
     
-    public static int createNewGame(Player player) {
-    //    if(player == null){
-    //       return -1;
-    //    }
+    public static void createNewGame(Player player) throws GameControlException {
+        if(player == null){
+            throw new GameControlException("Player is null, cannot create game");
+        }
         Game game = new Game();
         MormonTrailProject.setCurrentGame(game);
         MormonTrailProject.getCurrentGame().setPlayer(player);
         Person[] people = createPersons();
         createItems();
         MapControl.createMap(0);
-
-        return 1; 
     }
     
     public static Person[] createPersons(){

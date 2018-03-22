@@ -7,6 +7,8 @@ package byui.cit260.mormonTrail.model;
 
 import byui.cit260.mormonTrail.control.MapControl;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -14,7 +16,8 @@ import java.io.Serializable;
  */
 public class Map implements Serializable{
     
-    private int currentLocation;
+    private Location currentLocation;
+    private int currentMileMarker;
     public Location[] locations = MapControl.createLocations();
 
     public Map() {
@@ -24,22 +27,32 @@ public class Map implements Serializable{
         return locations;
     }
 
+    public int getCurrentMileMarker() {
+        return currentMileMarker;
+    }
+
+    public void setCurrentMileMarker(int currentMileMarker) {
+        this.currentMileMarker = currentMileMarker;
+    }
+
     public void setLocations(Location[] locations) {
         this.locations = locations;
     }
     
-    public int getCurrentLocation() {
+    public Location getCurrentLocation() {
         return currentLocation;
     }
 
-    public void setCurrentLocation(int currentLocation) {
+    public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + this.currentLocation;
+        int hash = 5;
+        hash = 73 * hash + Objects.hashCode(this.currentLocation);
+        hash = 73 * hash + this.currentMileMarker;
+        hash = 73 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 

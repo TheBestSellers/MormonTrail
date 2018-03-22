@@ -4,6 +4,7 @@ import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.exceptions.GameControlException;
 import java.util.Scanner;
 import byui.cit260.mormonTrail.model.Player;
+import mormontrailproject.MormonTrailProject;
 
 /**
  *
@@ -25,23 +26,18 @@ public class StartProgramView extends View{
     
         String playersName = inputs[0];
         try {
-            Player player = GameControl.savePlayer(playersName);
+            MormonTrailProject.setPlayer(GameControl.savePlayer(playersName));
         } catch (GameControlException mce) {
             System.out.println(mce.getMessage());
             return false;
-                
-        }
-        
-        if(player == null){
-            System.out.println("Could not create the player."
-                    + "Enter a different name.");
+        } catch (Throwable error) {
+            System.out.println(error);
             return false;
         }
         
-        else{
-            System.out.println("=========================" +"Welcome to the game "
-                    + playersName + ". we hope you have a lot of fun!" + "========================");
-        }
+        
+        System.out.println("=========================" +"Welcome to the game "
+            + playersName + ". we hope you have a lot of fun!" + "========================");
    
         mainMenuView mainMenuView = new mainMenuView();                
         mainMenuView.display();

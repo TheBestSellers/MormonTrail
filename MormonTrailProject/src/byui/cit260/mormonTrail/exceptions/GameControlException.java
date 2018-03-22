@@ -26,10 +26,8 @@ public class GameControlException extends Exception {
         super(cause);
     }
 
-    public GameControlException(String message, 
-                                                            Throwable cause, 
-                                                            boolean enableSuppression, 
-                                                            boolean writableStackTrace) {
+    public GameControlException(String message,Throwable cause, 
+            boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
     

@@ -26,10 +26,8 @@ public class MapControlException extends Exception {
         super(cause);
     }
 
-    public MapControlException(String message, 
-                                                        Throwable cause, 
-                                                        boolean enableSuppression, 
-                                                        boolean writableStackTrace) {
+    public MapControlException(String message, Throwable cause, 
+            boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 

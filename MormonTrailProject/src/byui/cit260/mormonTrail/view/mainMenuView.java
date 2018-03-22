@@ -9,6 +9,9 @@ import byui.cit260.mormonTrail.control.GameControl;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Player;
 import mormontrailproject.MormonTrailProject;
+import byui.cit260.mormonTrail.exceptions.GameControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -45,7 +48,13 @@ public mainMenuView(){
     inputs[0] = inputs[0].toUpperCase();
 
     switch (menuItem) {
-        case "N": startNewGame();
+        case "N": {
+        try {
+            startNewGame();
+        } catch (GameControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
             break;
         case "R": restoreSavedGame();
             break;
@@ -64,9 +73,9 @@ public mainMenuView(){
     return false;
     }
 
-    private void startNewGame() {
+    private void startNewGame() throws GameControlException {
         Player player = null;
-        GameControl.createNewGame(player);
+        GameControl.createNewGame(MormonTrailProject.getPlayer());
         gameMenuView = new gameMenuView();
         gameMenuView.display();
         
