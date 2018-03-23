@@ -37,7 +37,7 @@ public class StartProgramView extends View{
         
         
         System.out.println("=========================" +"Welcome to the game "
-            + playersName + ". we hope you have a lot of fun!" + "========================");
+            + playersName + ". We hope you have a lot of fun!" + "========================");
    
         mainMenuView mainMenuView = new mainMenuView();                
         mainMenuView.display();

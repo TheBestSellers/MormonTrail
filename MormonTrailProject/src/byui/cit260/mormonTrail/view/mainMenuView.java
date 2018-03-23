@@ -24,7 +24,7 @@ private SaveGameMenuView saveGameMenuView;
 private RestoreGameMenuView restoreGameMenuView;
 private startExistingGameView startExistingGameView;
 private helpMenuView helpMenuView;
-private GeneralStoreView generalStoreView;
+//private GeneralStoreView generalStoreView;
 private TeamPaceView teamPaceView;
 private riverCrossingMenuView riverCrossingMenuView;
     
@@ -62,8 +62,8 @@ public mainMenuView(){
             break;
         case "H": getHelp();
             break;
-        case "G": generalStore();
-            break;
+//        case "G": generalStore();
+//            break;
         case "P": teamPace();
             break;
         case "C": riverCrossingMenuView();
@@ -96,10 +96,10 @@ public mainMenuView(){
        helpMenuView.display();
     }
     
-    private void generalStore() {
-        generalStoreView = new GeneralStoreView();
-        generalStoreView.display();
-    }
+////    private void generalStore() {
+////        generalStoreView = new GeneralStoreView();
+////        generalStoreView.display();
+//    }
     
     private void teamPace() {
         teamPaceView = new TeamPaceView();

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.mormonTrail.control;
+import byui.cit260.mormonTrail.exceptions.EventControlException;
 import java.util.Random;
 
 /**
@@ -12,29 +13,34 @@ import java.util.Random;
  */
 public class EventControl {
     
-    public static int calcRiverCrossingProbability(int riverDepth, int wagonWeight, int oxenStrength){
+//    public static int calcWagonSuppliesDrop(int wagonWeight, int wagonCurrentInventory, int dropSuppliesTotal)
+//        throws EventControlException {
+//        
+//        int newWagonWeight;
+//        newWagonWeight = (wagonWeight - dropSuppliesTotal);
+//                return newWagonWeight;
+//    }
+
+ 
+    public static int calcRiverCrossingProbability(int riverDepth, int wagonWeight, int oxenStrength)
+                    throws EventControlException {
+        
         if(riverDepth < 1 || riverDepth > 10){
-            return -1;
+            throw new EventControlException("Exception Error: River Depth must be between 1 and 10");
         }
-        if(wagonWeight < 1 || wagonWeight > 10){
-            return -1;
+       
+        else if(wagonWeight < 1 || wagonWeight > 10){
+            throw new EventControlException("Exception Error: Wagon Weight must be between 1 and 10");
         }
-        if(oxenStrength < 1 || oxenStrength > 10){
-            return -1;
+       
+        else if(oxenStrength < 1 || oxenStrength > 10){
+            throw new EventControlException("Exception Error: Oxen Strength must be between 1 and 10");
         }
         
         int riverProbability = (riverDepth + wagonWeight + oxenStrength);
         
         return riverProbability;
-        
     }
-    
-    
-    public static int calcWagonSuppliesDrop(int wagonWeight, int wagonCurrentInventory, int dropSuppliesTotal){
-        
-        int newWagonWeight;
-        newWagonWeight = wagonWeight - dropSuppliesTotal;
-                return newWagonWeight;
-    }
+
    
 }

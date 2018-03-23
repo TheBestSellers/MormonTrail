@@ -5,14 +5,31 @@
  */
 package byui.cit260.mormonTrail.view;
 
+import byui.cit260.mormonTrail.exceptions.EventControlException;
+import byui.cit260.mormonTrail.control.EventControl;
+
 /**
  *
  * @author Sariah
  */
-public class riverCrossingProbabilityView {
+public class riverCrossingProbabilityView extends View {
 
-    static void display() {
-        
-    }
+public riverCrossingProbabilityView() {
+    super("Press C for calculate to see your probability: ");
+}
     
+    @Override
+    public boolean doAction(String[] inputs) {
+       String playersName = inputs[0];
+        try {
+           int calcRiverCrossingProbability = EventControl.calcRiverCrossingProbability(5, 20, 1);
+        } catch (EventControlException mce) {
+            System.out.println(mce.getMessage());
+            return false;
+        }
+        return false;
+        
+        
+ 
+    }
 }

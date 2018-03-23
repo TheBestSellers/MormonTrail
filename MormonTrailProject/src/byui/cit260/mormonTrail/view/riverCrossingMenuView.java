@@ -5,6 +5,11 @@
  */
 package byui.cit260.mormonTrail.view;
 
+import byui.cit260.mormonTrail.control.EventControl;
+import byui.cit260.mormonTrail.exceptions.EventControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Sariah
@@ -18,7 +23,7 @@ public class riverCrossingMenuView extends View {
               super("Welcome to the River Crossing"
               + "\nPlease select an option"
               + "\nD - Drop Supplies"
-              + "\nC - Cross the river"
+              + "\nC - Cross the river & Probability Success"
               + "\nB - Go back and think about it\n");
     }
     
@@ -45,8 +50,8 @@ public class riverCrossingMenuView extends View {
     }
 
     private void riverCrossingProbabilityView() {
-        riverCrossingProbabilityView = new riverCrossingProbabilityView();
-        riverCrossingProbabilityView.display();
+       riverCrossingProbabilityView = new riverCrossingProbabilityView();
+       riverCrossingProbabilityView.display();
     }
-    
-}
+
+    }
