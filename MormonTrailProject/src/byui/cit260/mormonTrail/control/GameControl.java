@@ -5,6 +5,7 @@
  */
 package byui.cit260.mormonTrail.control;
 import byui.cit260.mormonTrail.exceptions.GameControlException;
+import byui.cit260.mormonTrail.exceptions.MapControlException;
 import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Item;
 import byui.cit260.mormonTrail.model.Person;
@@ -33,7 +34,11 @@ import mormontrailproject.MormonTrailProject;
         return player;
     }
     
-    public static void createNewGame(Player player) throws GameControlException {
+    public static void createNewGame(Player player) throws GameControlException,
+            MapControlException {
+        
+        int test = -5;
+        
         if(player == null){
             throw new GameControlException("Player is null, cannot create game");
         }
@@ -42,7 +47,7 @@ import mormontrailproject.MormonTrailProject;
         MormonTrailProject.getCurrentGame().setPlayer(player);
         Person[] people = createPersons();
         createItems();
-        MapControl.createMap(0);
+        MapControl.createMap(test);
     }
     
     public static Person[] createPersons(){

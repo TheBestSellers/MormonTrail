@@ -6,10 +6,9 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
-import byui.cit260.mormonTrail.model.Game;
-import byui.cit260.mormonTrail.model.Player;
 import mormontrailproject.MormonTrailProject;
 import byui.cit260.mormonTrail.exceptions.GameControlException;
+import byui.cit260.mormonTrail.exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,7 +21,6 @@ public class mainMenuView extends View{
 private gameMenuView gameMenuView;
 private SaveGameMenuView saveGameMenuView;
 private RestoreGameMenuView restoreGameMenuView;
-private startExistingGameView startExistingGameView;
 private helpMenuView helpMenuView;
 private GeneralStoreView generalStoreView;
 private TeamPaceView teamPaceView;
@@ -42,7 +40,7 @@ public mainMenuView(){
     }
     
     @Override
-    public boolean doAction(String[] inputs){
+    public boolean doAction(String[] inputs) {
     String menuItem = inputs[0];
 
     inputs[0] = inputs[0].toUpperCase();
@@ -51,7 +49,7 @@ public mainMenuView(){
         case "N": {
         try {
             startNewGame();
-        } catch (GameControlException ex) {
+        } catch (GameControlException | MapControlException ex) {
             System.out.println(ex.getMessage());
         }
     }
@@ -73,9 +71,12 @@ public mainMenuView(){
     return false;
     }
 
-    private void startNewGame() throws GameControlException {
-        Player player = null;
+    private void startNewGame() throws GameControlException, MapControlException {
+        try {
         GameControl.createNewGame(MormonTrailProject.getPlayer());
+        } catch (GameControlException gce){
+            System.out.println(gce.getMessage());
+        }
         gameMenuView = new gameMenuView();
         gameMenuView.display();
         

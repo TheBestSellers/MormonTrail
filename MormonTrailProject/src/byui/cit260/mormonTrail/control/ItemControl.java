@@ -32,8 +32,7 @@ public class ItemControl {
     }
     public static void subtractMoney(String item, int qty) {
         
-        GameControl gc = new GameControl();
-        Item[] items = gc.createItems();
+        Item[] items = GameControl.createItems();
         int total = 0;
         
         for(int iCount = 0; iCount < items.length; iCount++){

@@ -20,11 +20,12 @@ import mormontrailproject.MormonTrailProject;
  */
 public class MapControl {
      
-    public static Map createMap(int miles){
-        if (miles < 0) {return null;};
-        // if (items == null || items.length < 0) { return null;}
+    public static Map createMap(int miles)throws MapControlException{
+        if (miles < 0) {
+            throw new MapControlException("Problem creating map. Miles cannot"
+                    + " be less than 0.");
+        };
 
-        Scene[] scenes = createScenes();
         Map map = new Map();
         MormonTrailProject.setMap(map);
 
@@ -33,6 +34,7 @@ public class MapControl {
     
     public static Location moveTeam (int milesTraveled) 
             throws MapControlException {
+        
         if (milesTraveled == 0) {
             throw new MapControlException("miles traveled cannot equal 0");
         }
@@ -108,7 +110,6 @@ public class MapControl {
     
     public static Scene[] createScenes(){
         Scene[] scenes = new Scene[4];
-  
         Scene DailyStopScene = new Scene("DailyStopScene");
         scenes[SceneType.DailyStopScene.ordinal()] = DailyStopScene;
         Scene FortScene = new Scene("FortScene");
@@ -120,15 +121,4 @@ public class MapControl {
        
         return scenes;
     }
-    
-//    public static void assignScenesToLocations(Map map, Scene[] scenes){
-//        Location[] locations = map.getLocations();
-//        
-//        locations[0].setType(SceneType.DailyStopScene.ordinal());
-//        locations[1].setType(SceneType.FortScene.ordinal());
-//        locations[2].setType(SceneType.TownScene.ordinal());
-//        locations[3].setType(SceneType.RiverScene.ordinal());
-// 
-//    }
-    
 }
