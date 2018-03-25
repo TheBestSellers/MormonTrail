@@ -2,6 +2,7 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.ItemControl;
+import byui.cit260.mormonTrail.exceptions.ItemControlException;
 import java.util.Scanner;
 
 /**
@@ -39,7 +40,13 @@ public class dropRiverQuantityView extends View {
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-            ItemControl.subtractItem(dropRiverSuppliesView.item, qty);
+            
+            try{
+                ItemControl.subtractItem(dropRiverSuppliesView.item, qty);
+            } catch (ItemControlException ice){
+                  System.out.println(ice.getMessage());
+                        return false;
+                    }
             return true;
         }
         

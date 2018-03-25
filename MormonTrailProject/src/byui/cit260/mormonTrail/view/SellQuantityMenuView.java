@@ -6,6 +6,7 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.ItemControl;
+import byui.cit260.mormonTrail.exceptions.ItemControlException;
 import java.util.Scanner;
 
 /**
@@ -43,8 +44,21 @@ public class SellQuantityMenuView extends View {
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-            ItemControl.subtractItem(SellMenuView.item, qty);
-            ItemControl.addMoney();
+            
+            try{
+                ItemControl.subtractItem(SellMenuView.item, qty);
+            } catch (ItemControlException ice){
+                  System.out.println(ice.getMessage());
+                        return false;
+                    }
+            
+            try{
+                ItemControl.addMoney(SellMenuView.item, qty);
+            } catch (ItemControlException ice){
+                  System.out.println(ice.getMessage());
+                        return false;
+                    }
+        
             return true;
         }
         

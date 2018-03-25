@@ -27,10 +27,31 @@ public class ItemControl {
     }
     
     
-    public static void addItem(String item, int qty) {
+    public static void addItem(String item, int qty)
+            throws ItemControlException{
+        
+        if(qty < 1){
+            throw new ItemControlException("Qty needs to be greater than 0");
+        }
+        
+        if(item == null){
+            throw new ItemControlException("You muse selet an item");
+        }
+        
         System.out.println("You just added " + qty + " " + item + "(s)");
     }
-    public static void subtractMoney(String item, int qty) {
+        
+    
+    public static void subtractMoney(String item, int qty) 
+            throws ItemControlException {
+        
+        if(qty < 1){
+            throw new ItemControlException("Qty needs to be greater than 0");
+        }
+        
+        if(item == null){
+            throw new ItemControlException("You muse selet an item");
+        }
         
         Item[] items = GameControl.createItems();
         int total = 0;
@@ -43,16 +64,44 @@ public class ItemControl {
         }
     }
     
-    public static void subtractItem(String item, int qty){
+    public static void subtractItem(String item, int qty)
+            throws ItemControlException{
+        
+        if(qty < 1){
+            throw new ItemControlException("Qty needs to be greater than 0");
+        }
+        
+        if(item == null){
+            throw new ItemControlException("You muse selet an item");
+        }
+        
         System.out.println("You just removed " + qty + " " + item + "(s)");
     }
 
     
-    public static void subtractRiverItem(String item, int qty){
+    public static void subtractRiverItem(String item, int qty)
+            throws ItemControlException{
+        
+        if(qty < 1){
+            throw new ItemControlException("Qty needs to be greater than 0");
+        }
+        
+        if(item == null){
+            throw new ItemControlException("You muse selet an item");
+        }
         System.out.println("You just dropped " + qty + " " + item + "(s)");
     }
 
-    public static void addMoney(){
+    public static void addMoney(String item, int qty)
+            throws ItemControlException{
+        
+        if(qty < 1){
+            throw new ItemControlException("Qty needs to be greater than 0");
+        }
+        
+        if(item == null){
+            throw new ItemControlException("You muse selet an item");
+        }
         System.out.println("addMoney()");
     }
 // public static int sumWagonWeight(ItemControl.addItem() {

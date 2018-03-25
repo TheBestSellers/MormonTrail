@@ -6,7 +6,10 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.ItemControl;
+import byui.cit260.mormonTrail.exceptions.ItemControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -43,13 +46,25 @@ public class BuyQuantityMenuView extends View {
         }
         else if (qty > 0 && qty <= 100) {
             System.out.println("Valid value");
-            ItemControl.addItem(BuyMenuView.item, qty);
-            ItemControl.subtractMoney(BuyMenuView.item, qty);
+      
+            try{
+                ItemControl.addItem(BuyMenuView.item, qty);
+            } catch (ItemControlException ice){
+                  System.out.println(ice.getMessage());
+                        return false;
+                    }
+    
+            try{
+                ItemControl.subtractMoney(BuyMenuView.item, qty);
+            } catch (ItemControlException ice){
+                  System.out.println(ice.getMessage());
+                        return false;
+                    }
+            }
+            
             return true;
         }
         
-        return false;
             
         }
         
-    }
