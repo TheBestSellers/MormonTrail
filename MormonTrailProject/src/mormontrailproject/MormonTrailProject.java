@@ -11,6 +11,10 @@ import byui.cit260.mormonTrail.model.Game;
 import byui.cit260.mormonTrail.model.Map;
 import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -22,7 +26,9 @@ public class MormonTrailProject {
     private static Player player = null;
     private static Map map = null;
     private static Person[] party = GameControl.createPersons();
-    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+        
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -47,17 +53,62 @@ public class MormonTrailProject {
         MormonTrailProject.player = player;
     }
     
+        public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        MormonTrailProject.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        MormonTrailProject.inFile = inFile;
+    }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
+        
+ 
+
+         try {
+            //open character stream files for end user input and output
+            MormonTrailProject.inFile =
+                    new BufferedReader(new InputStreamReader(System.in));
+            MormonTrailProject.outFile = new PrintWriter(System.out, true);
+            
+            //create StartProgramView and start the program
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
+            
             MormonTrailProject.setPlayer(player);
+            
         } catch (Throwable e) {
-            System.out.println("Something happened: " + e);
-        }
-    }
     
+            System.out.println("Exception: " + e.toString() +
+                                             "\nCause: " + e.getCause() +
+                                             "\nMessage: " + e.getMessage());
+            
+            e.printStackTrace();
+        }
+        
+        finally {
+            try {
+                if (MormonTrailProject.inFile != null)
+                    MormonTrailProject.inFile.close();
+                
+                if (MormonTrailProject.inFile != null)
+                    MormonTrailProject.outFile.close();
+           
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+    }
+    }
 }
