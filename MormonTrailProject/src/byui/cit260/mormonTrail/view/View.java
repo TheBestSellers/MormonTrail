@@ -16,7 +16,11 @@ import mormontrailproject.MormonTrailProject;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
-    String[] inputs = new String[1];
+    //String[] inputs = new String[1];
+    String inputs;
+    
+    
+    
     
     protected final BufferedReader keyboard = MormonTrailProject.getInFile();
     protected final PrintWriter console = MormonTrailProject.getOutFile();
@@ -32,12 +36,20 @@ public abstract class View implements ViewInterface {
     @Override
     public void display(){
         boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            inputs[0] = inputs[0].trim().toUpperCase();
-            if (inputs[0] == null || inputs[0].equals("Q")){
-                return;
-            }
+//        do {
+//            String[] inputs = this.getInputs();
+//            inputs[0] = inputs[0].trim().toUpperCase();
+//            if (inputs[0] == null || inputs[0].equals("Q")){
+//                return;
+//            }
+
+          do{
+             String inputs = this.getInputs();
+             inputs = inputs.trim().toUpperCase();
+             if (inputs == null || inputs.equals("Q")){
+                 return;
+              
+          }
             endView = doAction(inputs);
         } while(!endView);
     }
@@ -59,19 +71,19 @@ public abstract class View implements ViewInterface {
                 selection = selection.trim().toUpperCase();
                 
                 if (selection.length() < 1) { //blank value entered
-                    System.out.println("You must enter a value.");
+                    this.console.println("You must enter a value.");
                     continue;
                 }
                 break;
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
         
         return selection;
                 }
         
-//        System.out.println("\n" + this.displayMessage);
+//        this.console.println("\n" + this.displayMessage);
                
         
 //        while(!valid) {            
@@ -81,7 +93,7 @@ public abstract class View implements ViewInterface {
             
             //Validate that the user entered a letter
 //            if(inputs[0].length() < 1) {
-//                System.out.println("You must enter a value.");
+//                this.console.println("You must enter a value.");
 //                continue;
 //            }
 //            valid = true;

@@ -22,21 +22,21 @@ public class StartProgramView extends View{
     }
    
     @Override
-    public boolean doAction(String[] inputs){
+    public boolean doAction(String inputs){
     
-        String playersName = inputs[0];
+        String playersName = inputs;
         try {
             MormonTrailProject.setPlayer(GameControl.savePlayer(playersName));
         } catch (GameControlException mce) {
-            System.out.println(mce.getMessage());
+            ErrorView.display(this.getClass().getName(),mce.getMessage());
             return false;
         } catch (Throwable error) {
-            System.out.println(error);
+            ErrorView.display(this.getClass().getName(), error.getMessage());
             return false;
         }
         
         
-        System.out.println("=========================" +"Welcome to the game "
+        this.console.println("=========================" +"Welcome to the game "
             + playersName + ". We hope you have a lot of fun!" + "========================");
    
         mainMenuView mainMenuView = new mainMenuView();                

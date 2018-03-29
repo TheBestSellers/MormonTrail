@@ -11,6 +11,8 @@ package byui.cit260.mormonTrail.view;
  */
 public interface ViewInterface {
     public void display();
-    public String[] getInputs();
-    public boolean doAction(String[] inputs);
-}
+   // public String[] getInputs();
+    public String getInputs();
+    //public boolean doAction(String[] inputs);
+    public boolean doAction(String inputs);
+    }

@@ -2,12 +2,12 @@ package byui.cit260.mormonTrail.view;
  
  import java.io.Serializable;
  import java.util.Scanner;
+import mormontrailproject.MormonTrailProject;
  
 
- public class hotelSceneView {
+ public class hotelSceneView extends View{
      
-    
-private String[] availableCharacters;
+
     private int locationDistance;
     private int iCount;
     
@@ -15,98 +15,70 @@ private String[] availableCharacters;
     public hotelSceneView() {
      }
      
-    int[] inputs = new int[1];
+    String inputs;
+    
+    
     
     public void display() {
         boolean endView = false;
         do {
-            int[] inputs = this.getInputs();
-            if (inputs[0] < 1){
+            for(iCount = 0; iCount < MormonTrailProject.getParty().length; iCount++){
+            
+            this.console.println("\n" + (iCount+1) + " - " + MormonTrailProject.getParty()[iCount]);
+        } 
+            String inputs = this.getInputs();
+            if (inputs ==null){
                 return;
             }
             endView = doAction(inputs);
         } while(!endView);
     }
     
-    private int[] getInputs() {
-        
-                //create scanner to receive user input
-        Scanner inFile;
-        inFile = new Scanner(System.in);
-        
+    public String getInputs(){
         boolean valid = false;
-        
-        System.out.println("Hotel Menu" + 
-                "\nPlease select a person to add to your team");
-        
-        for(iCount = 0; iCount < availableCharacters.length; iCount++){
-            
-            System.out.println("\n" + (iCount+1) + " - " + availableCharacters[iCount]);
-        }    
-        
-        System.out.println("\n" + iCount + "- Quit");
-       
-        while(!valid) {
+        String selection = null;
+        try {
+            //while a valid name has not been retrieved
+            while (!valid) {
             //prompt user for input
-            System.out.println("Select a menu option.");
-            
-            //get the input user entered, trim it
-            inputs[0] = Integer.parseInt(inFile.nextLine());
+            this.console.println("Please select a person to add to your team");
  
-            //Validate that the user entered a value
-            if(inputs[0] < 1) {
-                System.out.println("You must enter a value.");
-                continue;
+                //get the value entered from the keyboard
+                selection = this.keyboard.readLine();
+                selection = selection.trim().toUpperCase();
+                
+                if (selection.length() < 1) { //blank value entered
+                    ErrorView.display(this.getClass().getName(),"You must enter a value.");
+                    continue;
+                }
+                break;
             }
-            valid = true;
-            
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + e.getMessage());
         }
-        return inputs;
-    }
-
-    private boolean doAction(int[] inputs) {
         
-     int menuItem = inputs[0];
-     for(int iCount = 0; iCount < availableCharacters.length; iCount++){
-         
-        if(iCount == menuItem){
-            
-            System.out.println("\nYou have selected\"\n" + availableCharacters[iCount] + "\n");          
-        }
-     
-     }   
-        if (iCount == menuItem){
-         
-         return true;
-     }
+        return selection;
+                }
+
+
+    public boolean doAction(String inputs) {
+        
+//     String menuItem = inputs;
+//     for(int iCount = 0; iCount < availableCharacters.length; iCount++){
+//         
+//        if(iCount == menuItem){
+//            
+//            this.console.println("\nYou have selected\"\n" + availableCharacters[iCount] + "\n");          
+//        }
+//     
+//     }   
+//        if (iCount == menuItem){
+//         
+//         return true;
+//     }
          return false;
 
     }
-     public String[] getAvailableCharacters() {
-         return availableCharacters;
-     }
- 
-  
-    public void setAvailableCharacters(String[] availableCharacters) {
-         this.availableCharacters = availableCharacters;
-     }
- 
-public void setLocationDistance(int locationDistance) {
-}
-     public int hashCode() {
-         int hash = 7;
- 
-        /* hash = 41 * hash + this.availableCharacters;*/
-         hash = 41 * hash + this.locationDistance;
-         return hash;
-     }
- public boolean equals(Object obj) {
-    return false;
- }
- public String toString() {
-         return "HotelScene{" + "availableCharacters=" + availableCharacters + ", locationDistance=" + locationDistance + '}';
-     }
-   
-    
+     
      
  }

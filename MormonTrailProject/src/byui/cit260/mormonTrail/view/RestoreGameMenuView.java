@@ -16,12 +16,12 @@ public class RestoreGameMenuView extends View {
     }
         
     @Override
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
-        String fileName = inputs[0].toLowerCase();
+        String fileName = inputs.toLowerCase();
         
         if (fileName.length() > 12) {
-            System.out.println("Invalid value\nEnter a file name "
+            ErrorView.display(this.getClass().getName(),"Invalid value\nEnter a file name "
                     + "no longer than 12 character");
             return false;
         }
@@ -32,7 +32,7 @@ public class RestoreGameMenuView extends View {
             return true;
         }
         catch (Exception e) {
-            System.out.println("Error restoring saved game: " + e);
+            ErrorView.display(this.getClass().getName(),"Error restoring saved game: " + e);
             return false;
         }
     }

@@ -26,23 +26,23 @@ public class helpMenuView extends View{
     }
         
     @Override
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
-        String menuItem = inputs[0];
+        String menuItem = inputs;
         
         switch (menuItem) {
-            case "G": System.out.println("\nThe goal of the game is to....\n");
+            case "G": this.console.println("\nThe goal of the game is to....\n");
                 break;
-            case "M": System.out.println("\nYou move by....\n");
+            case "M": this.console.println("\nYou move by....\n");
                 break;
-            case "E": System.out.println("\nEstimated resources are....\n");
+            case "E": this.console.println("\nEstimated resources are....\n");
                 break;
-            case "H": System.out.println("\nHarvest resources by...\n");
+            case "H": this.console.println("\nHarvest resources by...\n");
                 break;
-            case "D": System.out.println("\nDeliver resources to warehouse by....\n");
+            case "D": this.console.println("\nDeliver resources to warehouse by....\n");
                 break;
             case "Q": return true;
-            default: System.out.println("\nInvalid menu item\n\n");
+            default: ErrorView.display(this.getClass().getName(),"\nInvalid menu item\n\n");
             
         }
      return false;

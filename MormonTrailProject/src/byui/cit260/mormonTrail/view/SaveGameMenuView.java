@@ -16,12 +16,12 @@ public class SaveGameMenuView extends View {
     }
         
     @Override
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
-        String fileName = inputs[0].toLowerCase();
+        String fileName = inputs.toLowerCase();
         
         if (fileName.length() > 12) {
-            System.out.println("Invalid value\nEnter an existing file name "
+            ErrorView.display(this.getClass().getName(),"Invalid value\nEnter an existing file name "
                     + "not including the file extension.");
             return false;
         }
@@ -32,7 +32,7 @@ public class SaveGameMenuView extends View {
             return true;
         }
         catch (Exception e) {
-            System.out.println("Error saving game: " + e);
+            ErrorView.display(this.getClass().getName(),"Error saving game: " + e);
             return false;
         }
     }

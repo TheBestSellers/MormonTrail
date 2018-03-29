@@ -26,8 +26,8 @@ public class TeamPaceView extends View{
     }
     
     @Override
-    public boolean doAction(String[] inputs) {
-    String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+    String menuItem = inputs;
        
         switch (menuItem) {
             case "S": pace = "Slow";
@@ -41,7 +41,7 @@ public class TeamPaceView extends View{
                 break;
             case "Q": return true;
                 
-            default: System.out.println("Invalid menu item");
+            default: ErrorView.display(this.getClass().getName(),"Invalid menu item");
         }
         return false;
         

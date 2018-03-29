@@ -28,7 +28,28 @@ public class MormonTrailProject {
     private static Person[] party = GameControl.createPersons();
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
-        
+    private static PrintWriter logFile = null;
+
+    public static Person[] getParty() {
+        return party;
+    }
+
+    public static void setParty(Person[] party) {
+        MormonTrailProject.party = party;
+    }
+
+    
+    
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        MormonTrailProject.logFile = logFile;
+    }
+    
+    
+  
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -74,19 +95,17 @@ public class MormonTrailProject {
      */
     public static void main(String[] args) {
         
- 
-
+        //create StartProgramView and start the program
+            
+        
          try {
             //open character stream files for end user input and output
             MormonTrailProject.inFile =
                     new BufferedReader(new InputStreamReader(System.in));
             MormonTrailProject.outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
             
-            //create StartProgramView and start the program
-            StartProgramView startProgramView = new StartProgramView();
-            startProgramView.display();
             
-            MormonTrailProject.setPlayer(player);
             
         } catch (Throwable e) {
     
@@ -99,16 +118,25 @@ public class MormonTrailProject {
         
         finally {
             try {
-                if (MormonTrailProject.inFile != null)
+                if (MormonTrailProject.inFile != null){
                     MormonTrailProject.inFile.close();
-                
-                if (MormonTrailProject.inFile != null)
+                }
+                if (MormonTrailProject.inFile != null){
                     MormonTrailProject.outFile.close();
+                }
+                if (logFile != null){
+                    logFile.close();
+                }
            
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
             }
     }
+         
+         StartProgramView startProgramView = new StartProgramView();
+         startProgramView.display();
+            
+            MormonTrailProject.setPlayer(player);
     }
 }

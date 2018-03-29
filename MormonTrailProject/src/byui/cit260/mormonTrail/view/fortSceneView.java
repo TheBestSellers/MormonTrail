@@ -26,15 +26,15 @@ public class fortSceneView extends View{
     }
     
     @Override
-    public boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
        
         switch (menuItem) {
             case "G": generalStoreView();
                 break;
             case "E": return true;
                 
-            default: System.out.println("Invalid menu item");
+            default: ErrorView.display(this.getClass().getName(),"Invalid menu item");
         }
         return false;
         

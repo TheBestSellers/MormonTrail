@@ -40,17 +40,17 @@ public mainMenuView(){
     }
     
     @Override
-    public boolean doAction(String[] inputs) {
-    String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+    String menuItem = inputs;
 
-    inputs[0] = inputs[0].toUpperCase();
+    inputs = inputs.toUpperCase();
 
     switch (menuItem) {
         case "N": {
         try {
             startNewGame();
         } catch (GameControlException | MapControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
         }
     }
             break;
@@ -66,7 +66,7 @@ public mainMenuView(){
             break;
         case "C": riverCrossingMenuView();
             break;
-        default: System.out.println("Invalid menu item");
+        default: ErrorView.display(this.getClass().getName(),"Invalid menu item");
     }
     return false;
     }
@@ -75,7 +75,7 @@ public mainMenuView(){
         try {
         GameControl.createNewGame(MormonTrailProject.getPlayer());
         } catch (GameControlException gce){
-            System.out.println(gce.getMessage());
+            ErrorView.display(this.getClass().getName(),gce.getMessage());
         }
         gameMenuView = new gameMenuView();
         gameMenuView.display();

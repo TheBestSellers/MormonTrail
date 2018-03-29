@@ -22,42 +22,42 @@ public class BuyQuantityMenuView extends View {
              + "\nQ - Return to previous menu");
     }
     @Override
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
         int qty = 0;
         
         try {
-            qty = Integer.parseInt(inputs[0]);
+            qty = Integer.parseInt(inputs);
         } catch (NumberFormatException e) {
-            System.out.println("Invalid value\nEnter a number between 1 and 100");
+            ErrorView.display(this.getClass().getName(), "Invalid value\nEnter a number between 1 and 100");
             return false;
         } catch (Throwable e) {
-            System.out.println("Something happened: " + e);
+            ErrorView.display(this.getClass().getName(),"Something happened: " + e);
             return false;
         }
         
         if (qty < 0 || qty > 100) {
-            System.out.println("Invalid value\nEnter a number between 1 and 100");
+            ErrorView.display(this.getClass().getName(),"Invalid value\nEnter a number between 1 and 100");
         }
         
         else if (qty == 0) {
-            System.out.println("0 entered, returning to previous menu");
+            this.console.println("0 entered, returning to previous menu");
             return true;
         }
         else if (qty > 0 && qty <= 100) {
-            System.out.println("Valid value");
+            this.console.println("Valid value");
       
             try{
                 ItemControl.addItem(BuyMenuView.item, qty);
             } catch (ItemControlException ice){
-                  System.out.println(ice.getMessage());
+                  ErrorView.display(this.getClass().getName(),ice.getMessage());
                         return false;
                     }
     
             try{
                 ItemControl.subtractMoney(BuyMenuView.item, qty);
             } catch (ItemControlException ice){
-                  System.out.println(ice.getMessage());
+                  ErrorView.display(this.getClass().getName(),ice.getMessage());
                         return false;
                     }
             }

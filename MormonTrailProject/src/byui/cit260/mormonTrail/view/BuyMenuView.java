@@ -26,9 +26,9 @@ public class BuyMenuView extends View{
         
         
     @Override
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
-        String menuItem = inputs[0];
+        String menuItem = inputs;
         
         buyQuantityMenuView = new BuyQuantityMenuView();
         
@@ -48,7 +48,7 @@ public class BuyMenuView extends View{
             case "W": item = "Spare Wagon Wheel";
                 break;
             case "Q": return true;
-            default: System.out.println("\nInvalid menu item\n\n");
+            default: ErrorView.display(this.getClass().getName(), "\nInvalid menu item\n\n");
         }
         buyQuantityMenuView.display();
         

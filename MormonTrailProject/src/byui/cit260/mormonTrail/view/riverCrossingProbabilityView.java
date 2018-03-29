@@ -19,12 +19,12 @@ public riverCrossingProbabilityView() {
 }
     
     @Override
-    public boolean doAction(String[] inputs) {
-       String playersName = inputs[0];
+    public boolean doAction(String inputs) {
+       String playersName = inputs;
         try {
            int calcRiverCrossingProbability = EventControl.calcRiverCrossingProbability(5, 20, 1);
         } catch (EventControlException mce) {
-            System.out.println(mce.getMessage());
+            ErrorView.display(this.getClass().getName(),mce.getMessage());
             return false;
         }
         return false;

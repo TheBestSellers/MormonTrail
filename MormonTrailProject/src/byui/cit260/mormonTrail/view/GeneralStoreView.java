@@ -22,9 +22,9 @@ public class GeneralStoreView extends View {
       
         
     @Override
-    public boolean doAction(String[] inputs) {
+    public boolean doAction(String inputs) {
         
-        String menuItem = inputs[0];
+        String menuItem = inputs;
         
         switch (menuItem) {
             case "B": buyMenuView = new BuyMenuView();
@@ -34,7 +34,7 @@ public class GeneralStoreView extends View {
                       sellMenuView.display();
                 break;
             case "Q": return true;
-            default: System.out.println("\nInvalid menu item\n\n");
+            default: ErrorView.display(this.getClass().getName(),"\nInvalid menu item\n\n");
             
         }
      return false;

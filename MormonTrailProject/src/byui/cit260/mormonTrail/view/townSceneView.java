@@ -28,8 +28,8 @@ public class townSceneView extends View{
     }
     
     @Override
-    public boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
        
         switch (menuItem) {
             case "H": hotelSceneView();
@@ -38,7 +38,7 @@ public class townSceneView extends View{
                 break;
             case "E": return true;
                 
-            default: System.out.println("Invalid menu item");
+            default: ErrorView.display(this.getClass().getName(),"Invalid menu item");
         }
         return false;
         

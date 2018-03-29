@@ -28,10 +28,10 @@ public gameMenuView(){
     }
     
     @Override
-    public boolean doAction(String[] inputs){
-    String menuItem = inputs[0];
+    public boolean doAction(String inputs){
+    String menuItem = inputs;
 
-    inputs[0] = inputs[0].toUpperCase();
+    inputs = inputs.toUpperCase();
 
     switch (menuItem) {
         case "M": displayMap();
@@ -44,7 +44,7 @@ public gameMenuView(){
             break;
 //            case "S": ItemControl.sumWagonWeight(ItemControl.addItem());
 //            break;
-        default: System.out.println("Invalid menu item");
+        default: ErrorView.display(this.getClass().getName(),"Invalid menu item");
     }
     return false;
     }
@@ -55,7 +55,7 @@ public gameMenuView(){
        Location[] locations =  mc.createLocations();
        
        //for (Location location : MormonTrailProject.getMap().locations) {
-           System.out.println("**********************************************************************************************************\n|START|\n\n"
+           this.console.println("**********************************************************************************************************\n|START|\n\n"
            +"   Nauvoo     " + locations[1].getName() + "     "+ locations[3].getName() + "     "+locations[5].getName() +"     "+ locations[7].getName() + "     "+locations[9].getName() 
            +"\n     T            " + locations[1].getSymbol() + "                 " + locations[3].getSymbol() + "                 " + locations[5].getSymbol() + "                 " + locations[7].getSymbol() + "                  "+ locations[9].getSymbol()
            +"\n     |            |                 |                 |                 |                  |"
@@ -72,11 +72,11 @@ public gameMenuView(){
     }
     
     private void displayCharacters() {
-         System.out.println("displayCharacters stub called");
+         this.console.println("displayCharacters stub called");
     }
 
     private void displayInventory() {
-         System.out.println("displayInventory stub called");
+         this.console.println("displayInventory stub called");
     }
 
 }
