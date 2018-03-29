@@ -105,6 +105,12 @@ public class MormonTrailProject {
             MormonTrailProject.outFile = new PrintWriter(System.out, true);
             logFile = new PrintWriter("logFile.txt");
             
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            
+            MormonTrailProject.setPlayer(player);
+            return;
+            
             
             
         } catch (Throwable e) {
@@ -113,7 +119,7 @@ public class MormonTrailProject {
                                              "\nCause: " + e.getCause() +
                                              "\nMessage: " + e.getMessage());
             
-            e.printStackTrace();
+            e.printStackTrace(); 
         }
         
         finally {
@@ -134,9 +140,6 @@ public class MormonTrailProject {
             }
     }
          
-         StartProgramView startProgramView = new StartProgramView();
-         startProgramView.display();
-            
-            MormonTrailProject.setPlayer(player);
+         
     }
 }

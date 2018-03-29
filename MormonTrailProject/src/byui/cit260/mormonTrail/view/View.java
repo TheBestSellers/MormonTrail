@@ -18,9 +18,7 @@ public abstract class View implements ViewInterface {
     protected String displayMessage;
     //String[] inputs = new String[1];
     String inputs;
-    
-    
-    
+
     
     protected final BufferedReader keyboard = MormonTrailProject.getInFile();
     protected final PrintWriter console = MormonTrailProject.getOutFile();
@@ -44,7 +42,7 @@ public abstract class View implements ViewInterface {
 //            }
 
           do{
-             String inputs = this.getInputs();
+             inputs = this.getInputs();
              inputs = inputs.trim().toUpperCase();
              if (inputs == null || inputs.equals("Q")){
                  return;
@@ -65,7 +63,7 @@ public abstract class View implements ViewInterface {
         try {
             //while a valid name has not been retrieved
             while (!valid) {
-                    
+                this.console.println(displayMessage);    
                 //get the value entered from the keyboard
                 selection = this.keyboard.readLine();
                 selection = selection.trim().toUpperCase();
