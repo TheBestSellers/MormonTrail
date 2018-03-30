@@ -1,7 +1,9 @@
 package byui.cit260.mormonTrail.view;
 
-import java.util.Scanner;
 import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.exceptions.GameControlException;
+import byui.cit260.mormonTrail.model.Game;
+import mormontrailproject.MormonTrailProject;
 
 /**
  *
@@ -11,29 +13,25 @@ public class SaveGameMenuView extends View {
 
     public SaveGameMenuView() {
         super("----Save Current Game----"
-         + "\nType the file name you wish to save this game under,"
+         + "\nType the file path you wish to save this game under,"
          + "\nOr enter 'Q' to quit back to the previous menu:");
     }
         
     @Override
     public boolean doAction(String inputs) {
         
-        String fileName = inputs.toLowerCase();
+        String filePath = inputs.toLowerCase();
         
-        if (fileName.length() > 12) {
-            ErrorView.display(this.getClass().getName(),"Invalid value\nEnter an existing file name "
-                    + "not including the file extension.");
-            return false;
-        }
+        Game game = MormonTrailProject.getCurrentGame();
         
         try {
-            fileName += ".sav";
-            GameControl.saveGame(fileName);
-            return true;
+            GameControl.saveGame(game, filePath);
         }
-        catch (Exception e) {
-            ErrorView.display(this.getClass().getName(),"Error saving game: " + e);
+        catch (GameControlException gce) {
+            ErrorView.display(this.getClass().getName(),"Error saving file." + gce.getMessage());
             return false;
         }
+        this.console.println("Game was successfully saved at: " + filePath);
+        return true;
     }
 }

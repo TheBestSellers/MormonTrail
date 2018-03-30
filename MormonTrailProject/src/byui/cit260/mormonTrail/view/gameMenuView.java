@@ -29,9 +29,7 @@ public gameMenuView(){
     
     @Override
     public boolean doAction(String inputs){
-    String menuItem = inputs;
-
-    inputs = inputs.toUpperCase();
+    String menuItem = inputs.toUpperCase();
 
     switch (menuItem) {
         case "M": displayMap();

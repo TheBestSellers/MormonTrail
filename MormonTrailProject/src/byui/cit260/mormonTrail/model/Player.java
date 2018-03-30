@@ -5,13 +5,14 @@
  */
 package byui.cit260.mormonTrail.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Admin
  */
-public class Player {
+public class Player implements Serializable {
 
     public Player() {
     }

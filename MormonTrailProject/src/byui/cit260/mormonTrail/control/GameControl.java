@@ -12,6 +12,13 @@ import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.model.PersonType;
 import byui.cit260.mormonTrail.model.Player;
 import byui.cit260.mormonTrail.model.ItemType;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import mormontrailproject.MormonTrailProject;
 
 /**
@@ -37,8 +44,6 @@ import mormontrailproject.MormonTrailProject;
     public static void createNewGame(Player player) throws GameControlException,
             MapControlException {
         
-        int test = -5;
-        
         if(player == null){
             throw new GameControlException("Player is null, cannot create game");
         }
@@ -47,7 +52,7 @@ import mormontrailproject.MormonTrailProject;
         MormonTrailProject.getCurrentGame().setPlayer(player);
         Person[] people = createPersons();
         createItems();
-        MapControl.createMap(test);
+        MapControl.createMap(1);
     }
     
     public static Person[] createPersons(){
@@ -100,13 +105,43 @@ import mormontrailproject.MormonTrailProject;
         return items;
     }
 
-    public static boolean restoreGame(String fileName) {
-        System.out.println("****restoreGame() called, file name: " +fileName);
-        return true;
+    public static Game restoreGame(String filePath) throws GameControlException, ClassNotFoundException{
+        if (filePath == null || filePath.length() < 1 ) {
+            throw new GameControlException ("Something went wrong loading the"
+                    + " game. filePath cannot be null or less than 1 in length.");
+        }
+        Game game = null;
+        try (BufferedInputStream inputFileStream = 
+                new BufferedInputStream(new FileInputStream(filePath));
+            ObjectInputStream InputObjectStream =
+                new ObjectInputStream(new FileInputStream(filePath))) {
+            game = (Game)InputObjectStream.readObject();
+        } catch (IOException ex) {
+            throw new GameControlException ("Something went wrong loading the game: " + ex);
+        }
+        MormonTrailProject.setCurrentGame(game);
+        MormonTrailProject.setPlayer(MormonTrailProject.getCurrentGame().getPlayer());
+        
+        System.out.println();
+        
+        return game;        
     }
     
-    public static boolean saveGame(String fileName) {
-        System.out.println("****saveGame() called, file name: " +fileName);
-        return true;
+    public static void saveGame(Game game, String filePath) throws GameControlException {
+        if (game == null || filePath == null || filePath.length() < 1 ) {
+            throw new GameControlException ("Something went wrong saving the game.");
+        }
+        
+        try (BufferedOutputStream outputFileStream = 
+                new BufferedOutputStream(new FileOutputStream(filePath));
+            ObjectOutputStream objectStream =
+                new ObjectOutputStream(new FileOutputStream(filePath))) {
+            
+            objectStream.writeObject(game);
+            
+        } catch (IOException ex) {
+            System.out.println("I/O Error:" + ex.getMessage());
+        }
+        
     }
 }
