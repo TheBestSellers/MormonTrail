@@ -6,14 +6,9 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
-import byui.cit260.mormonTrail.control.MapControl;
 import mormontrailproject.MormonTrailProject;
 import byui.cit260.mormonTrail.exceptions.GameControlException;
 import byui.cit260.mormonTrail.exceptions.MapControlException;
-import java.io.PrintWriter;
-import java.io.Writer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -47,8 +42,6 @@ public mainMenuView(){
     @Override
     public boolean doAction(String inputs) {
     String menuItem = inputs;
-
-    inputs = inputs.toUpperCase();
 
     switch (menuItem) {
         case "N": {

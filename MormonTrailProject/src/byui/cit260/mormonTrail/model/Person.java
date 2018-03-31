@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author alyssahundley
  */
 public class Person implements Serializable {
-    
+
     //class instance varables
     public String name;
     private int health;
@@ -25,9 +25,9 @@ public class Person implements Serializable {
     private int dailyProteinDraw;
     private int dailyVeggieDraw;
 
-    public Person(String name, int health, int startingMoney, int huntingSkill, 
-            int gatheringSkill, int stamina, int dailyProteinDraw, 
-            int dailyVeggieDraw, String status){
+    public Person(String name, int health, int startingMoney, int huntingSkill,
+            int gatheringSkill, int stamina, int dailyProteinDraw,
+            int dailyVeggieDraw, String status) {
         this.name = name;
         this.health = health;
         this.startingMoney = startingMoney;
@@ -36,24 +36,22 @@ public class Person implements Serializable {
         this.stamina = stamina;
         this.dailyProteinDraw = dailyProteinDraw;
         this.dailyVeggieDraw = dailyVeggieDraw;
-        this.status = status; 
+        this.status = status;
 
     }
-    
+
     public Person() {
     }
-    
-    
 
     public String getStatus() {
         return status;
     }
-    
-    public String getName () {
+
+    public String getName() {
         return name;
     }
-    
-    public void setName (String name) {
+
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -173,5 +171,5 @@ public class Person implements Serializable {
         }
         return true;
     }
-    
+
 }

@@ -5,13 +5,39 @@
  */
 package byui.cit260.mormonTrail.control;
 
+import byui.cit260.mormonTrail.exceptions.PeopleControlException;
 import byui.cit260.mormonTrail.model.Person;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
  * @author alyssahundley
  */
 public class PeopleControl {
+   
+    public static void printCharacterReport(Person[] people, String filePath) throws PeopleControlException, IOException {
+        if (filePath.length() < 2) {
+            throw new PeopleControlException("File Path has to be at least 2 characters");
+        }
+
+        try (PrintWriter outFile = new PrintWriter(filePath+".txt")) {
+
+            outFile.printf("%n%50s", "Character Report");
+            outFile.printf("%n%-15s%-10s%20s%10s%20s%20s", "Name", "Status", "Current Health", "Stamina", "Hunting Skill", "Gathering Skill");
+
+            // print the location and the scene type that is on the map
+            for (Person person : people) {
+                outFile.printf("%n%-15s%-15s%10d%12d%17d%18d", person.getName(),
+                         person.getStatus(), person.getHealth(),
+                         person.getStamina(), person.getHuntingSkill(),
+                         person.getGatheringSkill());
+            }
+        } catch (IOException ex) {
+            throw new PeopleControlException("Error saving the file: " + ex.getMessage());
+        }
+    }
     
     public static int calcHealthDraw(int stamina, int foodShortage, double weather, double pace){
         if(stamina < 1 || stamina >5 ){

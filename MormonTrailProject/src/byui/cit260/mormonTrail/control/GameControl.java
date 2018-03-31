@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.mormonTrail.control;
+
 import byui.cit260.mormonTrail.exceptions.GameControlException;
 import byui.cit260.mormonTrail.exceptions.MapControlException;
 import byui.cit260.mormonTrail.model.Game;
@@ -27,12 +28,12 @@ import mormontrailproject.MormonTrailProject;
  *
  * @author alyssahundley, Sariah
  */
- public class GameControl {
-    
-    public static Player savePlayer (String name)
-        throws GameControlException {
-        
-        if (name == null || name.length() <1){
+public class GameControl {
+
+    public static Player savePlayer(String name)
+            throws GameControlException {
+
+        if (name == null || name.length() < 1) {
             throw new GameControlException("Could not create name, please try again");
         }
 
@@ -42,44 +43,45 @@ import mormontrailproject.MormonTrailProject;
         MormonTrailProject.getPlayer().setName(name);
         return player;
     }
-    
+
     public static void createNewGame(Player player) throws GameControlException,
             MapControlException {
-        
-        if(player == null){
+
+        if (player == null) {
             throw new GameControlException("Player is null, cannot create game");
         }
         Game game = new Game();
         MormonTrailProject.setCurrentGame(game);
         MormonTrailProject.getCurrentGame().setPlayer(player);
-        Person[] people = createPersons();
+        MormonTrailProject.setParty(createPersons());
         createItems();
         MapControl.createMap(1);
     }
-    
+
     public static void printItemsReport(Item[] item, String filePath) throws GameControlException {
-            if(filePath.length() < 2) {
-            
+        if (filePath.length() < 2) {
+
             throw new GameControlException("File Path has to be at least 2 characters");
         }
-        
+
         try (PrintWriter out = new PrintWriter(filePath)) {
-            
+
             out.println("\n\n                       Item Name/Price Report");
             out.printf("%n%-20s%10s", "Item", "Price");
             out.printf("%n%-20s%10s", "--------------", "------------------");
-            
-           // print the location and the scene type that is on the map
+
+            // print the location and the scene type that is on the map
             for (Item items : item) {
-                out.printf("%n%-20s%3d", items.getName()
-                                       , items.getCost());
+                out.printf("%n%-20s%3d", items.getName(),
+                         items.getCost());
             }
-        }   catch (IOException ex) {
+        } catch (IOException ex) {
             System.out.println("I/O Error: " + ex.getMessage());
-        } 
-   }
-    public static Person[] createPersons(){
-  
+        }
+    }
+
+    public static Person[] createPersons() {
+
         Person[] persons = new Person[10];
         Person Benjamin = new Person("Benjamin", 50, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.Benjamin.ordinal()] = Benjamin;
@@ -101,13 +103,13 @@ import mormontrailproject.MormonTrailProject;
         persons[PersonType.Harriett.ordinal()] = Harriett;
         Person George = new Person("George", 65, 100, 3, 3, 5, 5, 5, "Hotel");
         persons[PersonType.George.ordinal()] = George;
-        
-        return persons; 
+
+        return persons;
     }
-    
-    public static Item[] createItems(){
+
+    public static Item[] createItems() {
         Item[] items = new Item[8];
-        
+
         Item Money = new Item("Money", 1, 0, 0);
         items[ItemType.Money.ordinal()] = Money;
         Item Ammo = new Item("Ammo", 1, 1, 0);
@@ -124,47 +126,47 @@ import mormontrailproject.MormonTrailProject;
         items[ItemType.Veggie.ordinal()] = Veggie;
         Item SpareWheel = new Item("SpareWheel", 5, 2, 0);
         items[ItemType.SpareWheel.ordinal()] = SpareWheel;
-        
+
         return items;
     }
 
-    public static Game restoreGame(String filePath) throws GameControlException, ClassNotFoundException{
-        if (filePath == null || filePath.length() < 1 ) {
-            throw new GameControlException ("Something went wrong loading the"
+    public static Game restoreGame(String filePath) throws GameControlException, ClassNotFoundException {
+        if (filePath == null || filePath.length() < 1) {
+            throw new GameControlException("Something went wrong loading the"
                     + " game. filePath cannot be null or less than 1 in length.");
         }
         Game game = null;
-        try (BufferedInputStream inputFileStream = 
-                new BufferedInputStream(new FileInputStream(filePath));
-            ObjectInputStream InputObjectStream =
-                new ObjectInputStream(new FileInputStream(filePath))) {
-            game = (Game)InputObjectStream.readObject();
+        try (BufferedInputStream inputFileStream
+                = new BufferedInputStream(new FileInputStream(filePath));
+                ObjectInputStream InputObjectStream
+                = new ObjectInputStream(new FileInputStream(filePath))) {
+            game = (Game) InputObjectStream.readObject();
         } catch (IOException ex) {
-            throw new GameControlException ("Something went wrong loading the game: " + ex);
+            throw new GameControlException("Something went wrong loading the game: " + ex);
         }
         MormonTrailProject.setCurrentGame(game);
         MormonTrailProject.setPlayer(MormonTrailProject.getCurrentGame().getPlayer());
-        
+
         System.out.println();
-        
-        return game;        
+
+        return game;
     }
-    
+
     public static void saveGame(Game game, String filePath) throws GameControlException {
-        if (game == null || filePath == null || filePath.length() < 1 ) {
-            throw new GameControlException ("Something went wrong saving the game.");
+        if (game == null || filePath == null || filePath.length() < 1) {
+            throw new GameControlException("Something went wrong saving the game.");
         }
-        
-        try (BufferedOutputStream outputFileStream = 
-                new BufferedOutputStream(new FileOutputStream(filePath));
-            ObjectOutputStream objectStream =
-                new ObjectOutputStream(new FileOutputStream(filePath))) {
-            
+
+        try (BufferedOutputStream outputFileStream
+                = new BufferedOutputStream(new FileOutputStream(filePath));
+                ObjectOutputStream objectStream
+                = new ObjectOutputStream(new FileOutputStream(filePath))) {
+
             objectStream.writeObject(game);
-            
+
         } catch (IOException ex) {
             System.out.println("I/O Error:" + ex.getMessage());
         }
-        
+
     }
 }

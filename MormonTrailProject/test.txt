@@ -1,0 +1,13 @@
+
+                                  Character Report
+Name           Status          Current Health   Stamina       Hunting Skill     Gathering Skill
+Benjamin       Hotel                  50           5                3                 3
+Peter          Hotel                  90           5                3                 3
+Sarah          Hotel                  75           5                3                 3
+Daniel         Hotel                  25           5                3                 3
+Alexander      Hotel                  88           5                3                 3
+Mary           Hotel                  90           5                3                 3
+Beth           Hotel                  85           5                3                 3
+Joseph         Hotel                  95           5                3                 3
+Harriett       Hotel                 100           5                3                 3
+George         Hotel                  65           5                3                 3

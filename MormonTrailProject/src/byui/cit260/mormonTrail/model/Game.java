@@ -13,8 +13,8 @@ import java.util.Objects;
  *
  * @author alyssahundley
  */
-public class Game implements Serializable{
-    
+public class Game implements Serializable {
+
     private int locationOfParty;
     private int distanceFromNauvoo;
     private int distanceFromSLC;
@@ -24,11 +24,11 @@ public class Game implements Serializable{
     private Player player;
     private Inventory[] inventory;
     private Map map;
-    
+
     Map currentLocation = new Map();
 
     public Game() {
-        
+
     }
 
     public Inventory[] getInventory() {
@@ -46,15 +46,15 @@ public class Game implements Serializable{
     public void setMap(Map map) {
         this.map = map;
     }
-    
-    
-    public Player getPlayer(){
+
+    public Player getPlayer() {
         return player;
     }
-    
-    public void setPlayer (Player player) {
-        this.player = player; 
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
+
     public int getLocationOfParty() {
         return locationOfParty;
     }
@@ -101,7 +101,7 @@ public class Game implements Serializable{
 
     public void setWeather(String weather) {
         this.weather = weather;
-    
+
     }
 
     @Override
@@ -155,5 +155,3 @@ public class Game implements Serializable{
     }
 
 }
-
-    
