@@ -74,7 +74,7 @@ public class MapControl {
         }   catch (IOException ex) {
             System.out.println("I/O Error: " + ex.getMessage());
         } 
-        }
+   }
     
     public static Location[] createLocations(){
         Location[] locations = new Location[25];

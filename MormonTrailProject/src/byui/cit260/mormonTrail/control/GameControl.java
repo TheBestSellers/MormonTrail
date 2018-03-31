@@ -12,6 +12,7 @@ import byui.cit260.mormonTrail.model.Person;
 import byui.cit260.mormonTrail.model.PersonType;
 import byui.cit260.mormonTrail.model.Player;
 import byui.cit260.mormonTrail.model.ItemType;
+import byui.cit260.mormonTrail.model.Location;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
@@ -19,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import mormontrailproject.MormonTrailProject;
 
 /**
@@ -55,6 +57,27 @@ import mormontrailproject.MormonTrailProject;
         MapControl.createMap(1);
     }
     
+    public static void printItemsReport(Item[] item, String filePath) throws GameControlException {
+            if(filePath.length() < 2) {
+            
+            throw new GameControlException("File Path has to be at least 2 characters");
+        }
+        
+        try (PrintWriter out = new PrintWriter(filePath)) {
+            
+            out.println("\n\n                       Item Name/Price Report");
+            out.printf("%n%-20s%10s", "Item", "Price");
+            out.printf("%n%-20s%10s", "--------------", "------------------");
+            
+           // print the location and the scene type that is on the map
+            for (Item items : item) {
+                out.printf("%n%-20s%3d", items.getName()
+                                       , items.getCost());
+            }
+        }   catch (IOException ex) {
+            System.out.println("I/O Error: " + ex.getMessage());
+        } 
+   }
     public static Person[] createPersons(){
   
         Person[] persons = new Person[10];

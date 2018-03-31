@@ -10,6 +10,7 @@ public class GeneralStoreView extends View {
 
     private BuyMenuView buyMenuView;
     private SellMenuView sellMenuView;
+    private PrintItemView printItemView;
     
     public GeneralStoreView() {
         super("----Welcome to the General Store!----"
@@ -17,6 +18,7 @@ public class GeneralStoreView extends View {
          + "\nPlease select an option"
          + "\n\nB - Buy"
          + "\nS - Sell"
+         + "\nP - Print list of items"
          + "\nQ - Return to previous menu");
     }
       
@@ -32,6 +34,9 @@ public class GeneralStoreView extends View {
                 break;
             case "S": sellMenuView = new SellMenuView();
                       sellMenuView.display();
+                break;
+            case "P": printItemView = new PrintItemView();
+                      printItemView.display();
                 break;
             case "Q": return true;
             default: ErrorView.display(this.getClass().getName(),"\nInvalid menu item\n\n");
