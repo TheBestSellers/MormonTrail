@@ -55,10 +55,10 @@ public class MapControl {
     }    
     
         public static void printReport(Location[] locations, String filePath) throws MapControlException {
-           // if(filePath.length() < 2) {
+            if(filePath.length() < 2) {
             
             throw new MapControlException("File Path has to be a String");
-        //}
+        }
         
         try (PrintWriter out = new PrintWriter(filePath)) {
             
