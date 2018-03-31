@@ -12,6 +12,8 @@ import byui.cit260.mormonTrail.model.LocationType;
 import byui.cit260.mormonTrail.model.Map;
 import byui.cit260.mormonTrail.model.Scene;
 import byui.cit260.mormonTrail.model.SceneType;
+import java.io.IOException;
+import java.io.PrintWriter;
 import mormontrailproject.MormonTrailProject;
 
 /**
@@ -51,6 +53,28 @@ public class MapControl {
         
         return newLocation;
     }    
+    
+        public static void printReport(Location[] locations, String filePath) throws MapControlException {
+           // if(filePath.length() < 2) {
+            
+            throw new MapControlException("File Path has to be a String");
+        //}
+        
+        try (PrintWriter out = new PrintWriter(filePath)) {
+            
+            out.println("\n\n                       Map Location Report                        ");
+            out.printf("%n%-20s%10s", "Location", "Scene Type");
+            out.printf("%n%-20s%10s", "--------------", "------------------");
+            
+           // print the location and the scene type that is on the map
+            for (Location location : locations) {
+                out.printf("%n%-20s%1s", location.getName()
+                                                            , location.getSymbol());
+            }
+        }   catch (IOException ex) {
+            System.out.println("I/O Error: " + ex.getMessage());
+        } 
+        }
     
     public static Location[] createLocations(){
         Location[] locations = new Location[25];
@@ -121,4 +145,5 @@ public class MapControl {
        
         return scenes;
     }
+
 }

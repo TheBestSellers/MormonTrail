@@ -6,9 +6,12 @@
 package byui.cit260.mormonTrail.view;
 
 import byui.cit260.mormonTrail.control.GameControl;
+import byui.cit260.mormonTrail.control.MapControl;
 import mormontrailproject.MormonTrailProject;
 import byui.cit260.mormonTrail.exceptions.GameControlException;
 import byui.cit260.mormonTrail.exceptions.MapControlException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,9 +25,10 @@ private gameMenuView gameMenuView;
 private SaveGameMenuView saveGameMenuView;
 private RestoreGameMenuView restoreGameMenuView;
 private helpMenuView helpMenuView;
-private GeneralStoreView generalStoreView;
+//private GeneralStoreView generalStoreView;
 private TeamPaceView teamPaceView;
 private riverCrossingMenuView riverCrossingMenuView;
+private PrintMapReport PrintMapReport;
     
 public mainMenuView(){
     super("Main Menu"
@@ -33,9 +37,10 @@ public mainMenuView(){
         + "\nR - Restore a saved game"
         + "\nS - Save current game"
         + "\nH - Get help on how to play the game"
-        + "\nG - Test the general store view"
+        //+ "\nG - Test the general store view"
         + "\nP - Test the team pace view"
         + "\nC - Test the River Crossing view"
+        + "\nM - Print Map Locations Report"
         + "\nQ - Quit\n");
     }
     
@@ -60,11 +65,13 @@ public mainMenuView(){
             break;
         case "H": getHelp();
             break;
-        case "G": generalStore();
-            break;
+//        case "G": generalStore();
+//            break;
         case "P": teamPace();
             break;
         case "C": riverCrossingMenuView();
+            break;
+        case "M": PrintMapReport();
             break;
         default: ErrorView.display(this.getClass().getName(),"Invalid menu item");
     }
@@ -97,10 +104,10 @@ public mainMenuView(){
        helpMenuView.display();
     }
     
-    private void generalStore() {
-        generalStoreView = new GeneralStoreView();
-        generalStoreView.display();
-    }
+//    private void generalStore() {
+//        generalStoreView = new GeneralStoreView();
+//        generalStoreView.display();
+//    }
     
     private void teamPace() {
         teamPaceView = new TeamPaceView();
@@ -111,5 +118,12 @@ public mainMenuView(){
         riverCrossingMenuView = new riverCrossingMenuView();
         riverCrossingMenuView.display();
     }
+
+    private void PrintMapReport() {
+       PrintMapReport = new PrintMapReport();
+       PrintMapReport.display();
+    }
+
+
    
 }
